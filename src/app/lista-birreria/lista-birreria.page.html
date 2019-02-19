@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="home"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Cervecerías</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item [routerLink]="'/interna-birreria/'" routerDirection="forward" *ngFor="let birreria of birrerias">
+      <ion-card>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+                <h3>ffasdfsd</h3>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                <img src="../../assets/img/birreria.jpg" alt="">
+              </ion-col>
+              <ion-col>
+                fsdfsd
+              </ion-col>
+            </ion-row>
+        </ion-grid>
+      </ion-card>
+      
+      <div class="item-note" slot="end">
+        
+      </div>
+    </ion-item>
+  </ion-list>
+
+  
+
+  <!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+  -->
+</ion-content>

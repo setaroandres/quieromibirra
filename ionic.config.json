@@ -1,0 +1,7 @@
+{
+  "name": "quieromibirra",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
