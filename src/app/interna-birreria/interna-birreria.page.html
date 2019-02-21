@@ -1,43 +1,55 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button defaultHref="home"></ion-back-button>
-      </ion-buttons>
-      <ion-title>Cervecería</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cervecería</ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content padding>
-    <ion-card padding>
-        <h3>Nombre Cervecería</h3>
-        <p><img src="../../assets/img/birreria.jpg" alt=""></p>
-        <p>Calle Falsa 123</p>
-        <p>Abierto de 18 a 24</p>
-    </ion-card>
-    <p>Cupones disponibles:</p>
-    <ion-card padding [routerLink]="'/interna-cupon/'" routerDirection="forward">
-      <h3>50% off</h3>
-      <p>Válido hasta el 30 de marzo</p>
-    </ion-card>
-    <ion-card padding [routerLink]="'/interna-cupon/'" routerDirection="forward">
-        <h3>2x1 en Scottish</h3>
-        <p>Válido hasta el 30 de marzo</p>
-    </ion-card>
-    <ion-card padding [routerLink]="'/interna-cupon/'" routerDirection="forward">
-        <h3>2x1 en IPA</h3>
-        <p>Válido hasta el 30 de marzo</p>
-    </ion-card>
-    <p>Promociones disponibles:</p>
-    <ion-card padding [routerLink]="'/interna-promocion/'" routerDirection="forward">
-      <h3>50% off</h3>
-      <p>Válido hasta el 30 de marzo</p>
-    </ion-card>
-    <ion-card padding [routerLink]="'/interna-promocion/'" routerDirection="forward">
-        <h3>2x1 en Scottish</h3>
-        <p>Válido hasta el 30 de marzo</p>
-    </ion-card>
-    <ion-card padding [routerLink]="'/interna-promocion/'" routerDirection="forward">
-        <h3>2x1 en IPA</h3>
-        <p>Válido hasta el 30 de marzo</p>
-    </ion-card>
+  <ion-card padding>
+    <h3>Nombre Cervecería</h3>
+    <p><img src="../../assets/img/birreria.jpg" alt="" /></p>
+    <p>Calle Falsa 123</p>
+    <p>Abierto de 18 a 24</p>
+  </ion-card>
+  <p>Cupones disponibles:</p>
+  <ion-card padding [routerLink]="'/interna-cupon/'" routerDirection="forward">
+    <h3>50% off</h3>
+    <p>Canjealo por 150 puntos!</p>
+  </ion-card>
+  <ion-card padding [routerLink]="'/interna-cupon/'" routerDirection="forward">
+    <h3>2x1 en Scottish</h3>
+    <p>Canjealo por 250 puntos!</p>
+  </ion-card>
+  <ion-card padding [routerLink]="'/interna-cupon/'" routerDirection="forward">
+    <h3>2x1 en IPA</h3>
+    <p>Canjealo por 100 puntos!</p>
+  </ion-card>
+  <p>Promociones disponibles:</p>
+  <ion-card
+    padding
+    [routerLink]="'/interna-promocion/'"
+    routerDirection="forward"
+  >
+    <h3>50% off</h3>
+    <p>Válido hasta el 30 de marzo</p>
+  </ion-card>
+  <ion-card
+    padding
+    [routerLink]="'/interna-promocion/'"
+    routerDirection="forward"
+  >
+    <h3>2x1 en Scottish</h3>
+    <p>Válido hasta el 30 de marzo</p>
+  </ion-card>
+  <ion-card
+    padding
+    [routerLink]="'/interna-promocion/'"
+    routerDirection="forward"
+  >
+    <h3>2x1 en IPA</h3>
+    <p>Válido hasta el 30 de marzo</p>
+  </ion-card>
 </ion-content>
