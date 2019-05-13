@@ -1,9 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>crear-usuario</ion-title>
+    <ion-title>Crear Usuario</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-
+  <ion-item>
+    <ion-label position="floating" required="true">Nombre</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" required="true">Apellido</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" required="true">Email</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" required="true">Contraseña</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-button routerDirection="forward" expand="full" color="primary">Crear Usuario</ion-button>
+  <p class="ion-text-center">
+    <a [routerLink]="'/bases/'">Bases y condiciones</a> | <a [routerLink]="'/soporte/'">Soporte</a>
+  </p>
 </ion-content>

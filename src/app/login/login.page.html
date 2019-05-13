@@ -4,21 +4,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-grid
-    align-self-center
-    align-items-center
-    justify-content-center
-    text-center
-  >
-    <ion-row>
-      <ion-col>
-        <ion-card padding>
-          <ion-button [routerLink]="'/home/'" routerDirection="forward" center
-            >Ingresar</ion-button
-          >
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-content padding align-self-center align-items-center justify-content-center text-center>
+  <ion-button [routerLink]="'/home/'" routerDirection="forward" expand="full" color="primary"><ion-icon name="logo-facebook"></ion-icon> Ingresar con Facebook</ion-button>
+  <ion-button [routerLink]="'/home/'" routerDirection="forward" expand="full" color="secondary"><ion-icon name="logo-instagram"></ion-icon> Ingresar Instagram</ion-button>
+  <ion-button [routerLink]="'/home/'" routerDirection="forward" expand="full" color="tertiary"><ion-icon name="mail"></ion-icon>Ingresar con Email</ion-button>
+  <p class="ion-text-center">
+    <a [routerLink]="'/crear-usuario/'">Crear Usuario</a> | <a [routerLink]="'/recuperar-contrasena/'">Recuperar contraseña</a>
+  </p>
 </ion-content>

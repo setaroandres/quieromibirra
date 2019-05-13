@@ -17,7 +17,11 @@ const routes: Routes = [
   { path: 'lista-birreria', loadChildren: './lista-birreria/lista-birreria.module#ListaBirreriaPageModule' },
   { path: 'interna-birreria', loadChildren: './interna-birreria/interna-birreria.module#InternaBirreriaPageModule' },
   { path: 'interna-cupon', loadChildren: './interna-cupon/interna-cupon.module#InternaCuponPageModule' },
-  { path: 'interna-promocion', loadChildren: './interna-promocion/interna-promocion.module#InternaPromocionPageModule' }
+  { path: 'interna-promocion', loadChildren: './interna-promocion/interna-promocion.module#InternaPromocionPageModule' },
+  { path: 'recuperar-contrasena', loadChildren: './recuperar-contrasena/recuperar-contrasena.module#RecuperarContrasenaPageModule' },
+  { path: 'bases', loadChildren: './bases/bases.module#BasesPageModule' },
+  { path: 'soporte', loadChildren: './soporte/soporte.module#SoportePageModule' },
+  { path: 'tutorial', loadChildren: './tutorial/tutorial.module#TutorialPageModule' }
 ];
 
 @NgModule({
