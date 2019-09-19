@@ -1,28 +1,70 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Crear Usuario</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="home"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content padding>
-  <ion-item>
-    <ion-label position="floating" required="true">Nombre</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating" required="true">Apellido</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating" required="true">Email</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating" required="true">Contraseña</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-button routerDirection="forward" expand="full" color="primary">Crear Usuario</ion-button>
-  <p class="ion-text-center">
-    <a [routerLink]="'/bases/'">Bases y condiciones</a> | <a [routerLink]="'/soporte/'">Soporte</a>
-  </p>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h1 class="title-cuenta">Crear Cuenta</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating" required="true">
+            <ion-icon name="person"></ion-icon>
+            <span> Nombre y Apellido</span>
+          </ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating" required="true">
+            <ion-icon name="mail"></ion-icon>
+            <span> Email</span>
+          </ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating" required="true">
+            <ion-icon name="lock"></ion-icon>
+            <span> Contraseña</span>
+          </ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label position="floating" required="true">
+            <ion-icon name="gift"></ion-icon>
+            <span> Fecha de nacimiento</span>
+          </ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row class="crear-usuario-button align-items-end">
+      <ion-col>
+        <ion-button routerDirection="forward" expand="full">Crear Usuario</ion-button>
+        <p class="ion-text-center">
+          Ya tenes cuenta?
+          <a [routerLink]="">Logueate</a>
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
