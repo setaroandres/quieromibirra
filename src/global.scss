@@ -10,4 +10,41 @@
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
 
+/*Estilos generales*/
+ion-header {
+    ion-toolbar{
+        --background: var(--qmb-dark-gray);
 
+        ion-buttons {
+            
+            ion-menu-button {
+                
+                    button {
+                        --color: #fff;
+                       
+                  
+                }
+            }
+        }
+
+        ion-title {
+            display: inline-block;
+            width: 90%;
+            vertical-align: middle;
+
+            img {
+                max-width: 25%;
+            }
+        }
+
+        .lupa {
+            width: 10%;
+            display: inline-block;
+            vertical-align: middle;
+
+            img {
+                max-width: 80%;
+            }
+        }
+    }   
+}

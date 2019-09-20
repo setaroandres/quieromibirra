@@ -3,27 +3,57 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>
-      Home
+    <ion-title class="ion-text-center">
+      <img src="../../assets/img/logo-header.png" >
     </ion-title>
+    <div class="lupa">
+      <img src="../../assets/img/lupa-header.png" >
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-card class="welcome-card" justify-content-center align-items-center text-center>
+  <ion-grid>
+    <ion-card class="welcome-card" align-items-center >
       <ion-card-header>
-        <ion-card-title>Nombre Usuario</ion-card-title>
+        <ion-card-title>Facundo Gilbert</ion-card-title>
       </ion-card-header>
-      <p text-center>
-        <img src="../../assets/img/user.jpg" >
-      </p>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="6">
+            <p>
+              <img src="../../assets/img/user.jpg" >
+            </p>
+          </ion-col>
+          <ion-col size="6" class="ion-align-items-end">
+            <p>Miembro desde</p>
+            <p>27/04/2019</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <p text-center>
+              <img src="../../assets/img/user.jpg" >
+            </p>
+          </ion-col>
+            <ion-col size="6">
+              <p>Miembro desde</p>
+              <p>27/04/2019</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button [routerLink]="'/home/'" routerDirection="forward" class="canjear-puntos">
+                Canjear puntos
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        
+      </ion-card-content>
+      
       
     </ion-card>
 
-    <ion-card justify-content-center align-items-center text-center>
-      <ion-card-header>
-        <ion-card-title>1200<br>Puntos</ion-card-title>
-      </ion-card-header>
-    </ion-card>
+  </ion-grid>
     
 </ion-content>

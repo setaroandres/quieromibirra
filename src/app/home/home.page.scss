@@ -1,12 +1,20 @@
-.welcome-card img{
-  max-width: 80px;
-  border-radius: 50%;
+ion-content {
+  --background: var(--qmb-dark-gray);
+
+  .welcome-card {
+    --background: #fff;
+
+    ion-card-header {
+      padding-bottom: 0;
+  
+      ion-card-title {
+        font-size: 1rem;
+        font-weight: 700;
+      }
+    }
+  }
 }
 
-.sc-ion-card-ios-s img {
-  display: inline-block;
-  width: auto;
-  margin: auto;
-}
+
 
 
