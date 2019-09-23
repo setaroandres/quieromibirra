@@ -16,7 +16,7 @@ export class ListaBirreriaPage implements OnInit {
   constructor(private navCtrl:NavController) {
     for (let i = 1; i < 11; i++) {
       this.birrerias.push({
-        nombre: 'Nombre Cervecería',
+        nombre: 'Nombre Cervecería'+i,
         direccion: 'Calle Falsa 123' + i,
       });
     }

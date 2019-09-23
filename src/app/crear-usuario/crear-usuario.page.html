@@ -1,12 +1,12 @@
-<ion-header>
-    <ion-toolbar>
+<ion-header> 
+    <ion-toolbar [class.show-background]="showToolbar">
       <ion-buttons slot="start">
-        <ion-back-button defaultHref="home"></ion-back-button>
+        <ion-back-button defaultHref="login"></ion-back-button>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
 
-<ion-content>
+<ion-content fullscreen (ionScroll)="onScroll($event)" [scrollEvents]="true">
   <ion-grid>
     <ion-row>
       <ion-col>
@@ -59,7 +59,7 @@
     </ion-row>
     <ion-row class="crear-usuario-button align-items-end">
       <ion-col>
-        <ion-button routerDirection="forward" expand="full">Crear Usuario</ion-button>
+        <ion-button routerDirection="forward" expand="full" [routerLink]="'/tutorial/'">Crear Usuario</ion-button>
         <p class="ion-text-center">
           Ya tenes cuenta?
           <a [routerLink]="">Logueate</a>
