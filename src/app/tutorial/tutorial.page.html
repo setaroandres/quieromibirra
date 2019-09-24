@@ -1,31 +1,43 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Tutorial</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content padding>
-  <ion-list>
-    <ion-item>
-      <h2>Paso 1</h2>
-      <p>Detalle paso. Lorem ipsum.</p>
-    </ion-item>
-    <ion-item>
-      <h2>Paso 2</h2>
-      <p>Detalle paso. Lorem ipsum.</p>
-    </ion-item>
-    <ion-item>
-      <h2>Paso 3</h2>
-      <p>Detalle paso. Lorem ipsum.</p>
-    </ion-item>
-    <ion-item>
-      <h2>Paso 4</h2>
-      <p>Detalle paso. Lorem ipsum.</p>
-    </ion-item>
-  </ion-list>
-  <ion-row class="crear-usuario-button align-items-end">
-    <ion-col>
-      <ion-button routerDirection="forward" expand="full" [routerLink]="'/home/'">Continuar</ion-button>
-    </ion-col>
-  </ion-row>
+<ion-content class="dark-bg">
+  <ion-grid>
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide>
+        <ion-row>
+          <ion-col class="slide-img" size="12">
+            <img src="../../assets/img/tutorial/slide-1.png" >
+          </ion-col>
+          <ion-col class="slide-txt" size="12">
+            <p>Quiero mi birra es la nueva Aplicación que te permite sumar puntos disfrutando con amigos de una buena cerveza y los mejores acompañamientos</p>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+      <ion-slide>
+        <ion-row>
+          <ion-col class="slide-img" size="12">
+            <img src="../../assets/img/tutorial/slide-2.png" >
+          </ion-col>
+          <ion-col class="slide-txt" size="12">
+            <p>Siendo usuario de Quiero Mi Birra tendrás acceso a distintos beneficios y puntos que vas a poder canjear en los mejores lugares</p>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+      <ion-slide>
+        <ion-row>
+          <ion-col class="slide-img" size="12">
+            <img src="../../assets/img/tutorial/slide-3.png" >
+          </ion-col>
+          <ion-col class="slide-txt" size="12">
+            <p>Promos de cervecerías en una app! Vas a poder encontrar promociones y descuentos de las ciudad. Sumate a nuestra Comunidad</p>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+    </ion-slides>
+    <ion-row class="row-btn-tutorial">
+      <ion-col class="btn-tutorial">
+        <ion-button [routerLink]="'/home/'" routerDirection="forward" class="yellow-button continuar-tutorial" expand="full">
+          Continuar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

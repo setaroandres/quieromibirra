@@ -1,0 +1,51 @@
+ion-content {
+    
+    ion-grid {
+        padding: 0;
+
+        ion-slides {
+            height: 90vh;
+    
+            .slide-img {
+               
+        
+                img {
+                    max-width: 55%;
+                }
+            }
+    
+            .slide-txt {
+    
+                p {
+                    color: #fff;
+                    font-size: 0.8rem;
+                    line-height: 23px;
+                    padding: 0px 20px;
+                }    
+            }
+        
+        }
+     
+        .row-btn-tutorial {
+            height: 10vh;
+            position: relative;
+
+            .btn-tutorial {
+                padding: 0;
+        
+                ion-button {
+        
+                    &.yellow-button {
+                        position: absolute;
+                        width: 100%;
+                        bottom: 0px;
+                    } 
+                }
+            }
+        }
+
+        
+    }
+
+     
+}
