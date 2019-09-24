@@ -21,7 +21,9 @@ const routes: Routes = [
   { path: 'recuperar-contrasena', loadChildren: './recuperar-contrasena/recuperar-contrasena.module#RecuperarContrasenaPageModule' },
   { path: 'bases', loadChildren: './bases/bases.module#BasesPageModule' },
   { path: 'soporte', loadChildren: './soporte/soporte.module#SoportePageModule' },
-  { path: 'tutorial', loadChildren: './tutorial/tutorial.module#TutorialPageModule' }
+  { path: 'tutorial', loadChildren: './tutorial/tutorial.module#TutorialPageModule' },
+  { path: 'canjear-puntos', loadChildren: './canjear-puntos/canjear-puntos.module#CanjearPuntosPageModule' },
+  { path: 'ingreso', loadChildren: './ingreso/ingreso.module#IngresoPageModule' }
 ];
 
 @NgModule({
