@@ -1,9 +1,56 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>canjear-puntos</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      <img src="../../assets/img/logo-header.png" >
+    </ion-title>
+    <div class="lupa">
+      <img src="../../assets/img/lupa-header.png" >
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <ion-grid>
+    <ion-card class="welcome-card" align-items-center >
+      <ion-card-header>
+        <ion-card-title>Facundo Gilbert</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="6" class="ion-no-padding ion-padding-top img-user">
+            <p>
+              <img src="../../assets/img/logo.png" alt="logo-qmb" title="Logo QMB" />
+            </p>
+          </ion-col>
+          <ion-col size="6" class="miembro-desde">
+            <p>Miembro desde <span>27/04/2019</span></p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="6">
+            <p class="nro-usuario ion-no-padding">900 106 137 42</p>
+          </ion-col>
+          <ion-col size="6" class="total-puntos">
+            <p>Total de puntos QMB</p>
+            <p class="puntos"><span><img src="../../assets/img/coin.png" alt="coin-qmb" title="Coin QMB" /></span> 230981</p>
+          </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="canjear-puntos">
+              <ion-button [routerLink]="'/home/'" routerDirection="forward" class="canjear-puntos" expand="block">
+                Canjear puntos
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        
+      </ion-card-content>
+      
+      
+    </ion-card>
 
+  </ion-grid>
+    
 </ion-content>

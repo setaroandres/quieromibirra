@@ -1,0 +1,91 @@
+ion-content {
+    background-color: var(--qmb-dark-gray);
+    --background:  url("../../assets/img/smile-beer-small.png") no-repeat center 75%;
+  
+    .welcome-card {
+      --background: #fff;
+  
+      ion-card-header {
+        padding: 10px 10px 0;
+    
+        ion-card-title {
+          font-size: 1rem;
+          font-weight: 700;
+        }
+      }
+  
+      ion-card-content {
+        padding: 0px 10px 10px;
+  
+        .img-user {
+  
+          img {
+            max-width: 30%;
+          }
+        }
+  
+        .miembro-desde {
+  
+          p {
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-align: right;
+  
+            span {
+              display: block;
+              font-size: 0.8rem;
+            }
+          }
+        }
+  
+        .canjear-puntos {
+  
+          ion-button {
+            --background: var(--qmb-yellow);
+            --border-radius: 12px;
+  
+            a {
+              padding: 20px;
+            }
+          }
+        } 
+  
+        .total-puntos {
+          
+          
+          p {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-align: right;
+            
+            &.puntos {
+              font-size: 1.2rem;
+              text-align: center;
+              background: #eaeaea;
+              color: #000000;
+              border-radius: 5px;
+              width: 85%;
+              margin-left: 25px;
+              padding: 3px;
+  
+              span {
+                display: inline-flex;
+                vertical-align: middle;
+                justify-content: center;
+                width: 20px;
+                height: 20px;
+                margin-top: -2px;
+  
+                img {
+                }
+              }
+            }
+          }
+        }
+  
+      }
+    }
+  }
+  
+  
+  
