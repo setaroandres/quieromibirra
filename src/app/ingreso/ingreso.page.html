@@ -16,7 +16,7 @@
 
       <ion-item>
         <ion-label position="floating">Usuario (email)</ion-label>
-        <ion-input formControlName="firstName" type="text"></ion-input>
+        <ion-input formControlName="firstName" type="email"></ion-input>
       </ion-item>
       <ion-item *ngIf="!slideOneForm.controls.firstName.valid  && (slideOneForm.controls.firstName.dirty || submitAttempt)">
         <p>Please enter a valid name.</p>

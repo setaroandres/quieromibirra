@@ -11,3 +11,42 @@
         </div>
     </ion-toolbar>
 </ion-header>
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Promos de la semana</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-slides pager="true" [options]="slideOptsTwo">
+                <ion-slide>
+                    <img src="https://elclubdelamilanesa.com/images/content/x1566338615.jpg.pagespeed.ic.8wH8S1ljQm.jpg">
+                </ion-slide>
+                <ion-slide>
+                    <img src="https://elclubdelamilanesa.com/images/content/x1566338615.jpg.pagespeed.ic.8wH8S1ljQm.jpg">
+                </ion-slide>
+                <ion-slide>
+                    <img src="https://elclubdelamilanesa.com/images/content/x1566338615.jpg.pagespeed.ic.8wH8S1ljQm.jpg">
+                </ion-slide>
+            </ion-slides>
+        </ion-card-content>
+    </ion-card>
+    <ion-row>
+        <p>Lugares cercanos</p>
+    </ion-row>
+    <ion-row justify-content-center>
+        <ion-col size="6" *ngFor="let bar of [1,2,3,4]">
+            <ion-card (click)="goToBirreria(bar)">
+                <p float-left>Nombre bar</p>
+                <p float-right>200pts</p>
+                <img src="https://elclubdelamilanesa.com/images/content/x1566338615.jpg.pagespeed.ic.8wH8S1ljQm.jpg" />
+                <ion-card-header>
+                    <ion-card-title>2x1 Birra</ion-card-title>
+                    <ion-card-subtitle>Diiagonal 2134</ion-card-subtitle>
+                </ion-card-header>
+                <ion-card-content>
+                    200pts
+                </ion-card-content>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+</ion-content>
