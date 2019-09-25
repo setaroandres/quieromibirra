@@ -48,3 +48,20 @@ ion-header {
         }
     }   
 }
+
+ion-content {
+    &.dark-bg {
+        background-color: var(--qmb-dark-gray);
+        --background:  none;
+    }
+
+    ion-button {
+
+        &.yellow-button {
+            --background: var(--qmb-yellow);
+            --border-radius: none;
+            height: 45px;
+            margin:0;
+        } 
+    }
+}

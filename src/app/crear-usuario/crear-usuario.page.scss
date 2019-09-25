@@ -25,7 +25,21 @@ ion-content {
 
     ion-grid {
         padding: 0;
-
+        p {
+            font-size: 0.8em;
+            color: #d2d2d2;
+        }
+        
+        ion-label, .select-text {
+            margin-left: 10px;
+        }
+        
+        .invalid {
+            border: 1px solid #ea6153;
+        }
+        .list_registro{
+            background: transparent !important;
+        }
         ion-col {
             padding: 5px 0;
 

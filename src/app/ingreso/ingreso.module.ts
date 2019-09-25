@@ -5,23 +5,23 @@ import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
-import { CrearUsuarioPage } from './crear-usuario.page';
+import { IngresoPage } from './ingreso.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: CrearUsuarioPage
+    component: IngresoPage
   }
 ];
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     ReactiveFormsModule,
+    FormsModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [CrearUsuarioPage]
+  declarations: [IngresoPage]
 })
-export class CrearUsuarioPageModule {}
+export class IngresoPageModule {}
