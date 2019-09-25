@@ -1,12 +1,11 @@
-p {
-    font-size: 0.8em;
-    color: #d2d2d2;
+ion-content {
+
+    .logo-ingreso {
+        text-align: center;
+
+        img {
+            max-width: 75%;
+        }
+    }
 }
 
-ion-label, .select-text {
-    margin-left: 10px;
-}
-
-.invalid {
-    border: 1px solid #ea6153;
-}

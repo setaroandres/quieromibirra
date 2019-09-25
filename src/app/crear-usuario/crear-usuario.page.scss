@@ -47,21 +47,6 @@ ion-content {
                 color: #FFF;
                 padding-left: 25px;
             }
-    
-            ion-item {
-                --background: transparent;
-                --border-color: #fff;
-    
-                ion-label {
-                    --color: #FFF;
-                    font-size: 0.8rem;
-                    letter-spacing: 1px;
-
-                    ion-icon {
-                        font-size: 1.2rem;
-                    }
-                }
-            }
         }
 
         .crear-usuario-button {

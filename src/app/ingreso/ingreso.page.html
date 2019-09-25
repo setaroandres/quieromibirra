@@ -7,30 +7,49 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+<ion-content class="dark-bg">
+  <ion-grid>
+      <ion-row>
+        <ion-col class="logo-ingreso">
+          <img src="../../assets/img/logo-ingreso.png" alt="logo-qmb" title="Logo QMB" />
+        </ion-col>
+      </ion-row>
+      
+      <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+        <ion-list lines="none" class="transparent">
+          <form [formGroup]="slideOneForm">
+            <ion-row>
+              <ion-col class="gral-form">
+                <ion-item>
+                  <ion-label position="floating">
+                    <ion-icon name="person"></ion-icon>
+                    <span>Usuario (email)</span>
+                  </ion-label>
+                  <ion-input formControlName="firstName" type="email"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="!slideOneForm.controls.firstName.valid  && (slideOneForm.controls.firstName.dirty || submitAttempt)">
+                  <p>Please enter a valid name.</p>
+                </ion-item>
+              </ion-col>
+            </ion-row>
 
-  <ion-list lines="none">
+            <ion-row>
+              <ion-col class="gral-form">
+                <ion-item>
+                  <ion-label position="floating">
+                    <ion-icon name="lock"></ion-icon>
+                    <span> Contraseña</span>
+                  </ion-label>
+                  <ion-input formControlName="lastName" type="password"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="!slideOneForm.controls.lastName.valid  && (slideOneForm.controls.lastName.dirty || submitAttempt)">
+                  <p>Please enter a valid name.</p>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+        </form>
+      </ion-list>
 
-    <form [formGroup]="slideOneForm">
-
-      <ion-item>
-        <ion-label position="floating">Usuario (email)</ion-label>
-        <ion-input formControlName="firstName" type="email"></ion-input>
-      </ion-item>
-      <ion-item *ngIf="!slideOneForm.controls.firstName.valid  && (slideOneForm.controls.firstName.dirty || submitAttempt)">
-        <p>Please enter a valid name.</p>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input formControlName="lastName" type="password"></ion-input>
-      </ion-item>
-      <ion-item *ngIf="!slideOneForm.controls.lastName.valid  && (slideOneForm.controls.lastName.dirty || submitAttempt)">
-        <p>Please enter a valid name.</p>
-      </ion-item>
-    </form>
-
-  </ion-list>
-
-  <ion-button expand="full" color="primary" (click)="save()">Ingresar</ion-button>
+    <ion-button expand="full" class="yellow-button" (click)="save()">Ingresar</ion-button>
+  </ion-grid>
 </ion-content>
