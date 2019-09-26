@@ -1,3 +1,4 @@
+import { ServiceService } from './../service.service';
 import { Component, OnInit } from '@angular/core';
 import { ScrollDetail } from '@ionic/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -12,6 +13,7 @@ export class CrearUsuarioPage implements OnInit {
   showToolbar = false;
   public submitAttempt: boolean = false;
   constructor(
+    private service: ServiceService,
     private router: Router,
     public formBuilder: FormBuilder
   ) {
@@ -43,7 +45,14 @@ export class CrearUsuarioPage implements OnInit {
       console.log("success!")
       this.submitAttempt = false;
       console.log(this.registro.value);
-      this.router.navigateByUrl('/tutorial');
+      this.router.navigateByUrl('/tutorial')      
+      /* this.service.createUser(this.registro.value).then(data=>{
+        console.log('data', data);
+        if(data){
+          this.service.dataUser = data;
+          this.router.navigateByUrl('/tutorial')
+        }
+      }) */
     }
   }
 

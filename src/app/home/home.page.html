@@ -18,33 +18,30 @@
         </ion-card-header>
         <ion-card-content>
             <ion-slides pager="true" [options]="slideOptsTwo">
-                <ion-slide>
-                    <img src="https://elclubdelamilanesa.com/images/content/x1566338615.jpg.pagespeed.ic.8wH8S1ljQm.jpg">
-                </ion-slide>
-                <ion-slide>
-                    <img src="https://elclubdelamilanesa.com/images/content/x1566338615.jpg.pagespeed.ic.8wH8S1ljQm.jpg">
-                </ion-slide>
-                <ion-slide>
-                    <img src="https://elclubdelamilanesa.com/images/content/x1566338615.jpg.pagespeed.ic.8wH8S1ljQm.jpg">
+                <ion-slide *ngFor="let promo of promos">
+                    <img src="{{promo.imagen}}">
                 </ion-slide>
             </ion-slides>
         </ion-card-content>
+        <ion-col>
+            <p float-right [routerLink]="'/lista-birreria/'">Ver más..</p>
+        </ion-col>
     </ion-card>
     <ion-row>
         <p>Lugares cercanos</p>
     </ion-row>
     <ion-row justify-content-center>
-        <ion-col size="6" *ngFor="let bar of [1,2,3,4]">
-            <ion-card (click)="goToBirreria(bar)">
-                <p float-left>Nombre bar</p>
-                <p float-right>200pts</p>
-                <img src="https://elclubdelamilanesa.com/images/content/x1566338615.jpg.pagespeed.ic.8wH8S1ljQm.jpg" />
+        <ion-col size="6" *ngFor="let promo of promos">
+            <ion-card (click)="goToBirreria(promo)">
+                <p float-left>{{promo.barnombre}}</p>
+                <p float-right>{{promo.puntos}} pts</p>
+                <img src="{{promo.imagen}}" />
                 <ion-card-header>
-                    <ion-card-title>2x1 Birra</ion-card-title>
-                    <ion-card-subtitle>Diiagonal 2134</ion-card-subtitle>
+                    <ion-card-title>{{promo.titulo}}</ion-card-title>
+                    <ion-card-subtitle>{{promo.direccion}}</ion-card-subtitle>
                 </ion-card-header>
                 <ion-card-content>
-                    200pts
+                    {{promo.puntos}} pts
                 </ion-card-content>
             </ion-card>
         </ion-col>

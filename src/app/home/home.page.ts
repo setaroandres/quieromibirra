@@ -1,7 +1,7 @@
 import { ServiceService } from './../service.service';
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +12,7 @@ export class HomePage {
   slideOptsTwo = {
     slidesPerView: 1.5,
   };
+  promos:any;
   constructor(
     private router: Router,
     private service: ServiceService
@@ -20,13 +21,19 @@ export class HomePage {
   }
 
   getUser(){
-    this.service.getUser().then(data=>{
+    this.service.getPromos().subscribe(data=>{
       console.log('users', data);
+      this.promos = data;
     })
   }
 
   goToBirreria(bar){
-    this.router.navigateByUrl('/interna-birreria');
+    let dataPromo: NavigationExtras = {
+      queryParams:{
+        promo: JSON.stringify(bar)
+      }
+    };
+    this.router.navigate(['interna-birreria'], dataPromo);
   }
 
 }

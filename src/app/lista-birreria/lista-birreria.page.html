@@ -1,40 +1,61 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button defaultHref="home"></ion-back-button>
-      </ion-buttons>
-      <ion-title>Cervecerías</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      <img src="../../assets/img/logo-header.png">
+    </ion-title>
+    <div class="lupa">
+      <img src="../../assets/img/lupa-header.png">
+    </div>
+  </ion-toolbar>
+</ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-item [routerLink]="'/interna-birreria/'" routerDirection="forward" *ngFor="let birreria of birrerias">
+<ion-content padding>
+  <ion-row justify-content-center>
+    <ion-list>
+      <ion-card *ngFor="let promo of promos" (click)="goToBirreria(promo)">
+        <p float-left>{{promo.barnombre}}</p>
+        <p float-right>{{promo.puntos}} pts</p>
+        <img src="{{promo.imagen}}" />
+        <ion-card-header>
+          <ion-card-title>{{promo.titulo}}</ion-card-title>
+          <ion-card-subtitle>{{promo.direccion}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          {{promo.puntos}} pts
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </ion-row>
+  <!-- <ion-list>
+    <ion-item [routerLink]="'/interna-birreria/'" routerDirection="forward">
       <ion-card>
         <ion-grid>
           <ion-row>
             <ion-col>
-                <h3>{{birreria.nombre}}</h3>
+              <h3>{{birreria.nombre}}</h3>
             </ion-col>
           </ion-row>
           <ion-row>
-              <ion-col>
-                <img src="../../assets/img/birreria.jpg" alt="">
-              </ion-col>
-              <ion-col>
-                {{birreria.direccion}}
-              </ion-col>
-            </ion-row>
+            <ion-col>
+              <img src="../../assets/img/birreria.jpg" alt="">
+            </ion-col>
+            <ion-col>
+              {{birreria.direccion}}
+            </ion-col>
+          </ion-row>
         </ion-grid>
       </ion-card>
-      
+
       <div class="item-note" slot="end">
-        
+
       </div>
     </ion-item>
-  </ion-list>
+  </ion-list> -->
 
-  
+
 
   <!--
     <div *ngIf="selectedItem" padding>

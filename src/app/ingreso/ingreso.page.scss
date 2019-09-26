@@ -1,5 +1,21 @@
-ion-content {
+/* Transparent standard */
 
+
+/* Show background if class is active */
+.show-background {
+    border-style: none!important;
+    background: transparent;
+}
+
+/* Remove bottom border on md */
+.header-md::after {
+    background-image: none!important;
+}
+
+/* Remove bottom border on ios */
+
+
+ion-content {
     .logo-ingreso {
         text-align: center;
 
