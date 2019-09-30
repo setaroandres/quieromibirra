@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">
+    <ion-title class="ion-text-center title_center">
       <img src="../../assets/img/logo-header.png">
     </ion-title>
     <div class="lupa">
@@ -12,7 +12,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <ion-row justify-content-center>
+    <ion-col size="12" *ngFor="let promo of promos">
+      <ion-card (click)="goToBirreria(promo)">
+        <p float-left>{{promo.barnombre}}</p>
+        <p float-right>{{promo.puntos}} pts</p>
+        <img src="{{promo.imagen}}" />
+        <ion-card-header>
+          <ion-card-title>{{promo.titulo}}</ion-card-title>
+          <ion-card-subtitle>{{promo.direccion}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          {{promo.puntos}} pts
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
   <!-- <ion-card padding>
     <h3>Nombre Cervecería</h3>
     <p>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ServiceService } from '../service.service';
 @Component({
   selector: 'app-interna-birreria',
   templateUrl: './interna-birreria.page.html',
@@ -7,11 +8,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class InternaBirreriaPage implements OnInit {
 
+  promos: any;
   data: any;
   constructor(
     private route: ActivatedRoute, 
-    private router: Router
+    private router: Router,
+    private service: ServiceService
   ) {
+    this.getUser();
     this.route.queryParams.subscribe(params => {
       console.log('prams',params);
       if (params && params.promo) {
@@ -22,6 +26,13 @@ export class InternaBirreriaPage implements OnInit {
    }
 
   ngOnInit() {
+  }
+
+  getUser(){
+    this.service.getPromos().subscribe(data=>{
+      console.log('users', data);
+      this.promos = data;
+    })
   }
 
 }

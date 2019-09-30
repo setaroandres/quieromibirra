@@ -49,6 +49,11 @@ ion-header {
     }   
 }
 
+.title_center{
+    padding-left: 0px!important;
+    padding-right: 36px!important;
+}
+
 ion-content {
     &.dark-bg {
         background-color: var(--qmb-dark-gray);
