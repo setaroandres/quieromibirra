@@ -1,2 +1,22 @@
+@import "../../theme/variables";
 
+ion-content {
+  --background: #202734;
 
+  .promos-semana {
+    --background: #323f56;
+  }
+
+  .cercanos {
+    .row-cercanos {
+      //   --background: $light-blue;
+      //   background: $light-blue;
+      ion-col {
+        background: #323f56;
+        ion-card {
+          background: #202734;
+        }
+      }
+    }
+  }
+}

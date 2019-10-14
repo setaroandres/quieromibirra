@@ -11,8 +11,11 @@
         </div>
     </ion-toolbar>
 </ion-header>
+
+
 <ion-content>
-    <ion-card>
+
+    <ion-card class="promos-semana">
         <ion-card-header>
             <ion-card-title>Promos de la semana</ion-card-title>
         </ion-card-header>
@@ -27,23 +30,32 @@
             <p float-right [routerLink]="'/lista-birreria/'">Ver más..</p>
         </ion-col>
     </ion-card>
-    <ion-row>
-        <p>Lugares cercanos</p>
-    </ion-row>
-    <ion-row justify-content-center>
-        <ion-col size="6" *ngFor="let promo of promos">
-            <ion-card (click)="goToBirreria(promo)">
-                <p float-left>{{promo.barnombre}}</p>
-                <p float-right>{{promo.puntos}} pts</p>
-                <img src="{{promo.imagen}}" />
-                <ion-card-header>
-                    <ion-card-title>{{promo.titulo}}</ion-card-title>
-                    <ion-card-subtitle>{{promo.direccion}}</ion-card-subtitle>
-                </ion-card-header>
-                <ion-card-content>
-                    {{promo.puntos}} pts
-                </ion-card-content>
-            </ion-card>
-        </ion-col>
-    </ion-row>
+
+    <ion-grid class="cercanos">
+        <ion-row>
+            <ion-col>
+                <p>Lugares cercanos</p>
+            </ion-col>
+        </ion-row>
+
+
+        <ion-row justify-content-center class="row-cercanos">
+            <ion-col size="6" *ngFor="let promo of promos">
+                <ion-card (click)="goToBirreria(promo)">
+                    <p float-left>{{promo.barnombre}}</p>
+                    <p float-right>{{promo.puntos}} pts</p>
+                    <img src="{{promo.imagen}}" />
+                    <ion-card-header>
+                        <ion-card-title>{{promo.titulo}}</ion-card-title>
+                        <ion-card-subtitle>{{promo.direccion}}</ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content>
+                        {{promo.puntos}} pts
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
 </ion-content>

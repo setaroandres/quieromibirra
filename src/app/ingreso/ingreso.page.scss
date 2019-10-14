@@ -1,27 +1,63 @@
-/* Transparent standard */
+@import "../../theme/variables.scss";
 
+/* Transparent standard */
 
 /* Show background if class is active */
 .show-background {
-    border-style: none!important;
-    background: transparent;
+  border-style: none !important;
+  background: transparent;
 }
 
 /* Remove bottom border on md */
 .header-md::after {
-    background-image: none!important;
+  background-image: none !important;
 }
 
 /* Remove bottom border on ios */
 
-
 ion-content {
-    .logo-ingreso {
-        text-align: center;
+  .logo-ingreso {
+    text-align: center;
 
-        img {
-            max-width: 75%;
-        }
+    img {
+      max-width: 75%;
     }
+  }
 }
 
+.olvide {
+  align-items: center;
+  justify-content: center;
+  ion-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    p {
+      font-size: $small-font;
+      color: #a9abae;
+    }
+  }
+}
+
+.crear-cuenta {
+  margin-top: 5%;
+  ion-row {
+    align-items: center;
+    justify-content: center;
+    ion-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      p {
+        font-size: $small-font;
+        color: #a9abae;
+        .crea {
+          color: white !important;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
