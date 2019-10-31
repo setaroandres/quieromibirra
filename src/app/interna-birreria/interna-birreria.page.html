@@ -1,4 +1,42 @@
-<ion-header>
+<ion-header class="header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <h1>{{cerveceria.nombre}}</h1>
+</ion-header>
+<ion-content>
+
+  <ion-grid class="main-container">
+
+    <ion-row class="hhour-box">
+
+      <ion-col size="12" class="titulo">
+        <h3>{{cerveceria.direccion}}</h3>
+      </ion-col>
+
+      <ion-col size="12" class="col-img-map">
+        <img src="assets/img/int-hhour-map.png" alt="">
+      </ion-col>
+
+      <ion-col size="12" class="col-descripcion">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam quasi delectus ipsum
+          tempore minima fugiat ullam.
+        </p>
+      </ion-col>
+
+      <ion-col size="12" class="col-btn">
+        <button (click)="goToListaPromosBirreria()">VER PROMOCIONES</button>
+      </ion-col>
+
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
@@ -13,54 +51,28 @@
 </ion-header>
 
 <ion-content>
-  <ion-row justify-content-center>
-    <ion-col size="12" *ngFor="let promo of promos">
-      <ion-card (click)="goToBirreria(promo)">
-        <p float-left>{{promo.barnombre}}</p>
-        <p float-right>{{promo.puntos}} pts</p>
-        <img src="{{promo.imagen}}" />
-        <ion-card-header>
-          <ion-card-title>{{promo.titulo}}</ion-card-title>
-          <ion-card-subtitle>{{promo.direccion}}</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>
-          {{promo.puntos}} pts
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-  <!-- <ion-card padding>
-    <h3>Nombre Cervecería</h3>
-    <p>
-      <img src="../../assets/img/birreria.jpg" alt="" />
-    </p>
-    <p>Calle Falsa 123</p>
-    <p>Abierto de 18 a 24</p>
-  </ion-card>
-  <p>Cupones disponibles:</p>
-  <ion-card padding [routerLink]="'/interna-cupon/'" routerDirection="forward">
-    <h3>50% off</h3>
-    <p>Canjealo por 150 puntos!</p>
-  </ion-card>
-  <ion-card padding [routerLink]="'/interna-cupon/'" routerDirection="forward">
-    <h3>2x1 en Scottish</h3>
-    <p>Canjealo por 250 puntos!</p>
-  </ion-card>
-  <ion-card padding [routerLink]="'/interna-cupon/'" routerDirection="forward">
-    <h3>2x1 en IPA</h3>
-    <p>Canjealo por 100 puntos!</p>
-  </ion-card>
-  <p>Promociones disponibles:</p>
-  <ion-card padding [routerLink]="'/interna-promocion/'" routerDirection="forward">
-    <h3>50% off</h3>
-    <p>Válido hasta el 30 de marzo</p>
-  </ion-card>
-  <ion-card padding [routerLink]="'/interna-promocion/'" routerDirection="forward">
-    <h3>2x1 en Scottish</h3>
-    <p>Válido hasta el 30 de marzo</p>
-  </ion-card>
-  <ion-card padding [routerLink]="'/interna-promocion/'" routerDirection="forward">
-    <h3>2x1 en IPA</h3>
-    <p>Válido hasta el 30 de marzo</p>
-  </ion-card> -->
-</ion-content>
+
+  <ion-grid>
+
+    <ion-row class="promo-box" justify-content-center *ngFor="let cerve of cerveceria" (click)="goToBirreria(promo)">
+
+      <ion-col size="12" class="copete">
+        <p float-left>{{cerve.nombre}}</p>
+        <p float-right class="puntos"> <img src="assets/img/coin.png" alt=""> {{cerve.puntos}} pts</p>
+      </ion-col>
+
+      <ion-col class="col-img " size="12">
+        <img src="{{cerve.imagen}}" />
+      </ion-col>
+
+      <ion-col size="12" class="info">
+        <p class="title">{{cerve.titulo}}</p>
+        <p class="dir">{{cerve.direccion}}</p>
+        <p class="puntos">{{cerve.puntos}} pts</p>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content> -->

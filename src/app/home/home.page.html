@@ -1,5 +1,5 @@
-<ion-header>
-    <ion-toolbar>
+<ion-header no-border>
+    <ion-toolbar no-border>
         <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
@@ -13,49 +13,80 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content padding>
 
-    <ion-card class="promos-semana">
-        <ion-card-header>
-            <ion-card-title>Promos de la semana</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-            <ion-slides pager="true" [options]="slideOptsTwo">
-                <ion-slide *ngFor="let promo of promos">
-                    <img src="{{promo.imagen}}">
-                </ion-slide>
-            </ion-slides>
-        </ion-card-content>
-        <ion-col>
-            <p float-right [routerLink]="'/lista-birreria/'">Ver más..</p>
-        </ion-col>
-    </ion-card>
+    <mis-puntos></mis-puntos>
 
-    <ion-grid class="cercanos">
-        <ion-row>
+
+    <ion-grid class="promos-semana round-standard">
+
+        <ion-row class="title">
             <ion-col>
-                <p>Lugares cercanos</p>
+                <h3>Promos de la semana</h3>
             </ion-col>
         </ion-row>
 
+        <ion-row class="row-slides">
+            <ion-col>
+                <ion-slides pager="true" [options]="slideOptsTwo">
+                    <ion-slide *ngFor="let promo of promos">
+                        <p class="promo-semana-title">{{promo.titulo}}</p>
+                        <img src="{{promo.imgpath}}">
+                    </ion-slide>
+                </ion-slides>
+            </ion-col>
+        </ion-row>
 
-        <ion-row justify-content-center class="row-cercanos">
-            <ion-col size="6" *ngFor="let promo of promos">
-                <ion-card (click)="goToBirreria(promo)">
-                    <p float-left>{{promo.barnombre}}</p>
-                    <p float-right>{{promo.puntos}} pts</p>
-                    <img src="{{promo.imagen}}" />
-                    <ion-card-header>
-                        <ion-card-title>{{promo.titulo}}</ion-card-title>
-                        <ion-card-subtitle>{{promo.direccion}}</ion-card-subtitle>
-                    </ion-card-header>
-                    <ion-card-content>
-                        {{promo.puntos}} pts
-                    </ion-card-content>
-                </ion-card>
+        <ion-row>
+            <ion-col>
+                <p class="vermas" float-right (click)="goToListaPromos()">ver más</p>
+            </ion-col>
+        </ion-row>
+
+    </ion-grid>
+
+
+
+    <ion-grid class="title-cercanos">
+        <ion-row>
+            <ion-col>
+                <h3>Lugares cercanos</h3>
             </ion-col>
         </ion-row>
     </ion-grid>
+
+    <ion-grid class="lugares-cercanos round-standard">
+
+        <ion-row>
+
+            <ion-col size="5" *ngFor="let cerve of cervecerias" class="square-promo-col round-standard">
+
+                <ion-row (click)="goToBirreria(cerve)" class="square-promo">
+
+                    <ion-col size="12" class="copete">
+                        <p float-left>{{cerve.nombre}}</p>
+                        <!-- <p float-right>{{promo.puntos}} pts</p> -->
+                    </ion-col>
+
+                    <ion-col size="12" class="col-img">
+                        <img src="{{cerve.logo}}" />
+                    </ion-col>
+
+                    <ion-col size="12" class="info">
+                        <!-- <p class="title">{{cerve.titulo}}</p> -->
+                        <p class="dir">{{cerve.direccion}}</p>
+                        <!-- <p class="puntos">{{promo.puntos}} pts</p> -->
+                    </ion-col>
+
+                </ion-row>
+
+            </ion-col>
+
+        </ion-row>
+
+    </ion-grid>
+
+
 
 
 </ion-content>

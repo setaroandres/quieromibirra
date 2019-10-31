@@ -1,4 +1,11 @@
 ion-content {
+  --background: #32415d;
+  background: linear-gradient(
+    180deg,
+    rgba(43, 40, 107, 0) 0%,
+    rgba(32, 39, 52, 1) 70%
+  );
+
   ion-grid {
     padding: 0;
 

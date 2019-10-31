@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      <img src="../../assets/img/logo-header.png">
+    </ion-title>
+    <div class="lupa">
+      <img src="../../assets/img/lupa-header.png">
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+
+    <ion-row class="promo-box" justify-content-center *ngFor="let promo of promos" (click)="goToInternaPromo(promo)">
+
+      <ion-col size="12" class="copete">
+        <p float-left>{{promo.nombre}}</p>
+
+      </ion-col>
+
+      <ion-col class="col-img " size="12">
+        <img src="{{promo.imgpath}}" />
+      </ion-col>
+
+      <ion-col size="12" class="info">
+        <p class="title">{{promo.titulo}}</p>
+        <p class="dir">{{promo.direccion}}</p>
+        <!-- <p class="puntos">{{promo.puntos}} pts</p> -->
+      </ion-col>
+
+      <ion-col size="6" class="suma-puntos">
+        <p class="title">Sumá puntos</p>
+        <span class="puntos">
+          <img src="assets/img/coin.png" alt="">
+          <p class="puntos_promo">{{promo.puntos_promo}} pts</p>
+        </span>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

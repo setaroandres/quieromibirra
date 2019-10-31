@@ -1,31 +1,27 @@
-import { ServiceService } from './../service.service';
-import { Component, OnInit } from '@angular/core';
-import { ScrollDetail } from '@ionic/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ServiceService } from "./../service.service";
+import { Component, OnInit } from "@angular/core";
+import { ScrollDetail } from "@ionic/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 @Component({
-  selector: 'app-crear-usuario',
-  templateUrl: './crear-usuario.page.html',
-  styleUrls: ['./crear-usuario.page.scss'],
+  selector: "app-crear-usuario",
+  templateUrl: "./crear-usuario.page.html",
+  styleUrls: ["./crear-usuario.page.scss"]
 })
 export class CrearUsuarioPage implements OnInit {
-  registro: FormGroup;
-  showToolbar = false;
-  public submitAttempt: boolean = false;
   constructor(
     private service: ServiceService,
     private router: Router,
     public formBuilder: FormBuilder
-  ) {
-    this.registro = formBuilder.group({
-      nomyAp:['',Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],//Contener letras y espacios, y tener menos de 30 caracteres.
-      nacimiento:['',Validators.required],
-      email:['',Validators.compose([Validators.maxLength(30),Validators.required,Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')])],
-      pw:['',Validators.required]
-    })
-   }
+  ) {}
+
+  registro: FormGroup;
+  showToolbar = false;
+  public submitAttempt: boolean = false;
 
   ngOnInit() {
+    console.log("CrearUsuarioPage");
+    this.form();
   }
 
   onScroll($event: CustomEvent<ScrollDetail>) {
@@ -35,27 +31,56 @@ export class CrearUsuarioPage implements OnInit {
     }
   }
 
-  crearUser(){
+  crearUser() {
     this.submitAttempt = true;
 
+    console.log(this.registro);
+
     if (!this.registro.valid) {
-      console.log("nooo!")
+      console.log("nooo!");
       console.log(this.registro.value);
     } else {
-      console.log("success!")
+      console.log("success!");
       this.submitAttempt = false;
-      console.log(this.registro.value);
-      this.router.navigateByUrl('/tutorial')      
-      /* this.service.createUser(this.registro.value).then(data=>{
-        console.log('data', data);
-        if(data){
+
+      this.service.crearUsuario(this.registro.value).subscribe(data => {
+        console.log("data", data);
+        if (data) {
           this.service.dataUser = data;
-          this.router.navigateByUrl('/tutorial')
+          this.router.navigateByUrl("/tutorial");
         }
-      }) */
+      });
     }
   }
 
-  
-
+  form() {
+    this.registro = this.formBuilder.group({
+      nombre: [
+        "",
+        Validators.compose([
+          Validators.maxLength(20),
+          Validators.pattern("[a-zA-Z ]*"),
+          Validators.required
+        ])
+      ], //Contener letras y espacios, y tener menos de 30 caracteres.
+      apellido: [
+        "",
+        Validators.compose([
+          Validators.maxLength(20),
+          Validators.pattern("[a-zA-Z ]*"),
+          Validators.required
+        ])
+      ], //Contener letras y espacios, y tener menos de 30 caracteres.
+      nacimiento: ["", Validators.required],
+      email: [
+        "",
+        Validators.compose([
+          Validators.maxLength(30),
+          Validators.required,
+          Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")
+        ])
+      ],
+      password: ["", Validators.required]
+    });
+  }
 }

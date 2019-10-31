@@ -1,0 +1,144 @@
+@import "../../global";
+@import "../../theme/header-transparent";
+
+img {
+  width: 100%;
+}
+
+.main-img {
+  h1 {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: $xgiant-font;
+    color: white;
+    text-shadow: 1px 1px 8px grey;
+    font-weight: 500;
+  }
+}
+
+ion-content {
+  --background: #ffffff;
+  background: #ffffff;
+  padding: 0 10%;
+}
+
+.hhour-box {
+  .titulo {
+    h3 {
+      position: relative;
+      left: 7%;
+      color: black;
+    }
+  }
+
+  .col-img-map {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    img {
+      border-radius: 5px;
+      box-shadow: 1px 3px 10px grey;
+      max-width: 90%;
+    }
+  }
+
+  .col-descripcion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    p {
+      color: grey;
+      font-size: $semi-small-font;
+      width: 80%;
+    }
+  }
+
+  .col-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    button {
+      border-radius: 10px;
+      background: #e9b418;
+      color: white;
+      font-weight: 700;
+      font-size: $small-font;
+      padding: 15px 30px;
+    }
+  }
+}
+
+ion-buttons,
+ion-title {
+  color: black;
+}
+
+// @import "../../global";
+
+// .promo-box {
+//   background: $dark-blue;
+//   margin: 5px;
+//   max-height: 42vh;
+
+//   .copete {
+//     background: $yellow-birra;
+//     border-radius: 5px 5px 0 0;
+
+//     p {
+//       font-size: $default-font;
+//       margin: 0;
+//       padding: 0;
+//     }
+
+//     .puntos {
+//       display: flex;
+//       flex-direction: row;
+//       align-items: center;
+//       justify-content: center;
+//       img {
+//         max-width: 18%;
+//         margin-right: 5px;
+//       }
+//     }
+//   }
+
+//   .col-img {
+//     padding: 0;
+
+//     img {
+//       border-radius: 0 0 5px 5px;
+//     }
+//   }
+
+//   .info {
+//     // background: $light-blue;
+//     border-radius: 0 0 5px 5px;
+//     position: relative;
+//     bottom: 25vh;
+//     text-align: center;
+
+//     p {
+//       margin: 0;
+//       padding: 0;
+//       text-shadow: 1px 1px 3px black;
+//     }
+
+//     .title {
+//       font-size: $giant-font;
+//       font-weight: 700;
+//     }
+
+//     .dir {
+//       font-size: $xbig-font;
+//     }
+
+//     .puntos {
+//       margin-top: 10px;
+//       font-size: $semi-small-font;
+//     }
+//   }
+// }

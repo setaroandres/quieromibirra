@@ -9,21 +9,84 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+@import './theme/variables';
 
 /*Estilos generales*/
 
-.swiper-pagination-bullet-active {
-  background: #33425f !important;
+@mixin flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  ion-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    ion-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.saldo-puntos {
+  @include flex-center;
+  ion-row {
+    ion-col {
+      color: white;
+      flex-direction: row;
+      text-transform: uppercase;
+      font-size: $small-font;
+
+      // .desc-puntos {
+      // }
+
+      .puntos {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-size: $semi-big-font;
+        padding: 4px 10px;
+        margin-left: 5px;
+        background: #e8b519;
+        font-weight: 800;
+        border-radius: 30px;
+        img {
+          margin-right: 5px;
+          max-width: 25%;
+        }
+      }
+    }
+  }
+}
+
+ion-buttons,
+ion-title {
+  color: white;
 }
 
 .swiper-pagination-bullet {
-  background: #d2d2d4 !important;
+  background: white !important;
+  opacity: .6;
+}
+
+.swiper-pagination-bullet-active {
+  background: white !important;
+  opacity: 1;
+}
+
+ion-back-button {
+  color: white;
 }
 
 ion-header {
   ion-toolbar {
-    --background: var(--qmb-dark-gray);
-
+    background: $dark-blue;
+    --background: $dark-blue;
     ion-buttons {
       ion-menu-button {
         button {
@@ -60,6 +123,8 @@ ion-header {
 }
 
 ion-content {
+  --background: #202734;
+  padding: 0 5%;
   &.dark-bg {
     background-color: var(--qmb-dark-gray);
     --background: none;
@@ -106,25 +171,33 @@ ion-content {
   }
 }
 
+.light-bg {
+  --background: white;
+}
+
 .invalid {
   border: 1px solid #ea6153;
 }
 
-// @mixin a {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   ion-row {
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//     justify-content: center;
-//     ion-col {
-//       display: flex;
-//       flex-direction: column;
-//       align-items: center;
-//       justify-content: center;
-//     }
-//   }
-// }
+.round-standard {
+  border-radius: 5px;
+}
+
+.vermas {
+  color: white;
+  font-size: $default-font;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+h3 {
+  font-size: $semi-big-font;
+  color: white;
+}
+
+p {
+  color: white;
+  font-size: $default-font;
+}

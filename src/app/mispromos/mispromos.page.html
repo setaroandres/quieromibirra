@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      <img src="../../assets/img/logo-header.png">
+    </ion-title>
+    <div class="lupa">
+      <img src="../../assets/img/lupa-header.png">
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h3 class="title">Mis promociones no retiradas</h3>
+
+  <ion-grid class="main-container">
+    <ion-row *ngFor="let promo of promos">
+      <ion-col (click)="goToInternaPromo(promo)" *ngIf="promo.retirado == '0'">
+        <h3>{{promo.titulo}}</h3>
+        <p class="puntos">{{promo.detalle}}</p>
+        <p class="puntos">Puntos a sumar: {{promo.puntos_promo}} pts.</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

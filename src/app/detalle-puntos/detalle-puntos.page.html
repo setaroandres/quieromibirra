@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      <img src="../../assets/img/logo-header.png">
+    </ion-title>
+    <div class="lupa">
+      <img src="../../assets/img/lupa-header.png">
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid class="card">
+    <ion-row class="row-1">
+      <ion-col size="6" class="col-titulo">
+        <h2>Facundo Gilbert</h2>
+      </ion-col>
+      <ion-col size="6" class="col-miembro">
+        <p>Miembro desde</p>
+        <p>27/04/2019</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row-2">
+      <ion-col size="6" class="col-btn">
+        <img src="assets/img/logo-bola-qmb.png" alt="">
+        <p class="credit-card">900 106 137 42</p>
+      </ion-col>
+      <ion-col size="6" class="puntos">
+        <p>Total de puntos QMB</p>
+        <p class="n-puntos"> <img src="assets/img/coin.png" alt=""> {{puntos}}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row-btn">
+      <ion-col>
+        <button (click)="goToListaCanje()">CANJEAR PUNTOS</button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+  <ion-grid class="grid-img">
+    <ion-row>
+      <ion-col>
+        <img src="assets/img/detalle-puntos-img.png" alt="">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer no-border>
+  <p>AL UTILIZAR LOS PUNTOS O INICIAR SESIÓN ESTÁS ACEPTANDO NUESTROS <span>TÉRMINOS Y CONDICIONES</span> Y
+    <span>POLÍTICA DE PRIVACIDAD</span></p>
+</ion-footer>

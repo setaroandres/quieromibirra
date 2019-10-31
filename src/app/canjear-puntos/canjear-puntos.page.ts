@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-canjear-puntos',
-  templateUrl: './canjear-puntos.page.html',
-  styleUrls: ['./canjear-puntos.page.scss'],
+  selector: "app-canjear-puntos",
+  templateUrl: "./canjear-puntos.page.html",
+  styleUrls: ["./canjear-puntos.page.scss"]
 })
 export class CanjearPuntosPage implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    console.log("CanjearPuntosPage");
   }
-
 }

@@ -1,70 +1,40 @@
-<ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-menu-button></ion-menu-button>
-  </ion-buttons>
-  <ion-title>
-    Happy Hours
-  </ion-title>
-</ion-toolbar>
+<ion-header class="header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <h1>Happy Hours</h1>
+
+</ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-grid>
-      <ion-row>
-          <ion-col>
-              <h2>2x1 en IPA</h2>
+
+  <!-- <div class="main-img">
+    <img src="assets/img/hhour-background.jpg" alt="">
+    <h1>Happy Hours</h1>
+  </div> -->
+
+  <ion-grid class="main-container">
+    <ion-row>
+
+      <ion-col *ngFor="let cerve of cervecerias" size="6" class="hhour-box">
+        <ion-row (click)="goToBirreria(cerve)">
+          <ion-col size="12" class="copete">
+            <h3>{{cerve.nombre}}</h3>
+            <p>{{cerve.happyhourinicio}} a {{cerve.happyhourfin}} hs.</p>
           </ion-col>
-      </ion-row>
-      <ion-row>
-          <ion-col size="4">
-            <img src="../../assets/img/birreria.jpg" alt="">
+          <ion-col size="12" class="col-img">
+            <img src="{{cerve.logo}}" alt="">
           </ion-col>
-          <ion-col size="8">
-            <h3>On Tap</h3>
-            <p>De 18 a 1hs</p>
+          <ion-col size="12" class="col-btn">
+            <button class="btn-vermapa">Ver Mapa</button>
           </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-card>
-  <ion-card>
-    <ion-grid>
-      <ion-row>
-          <ion-col>
-              <h2>50% en Scottish</h2>
-          </ion-col>
-      </ion-row>
-      <ion-row>
-          <ion-col size="4">
-            <img src="../../assets/img/birreria.jpg" alt="">
-          </ion-col>
-          <ion-col size="8">
-            <h3>Antares</h3>
-            <p>De 18 a 1hs</p>
-          </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-card>
-  <ion-card>
-    <ion-grid>
-      <ion-row>
-          <ion-col>
-              <h2>50% en IPA</h2>
-          </ion-col>
-      </ion-row>
-      <ion-row>
-          <ion-col size="4">
-            <img src="../../assets/img/birreria.jpg" alt="">
-          </ion-col>
-          <ion-col size="8">
-            <h3>Cervelar</h3>
-            <p>De 18 a 1hs</p>
-          </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-card>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+        </ion-row>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
 </ion-content>

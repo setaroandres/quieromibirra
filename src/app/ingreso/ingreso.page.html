@@ -27,7 +27,7 @@
               <ion-icon name="person"></ion-icon>
               <span>Usuario (email)</span>
             </ion-label>
-            <ion-input formControlName="firstName" type="email"></ion-input>
+            <ion-input formControlName="email" type="email"></ion-input>
           </ion-item>
           <!-- <ion-item *ngIf="!slideOneForm.controls.firstName.valid  && (slideOneForm.controls.firstName.dirty || submitAttempt)">
               <p>Please enter a valid name.</p>
@@ -42,7 +42,7 @@
               <ion-icon name="lock"></ion-icon>
               <span> Contraseña</span>
             </ion-label>
-            <ion-input formControlName="lastName" type="password"></ion-input>
+            <ion-input formControlName="password" type="password"></ion-input>
           </ion-item>
           <!-- <ion-item *ngIf="!slideOneForm.controls.lastName.valid  && (slideOneForm.controls.lastName.dirty || submitAttempt)">
               <p>Please enter a valid name.</p>
@@ -60,6 +60,11 @@
 
   </ion-grid>
 
+  <ion-grid class="logo-ingreso">
+    <ion-row>
+      <ion-col><img src="../../assets/img/logo-header.png" alt=""></ion-col>
+    </ion-row>
+  </ion-grid>
 
   <ion-button expand="full" class="yellow-button" (click)="save()">Ingresar</ion-button>
 

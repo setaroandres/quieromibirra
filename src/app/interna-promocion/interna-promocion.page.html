@@ -3,13 +3,38 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
-    <ion-title>Promoción</ion-title>
+    <ion-title class="ion-text-center">
+      <img src="../../assets/img/logo-header.png">
+    </ion-title>
+    <div class="lupa">
+      <img src="../../assets/img/lupa-header.png">
+    </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding text-center>
-  <h3>50% en IPA</h3>
-  <p>Válida hasta el 30 de marzo</p>
-  <p>Acumula 150 puntos!</p>
-  <img src="../../assets/img/qr.png" alt="" />
+
+
+  <ion-grid class="main-container">
+
+    <ion-row class="row-img">
+      <ion-col>
+        <img src="assets/img/qr.png" alt="" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row-info">
+      <ion-col>
+        <!-- <h3>¡Muchas gracias!</h3> -->
+        <p>Con este código QR podrás obtener {{promo.titulo}} en {{promo.nombre}} de {{promo.direccion}}</p>
+        <p>Una vez que haya sido escaneado, vas a acumular <strong class="puntos">{{promo.puntos_promo}} pts.</strong>
+          en tu cuenta</p>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+  <button (click)="retirarCompraPromo()">ENTREGAR (botón de testing)</button>
+
 </ion-content>

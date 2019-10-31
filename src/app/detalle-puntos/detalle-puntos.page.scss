@@ -1,0 +1,133 @@
+@import "../../global";
+
+.card {
+  background: white;
+  border-radius: 5px;
+  padding: 10px;
+
+  ion-row {
+    padding: 0;
+    margin: 0;
+    ion-col {
+      padding: 0;
+      margin: 0;
+      p {
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  .row-1 {
+    .col-titulo {
+      h2 {
+        font-size: $big-font;
+      }
+    }
+
+    .col-miembro {
+      p {
+        color: #202734 !important;
+        text-align: right;
+        font-size: $semi-small-font;
+      }
+    }
+  }
+
+  .row-2 {
+    .col-btn {
+      img {
+        width: 50%;
+      }
+
+      .credit-card {
+        color: grey;
+      }
+    }
+
+    .puntos {
+      p {
+        color: #4d525d;
+        text-align: center;
+        font-size: $semi-small-font;
+        border-radius: 5px;
+      }
+
+      .n-puntos {
+        text-align: center;
+        background: #eaeaea;
+        font-size: $semi-giant-font;
+        color: #202734;
+        font-weight: 800;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        img {
+          margin-right: 5px;
+          max-width: 18%;
+        }
+      }
+    }
+  }
+
+  .row-btn {
+    ion-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+
+      button {
+        border-radius: 10px;
+        background: #e8b519;
+        color: white;
+        font-weight: 700;
+        font-size: $small-font;
+        padding: 10px 20px;
+        width: 90%;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+.grid-img {
+  position: relative;
+  top: 10%;
+  ion-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    ion-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 62%;
+      }
+    }
+  }
+}
+
+ion-footer {
+  border: none;
+  --background: #202734;
+  background: #202734;
+  p {
+    text-align: center;
+    font-size: $xsmall-font;
+    span {
+      color: #b38f20;
+    }
+  }
+}
+
+ion-footer {
+  &.footer-md::before {
+    background-image: none;
+  }
+}

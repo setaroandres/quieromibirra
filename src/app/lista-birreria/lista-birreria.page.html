@@ -13,53 +13,43 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-row justify-content-center>
-    <ion-list>
-      <ion-card *ngFor="let promo of promos" (click)="goToBirreria(promo)">
-        <p float-left>{{promo.barnombre}}</p>
-        <p float-right>{{promo.puntos}} pts</p>
-        <img src="{{promo.imagen}}" />
-        <ion-card-header>
-          <ion-card-title>{{promo.titulo}}</ion-card-title>
-          <ion-card-subtitle>{{promo.direccion}}</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>
-          {{promo.puntos}} pts
-        </ion-card-content>
-      </ion-card>
-    </ion-list>
-  </ion-row>
-  <!-- <ion-list>
-    <ion-item [routerLink]="'/interna-birreria/'" routerDirection="forward">
-      <ion-card>
-        <ion-grid>
-          <ion-row>
-            <ion-col>
-              <h3>{{birreria.nombre}}</h3>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col>
-              <img src="../../assets/img/birreria.jpg" alt="">
-            </ion-col>
-            <ion-col>
-              {{birreria.direccion}}
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card>
 
-      <div class="item-note" slot="end">
+  <mis-puntos></mis-puntos>
 
-      </div>
-    </ion-item>
-  </ion-list> -->
+  <ion-grid class="lugares-cercanos round-standard">
 
+    <ion-row>
+      <ion-col>
+        <h2>{{cerveceria.nombre}}</h2>
+      </ion-col>
+    </ion-row>
 
+    <ion-row>
 
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+      <ion-col size="5" *ngFor="let promo of promos" class="square-promo-col round-standard">
+
+        <ion-row (click)="goToInternaPromo(promo)" class="square-promo">
+
+          <ion-col size="12" class="copete">
+            <!-- <p float-left>{{promo.nombre}}</p> -->
+            <p float-right>{{promo.puntos_promo}} pts</p>
+          </ion-col>
+
+          <ion-col size="12" class="col-img">
+            <img src="{{promo.imgpath}}" />
+          </ion-col>
+
+          <ion-col size="12" class="info">
+            <p class="title">{{promo.titulo}}</p>
+            <p class="dir">{{promo.direccion}}</p>
+            <!-- <p class="puntos">{{promo.puntos}} pts</p> -->
+          </ion-col>
+
+        </ion-row>
+
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
 </ion-content>

@@ -1,0 +1,30 @@
+ion-content {
+  background: white;
+  --background: white;
+}
+
+.main-container {
+  .row-img {
+    ion-col {
+      img {
+        max-width: 90%;
+      }
+    }
+  }
+
+  .row-info {
+    ion-col {
+      h3 {
+        color: grey;
+      }
+
+      p {
+        color: grey;
+      }
+    }
+  }
+}
+
+.puntos {
+  color: green;
+}

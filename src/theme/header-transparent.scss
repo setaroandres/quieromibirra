@@ -1,0 +1,56 @@
+ion-header,
+.header-transparent {
+  min-height: 30vh;
+
+  h1 {
+    position: absolute;
+    font-size: $xgiant-font;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+    top: 10vh;
+    left: 8vw;
+    z-index: 999;
+    color: white;
+  }
+
+  ion-toolbar {
+    // background: red !important;
+    // --background: red !important;
+    background: url("../../assets/img/hhour-background.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 30vh;
+
+    ion-buttons {
+      ion-menu-button {
+        color: white;
+
+        button {
+          --color: #fff;
+          color: white;
+        }
+      }
+    }
+
+    ion-title {
+      display: inline-block;
+      width: 90%;
+      vertical-align: middle;
+
+      img {
+        max-width: 25%;
+      }
+    }
+
+    .lupa {
+      width: 10%;
+      display: inline-block;
+      vertical-align: middle;
+
+      img {
+        max-width: 80%;
+      }
+    }
+  }
+}

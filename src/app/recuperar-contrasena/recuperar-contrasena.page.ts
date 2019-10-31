@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-recuperar-contrasena',
-  templateUrl: './recuperar-contrasena.page.html',
-  styleUrls: ['./recuperar-contrasena.page.scss'],
+  selector: "app-recuperar-contrasena",
+  templateUrl: "./recuperar-contrasena.page.html",
+  styleUrls: ["./recuperar-contrasena.page.scss"]
 })
 export class RecuperarContrasenaPage implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    console.log("RecuperarContrasenaPage");
   }
-
 }

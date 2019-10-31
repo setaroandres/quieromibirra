@@ -1,0 +1,88 @@
+@import "../../global";
+@import "../../theme/header-transparent";
+
+img {
+  width: 100%;
+}
+
+.main-img {
+  h1 {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: $xgiant-font;
+    color: white;
+    text-shadow: 1px 1px 8px grey;
+    font-weight: 500;
+  }
+}
+
+ion-content {
+  --background: #ffffff;
+  background: #ffffff;
+  padding: 0 15%;
+}
+
+.main-container {
+  padding: 0 5%;
+  .row-descripcion {
+    border-bottom: .5px solid lightgray;
+    padding: 0;
+    ion-col {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      p {
+        color: grey;
+      }
+    }
+  }
+
+  .row-fecha {
+    ion-col {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      p {
+        color: black;
+      }
+    }
+  }
+
+  .row-texto {
+    ion-col {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      ion-textarea {
+        border: 1px solid lightgrey;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .row-btn {
+    ion-col {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      button {
+        border-radius: 15px;
+        background: #e8b519;
+        color: white;
+        font-weight: 700;
+        font-size: $small-font;
+        padding: 10px 40px;
+      }
+    }
+  }
+}
+
+ion-buttons,
+ion-title {
+  color: black;
+}

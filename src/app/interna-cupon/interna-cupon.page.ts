@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-interna-cupon',
-  templateUrl: './interna-cupon.page.html',
-  styleUrls: ['./interna-cupon.page.scss'],
+  selector: "app-interna-cupon",
+  templateUrl: "./interna-cupon.page.html",
+  styleUrls: ["./interna-cupon.page.scss"]
 })
 export class InternaCuponPage implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    console.log("InternaCuponPage");
   }
-
 }

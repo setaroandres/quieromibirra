@@ -1,0 +1,77 @@
+@import "../../global";
+@import "../../theme/header-transparent";
+
+img {
+  width: 100%;
+}
+
+.main-img {
+  h1 {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: $xgiant-font;
+    color: white;
+    text-shadow: 1px 1px 8px grey;
+    font-weight: 500;
+  }
+}
+
+ion-content {
+  --background: #ffffff;
+  background: #ffffff;
+  padding: 0 10%;
+}
+
+.hhour-box {
+  .titulo {
+    h2 {
+      position: relative;
+      left: 7%;
+    }
+  }
+
+  .col-img-map {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    img {
+      border-radius: 5px;
+      box-shadow: 1px 3px 10px grey;
+      max-width: 90%;
+    }
+  }
+
+  .col-descripcion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    p {
+      color: grey;
+      font-size: $semi-small-font;
+      width: 80%;
+    }
+  }
+
+  .col-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    button {
+      border-radius: 10px;
+      background: black;
+      color: white;
+      font-weight: 700;
+      font-size: $small-font;
+      padding: 10px 20px;
+    }
+  }
+}
+
+ion-buttons,
+ion-title {
+  color: black;
+}

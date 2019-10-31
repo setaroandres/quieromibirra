@@ -1,35 +1,96 @@
-import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { ServiceService } from './../service.service';
+import { Component, OnInit } from "@angular/core";
+import { NavController, ToastController } from "@ionic/angular";
+import { ServiceService } from "./../service.service";
+import { ActivatedRoute } from "@angular/router";
+import { Router, NavigationExtras } from "@angular/router";
+import { Storage } from "@ionic/storage";
+
 @Component({
-  selector: 'app-lista-birreria',
-  templateUrl: './lista-birreria.page.html',
-  styleUrls: ['./lista-birreria.page.scss'],
+  selector: "app-lista-birreria",
+  templateUrl: "./lista-birreria.page.html",
+  styleUrls: ["./lista-birreria.page.scss"]
 })
 export class ListaBirreriaPage implements OnInit {
-
-  promos: any;
   private selectedItem: any;
-  private icons = [
-    'beer',
-  ];
-  public birrerias: Array<{ nombre: string; direccion: string; }> = [];
-  constructor(
-    private navCtrl:NavController,
-    private service: ServiceService
-  ) {
-    this.getUser();
-    }
+  private icons = ["beer"];
+  public birrerias: Array<{ nombre: string; direccion: string }> = [];
 
-  getUser(){
-    this.service.getPromos().subscribe(data=>{
-      console.log('users', data);
-      this.promos = data;
-    })
-  }
+  constructor(
+    private navCtrl: NavController,
+    private service: ServiceService,
+    private route: ActivatedRoute,
+    private router: Router,
+    public toastController: ToastController,
+    private storage: Storage
+  ) {}
+
+  promos: any = [];
+  cerveceria: any = {};
+  dataUser: any = {};
 
   ngOnInit() {
-    
+    console.log("ListaBirreriaPage");
+    this.getStorage();
+    this.getParams();
+    this.traerPromosPorId();
   }
 
+  getParams() {
+    this.route.queryParams.subscribe(params => {
+      if (params) {
+        this.cerveceria = JSON.parse(params.cerveceria);
+        console.log("PARAMS", this.cerveceria);
+      }
+    });
+  }
+
+  traerPromosPorId() {
+    this.service.traerPromosPorId(this.cerveceria.cerveceriaid).subscribe(x => {
+      console.log("PROMOS", x["data"]);
+      this.promos = x["data"];
+    });
+  }
+
+  goToQr(promo) {
+    let dataPromo: NavigationExtras = {
+      queryParams: {
+        promo: JSON.stringify(promo)
+      }
+    };
+    this.router.navigate(["interna-promocion"], dataPromo);
+  }
+
+  goToInternaPromo(promo) {
+    this.service.crearcomprapromo(promo, this.dataUser).subscribe(x => {
+      let response = JSON.parse(x["_body"])["data"];
+
+      console.log("RESPONSE; ", response);
+
+      if (response === "inserted") {
+        let dataPromo: NavigationExtras = {
+          queryParams: {
+            promo: JSON.stringify(promo)
+          }
+        };
+        this.router.navigate(["interna-promocion"], dataPromo);
+      } else {
+        this.presentToast();
+      }
+    });
+  }
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: "Ya disponés de esta promoción",
+      position: "top",
+      duration: 2000
+    });
+    toast.present();
+  }
+
+  getStorage() {
+    this.storage.get("dataUser").then(storageData => {
+      this.dataUser = storageData;
+    });
+  }
 }

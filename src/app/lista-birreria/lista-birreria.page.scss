@@ -1,0 +1,70 @@
+@import "../../global";
+
+ion-content {
+  --background: #202734;
+}
+
+h2 {
+  color: white;
+  position: relative;
+  left: 10%;
+}
+
+.lugares-cercanos {
+  background: $light-blue;
+  padding: 0;
+  margin-top: 10%;
+
+  ion-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .square-promo-col {
+      background: $dark-blue;
+      margin: 5px;
+
+      .square-promo {
+        .copete {
+          background: $yellow-birra;
+          border-radius: 5px 5px 0 0;
+
+          p {
+            font-size: $small-font;
+            margin: 0;
+            padding: 0;
+          }
+        }
+
+        .col-img {
+          padding: 0;
+
+          img {
+            border-radius: 0 0 5px 5px;
+          }
+        }
+
+        .info {
+          p {
+            margin: 0;
+            padding: 0;
+          }
+
+          .title {
+            font-size: $default-font;
+          }
+
+          .dir {
+            font-size: $small-font;
+          }
+
+          // .puntos {
+          //   margin-top: 10px;
+          //   font-size: $semi-small-font;
+          // }
+        }
+      }
+    }
+  }
+}
