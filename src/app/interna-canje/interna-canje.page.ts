@@ -1,16 +1,15 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
 import { ServiceService } from "../service.service";
 import { Storage } from "@ionic/storage";
-import { Router, NavigationExtras } from "@angular/router";
+import { Router, NavigationExtras, ActivatedRoute } from "@angular/router";
 import { AlertController } from "@ionic/angular";
 
 @Component({
-  selector: "app-interna-promocion",
-  templateUrl: "./interna-promocion.page.html",
-  styleUrls: ["./interna-promocion.page.scss"]
+  selector: "app-interna-canje",
+  templateUrl: "./interna-canje.page.html",
+  styleUrls: ["./interna-canje.page.scss"]
 })
-export class InternaPromocionPage implements OnInit {
+export class InternaCanjePage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private service: ServiceService,
@@ -19,7 +18,7 @@ export class InternaPromocionPage implements OnInit {
     public alertController: AlertController
   ) {}
 
-  promo: any = {};
+  canje: any = {};
   dataUser: any = {};
 
   ngOnInit() {
@@ -31,16 +30,15 @@ export class InternaPromocionPage implements OnInit {
   getParams() {
     this.route.queryParams.subscribe(params => {
       if (params) {
-        this.promo = JSON.parse(params.promo);
-        console.log("PARAMS", this.promo);
+        this.canje = JSON.parse(params.canje);
+        console.log("PARAMS", this.canje);
       }
     });
   }
 
-  retirarCompraPromo() {
-    this.service.retirarCompraPromo(this.promo, this.dataUser).subscribe(x => {
+  retirarCompraCanje() {
+    this.service.retirarCompraCanje(this.canje, this.dataUser).subscribe(x => {
       console.log("SUCCES...", JSON.parse(x["_body"]));
-
       let response = JSON.parse(x["_body"])["data"];
 
       if (response == "updated") {
@@ -59,7 +57,7 @@ export class InternaPromocionPage implements OnInit {
     const alert = await this.alertController.create({
       header: "¡Muchas gracias!",
       message:
-        "Ya podés retirar la promoción y tus puntos ya se encuentran sumados a tu cuenta",
+        "Gracias por utilizar QMB, los puntos de este cupón ya fueron descontados de tu cuenta",
       buttons: [
         {
           text: "Ok!",

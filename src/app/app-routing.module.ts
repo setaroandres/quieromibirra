@@ -40,8 +40,8 @@ const routes: Routes = [
       "./interna-birreria/interna-birreria.module#InternaBirreriaPageModule"
   },
   {
-    path: "interna-cupon",
-    loadChildren: "./interna-cupon/interna-cupon.module#InternaCuponPageModule"
+    path: "interna-canje",
+    loadChildren: "./interna-canje/interna-canje.module#InternaCanjePageModule"
   },
   {
     path: "interna-promocion",
@@ -95,6 +95,10 @@ const routes: Routes = [
   {
     path: "mispromos",
     loadChildren: "./mispromos/mispromos.module#MispromosPageModule"
+  },
+  {
+    path: "interna-canje",
+    loadChildren: "./interna-canje/interna-canje.module#InternaCanjePageModule"
   }
 ];
 

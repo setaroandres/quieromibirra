@@ -13,6 +13,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { IonicStorageModule } from "@ionic/storage";
 import { MisPuntosComponent } from "./components/mis-puntos/mis-puntos.component";
 import { ComponentsModule } from "./components/components.module";
+import { DatePipe } from "@angular/common";
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +30,8 @@ import { ComponentsModule } from "./components/components.module";
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    ServiceService
+    ServiceService,
+    DatePipe
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

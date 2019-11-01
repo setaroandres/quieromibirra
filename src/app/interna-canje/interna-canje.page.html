@@ -12,16 +12,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding text-center>
+<ion-content padding>
 
   <ion-grid>
     <ion-row>
       <ion-col>
-        <h2>Código de promoción</h2>
+        <h2>Código de canje</h2>
       </ion-col>
     </ion-row>
   </ion-grid>
-
 
   <ion-grid class="main-container">
 
@@ -34,15 +33,18 @@
     <ion-row class="row-info">
       <ion-col>
         <!-- <h3>¡Muchas gracias!</h3> -->
-        <p>Con este código QR podrás obtener {{promo.titulo}} en {{promo.nombre}} de {{promo.direccion}}</p>
-        <p>Una vez que haya sido escaneado, vas a acumular <strong class="puntos">{{promo.puntos_promo}} pts.</strong>
-          en tu cuenta</p>
+        <p>Con este código QR podrás obtener recibirás {{canje.titulo}} del bar {{canje.nombre}} ubicado en
+          {{canje.direccion}}</p>
+        <p>Una vez que haya sido escaneado, se te descontarán <strong class="puntos">{{canje.puntos_canje}}
+            pts.</strong>
+          de tu cuenta</p>
       </ion-col>
     </ion-row>
 
   </ion-grid>
 
 
-  <button (click)="retirarCompraPromo()">ENTREGAR (botón de testing)</button>
+  <button (click)="retirarCompraCanje()">ENTREGAR (botón de testing)</button>
+
 
 </ion-content>

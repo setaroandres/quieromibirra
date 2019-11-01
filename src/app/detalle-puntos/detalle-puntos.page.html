@@ -14,25 +14,25 @@
 
 <ion-content padding>
 
-  <ion-grid class="card">
+  <ion-grid class="card" *ngFor="let user of usuario">
     <ion-row class="row-1">
       <ion-col size="6" class="col-titulo">
-        <h2>Facundo Gilbert</h2>
+        <h2>{{user.nombre}} {{user.apellido}}</h2>
       </ion-col>
       <ion-col size="6" class="col-miembro">
         <p>Miembro desde</p>
-        <p>27/04/2019</p>
+        <p>{{ setDate(user.fechadecreacion)}}</p>
       </ion-col>
     </ion-row>
 
     <ion-row class="row-2">
       <ion-col size="6" class="col-btn">
         <img src="assets/img/logo-bola-qmb.png" alt="">
-        <p class="credit-card">900 106 137 42</p>
+        <!-- <p class="credit-card">900 106 137 42</p> -->
       </ion-col>
       <ion-col size="6" class="puntos">
         <p>Total de puntos QMB</p>
-        <p class="n-puntos"> <img src="assets/img/coin.png" alt=""> {{puntos}}</p>
+        <p class="n-puntos"> <img src="assets/img/coin.png" alt=""> {{user.puntos_usuario}}</p>
       </ion-col>
     </ion-row>
 

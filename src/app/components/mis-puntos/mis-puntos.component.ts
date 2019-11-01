@@ -14,6 +14,10 @@ export class MisPuntosComponent implements OnInit {
   dataUser: any = {};
 
   ngOnInit() {
+    console.log("MisPuntosComponent");
+  }
+
+  ngAfterViewInit() {
     this.getStorage();
   }
 

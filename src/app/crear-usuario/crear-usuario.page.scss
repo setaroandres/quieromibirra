@@ -1,75 +1,88 @@
 /* Transparent standard */
 ion-toolbar {
-    --background: transparent;
-    --ion-color-base: transparent !important;
+  --background: transparent;
+  --ion-color-base: transparent !important;
 }
 
 /* Show background if class is active */
 .show-background {
-    border-style: none;
-    background: transparent;
+  border-style: none;
+  background: transparent;
 }
 
 /* Remove bottom border on md */
 .header-md::after {
-    background-image: none;
+  background-image: none;
 }
 
 /* Remove bottom border on ios */
 .header-ios ion-toolbar:last-child {
-    --border-width: 0;
+  --border-width: 0;
 }
 
 ion-content {
-    --background:  url("../../assets/img/crear-usuario/bg-cu.jpg") no-repeat center center / cover;
+  --background: url("../../assets/img/crear-usuario/bg-cu.jpg") no-repeat center
+    center / cover;
 
-    ion-grid {
-        padding: 0;
-        p {
-            font-size: 0.8em;
-            color: #d2d2d2;
-        }
-        
-        ion-label, .select-text {
-            margin-left: 10px;
-        }
-        
-        .invalid {
-            border: 1px solid #ea6153;
-        }
-        .list_registro{
-            background: transparent !important;
-        }
-        ion-col {
-            padding: 5px 0;
-
-            .title-cuenta {
-                color: #FFF;
-                padding-left: 25px;
-            }
-        }
-
-        .crear-usuario-button {
-            height: 30vh;
-            align-items: flex-end;
-
-            ion-button {
-                margin: 0;
-                --background: var(--qmb-yellow);
-                height: 50px;
-            }
-
-            p {
-                color: #FFF;
-                font-size: 0.7rem;
-                letter-spacing: 1px;
-
-                a {
-                    color: #FFF;
-                    text-decoration: none;
-                    font-weight: 600;
-                }
-            }
-        }
+  ion-grid {
+    padding: 0;
+    p {
+      font-size: 0.8em;
+      color: #d2d2d2;
     }
+
+    ion-label,
+    .select-text {
+      margin-left: 10px;
+    }
+
+    .invalid {
+      border: 1px solid #ea6153;
+    }
+    .list_registro {
+      background: transparent !important;
+    }
+    ion-col {
+      padding: 5px 0;
+
+      .title-cuenta {
+        color: #fff;
+        padding-left: 25px;
+      }
+    }
+
+    .crear-usuario-button {
+      height: 30vh;
+      align-items: flex-end;
+
+      ion-button {
+        margin: 0;
+        --background: var(--qmb-yellow);
+        height: 50px;
+      }
+
+      p {
+        color: #fff;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+ion-input,
+ion-datetime {
+  color: white;
+}
+
+.main-container {
+  .completar-campos {
+    padding: 0 10%;
+  }
 }

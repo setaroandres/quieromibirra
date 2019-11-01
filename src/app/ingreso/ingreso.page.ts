@@ -44,24 +44,18 @@ export class IngresoPage implements OnInit {
         console.log("DATA: ", dataUser);
 
         if (dataUser.usuarioid > 0) {
-          this.storage.get("dataUser").then(storageData => {
-            if (storageData) {
-              console.log("STORAGE 1", dataUser);
-              // this.service.dataUser = dataUser;
-              this.storage.set("dataUser", dataUser);
-              this.router.navigateByUrl("/home");
-            } else {
-              console.log("STORAGE 2", dataUser);
-              // this.service.dataUser = dataUser;
-              this.storage.set("dataUser", dataUser);
-              this.router.navigateByUrl("/tutorial");
-            }
-          });
+          console.log("STORAGE", dataUser);
+          this.storage.set("dataUser", dataUser);
+          this.router.navigateByUrl("/home");
         } else {
           this.presentToast();
         }
       });
     }
+  }
+
+  goToCrearCuenta() {
+    this.router.navigateByUrl("/crear-usuario");
   }
 
   form() {

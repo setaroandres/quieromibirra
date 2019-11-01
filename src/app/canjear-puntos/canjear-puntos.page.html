@@ -16,18 +16,26 @@
 
   <mis-puntos></mis-puntos>
 
-
-  <ion-grid class="main-container">
+  <ion-grid>
     <ion-row>
       <ion-col>
         <h3 class="title">Canjeá tus puntos</h3>
       </ion-col>
     </ion-row>
+  </ion-grid>
+
+
+  <ion-grid class="main-container">
     <ion-row *ngFor="let canje of canjes">
-      <ion-col (click)="goToInternaPromo(promo)" *ngIf="promo.retirado == '0'">
-        <h3>{{canje.titulo}}</h3>
-        <p class="puntos">{{canje.detalle}}</p>
-        <p class="puntos">Costo: {{canje.puntos_promo}} pts.</p>
+      <ion-col size="12">
+        <h3>{{canje.nombre}}</h3>
+        <p>{{canje.titulo}}</p>
+        <p>{{canje.direccion}}</p>
+        <p class="detalle">{{canje.detalle}}</p>
+        <p class="puntos">Costo: {{canje.puntos_canje}} pts.</p>
+      </ion-col>
+      <ion-col size="12">
+        <button (click)="goToInternaCanje(canje)">Canjear</button>
       </ion-col>
     </ion-row>
   </ion-grid>

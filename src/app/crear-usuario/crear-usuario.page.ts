@@ -3,6 +3,10 @@ import { Component, OnInit } from "@angular/core";
 import { ScrollDetail } from "@ionic/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { ToastController } from "@ionic/angular";
+import { DatePipe } from "@angular/common";
+import { Storage } from "@ionic/storage";
+
 @Component({
   selector: "app-crear-usuario",
   templateUrl: "./crear-usuario.page.html",
@@ -12,9 +16,13 @@ export class CrearUsuarioPage implements OnInit {
   constructor(
     private service: ServiceService,
     private router: Router,
-    public formBuilder: FormBuilder
+    public formBuilder: FormBuilder,
+    public toastController: ToastController,
+    private datePipe: DatePipe,
+    private storage: Storage
   ) {}
 
+  date: any = new Date();
   registro: FormGroup;
   showToolbar = false;
   public submitAttempt: boolean = false;
@@ -41,16 +49,38 @@ export class CrearUsuarioPage implements OnInit {
       console.log(this.registro.value);
     } else {
       console.log("success!");
-      this.submitAttempt = false;
 
-      this.service.crearUsuario(this.registro.value).subscribe(data => {
-        console.log("data", data);
-        if (data) {
-          this.service.dataUser = data;
-          this.router.navigateByUrl("/tutorial");
-        }
-      });
+      let a = this.getAge(this.registro.value.nacimiento);
+      let fechadecreacion = this.datePipe.transform(this.date, "yyyy-MM-dd");
+
+      if (a >= 18) {
+        this.submitAttempt = false;
+
+        this.service
+          .crearUsuario(this.registro.value, fechadecreacion)
+          .subscribe(data => {
+            let dataUser = JSON.parse(data["_body"])["data"];
+            console.log("data", dataUser[0]);
+            if (dataUser[0]) {
+              this.storage.set("dataUser", dataUser[0]);
+              this.router.navigateByUrl("/tutorial");
+            }
+          });
+      } else {
+        this.errorEdad();
+      }
     }
+  }
+
+  getAge(dateString) {
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age;
   }
 
   form() {
@@ -82,5 +112,14 @@ export class CrearUsuarioPage implements OnInit {
       ],
       password: ["", Validators.required]
     });
+  }
+
+  async errorEdad() {
+    const toast = await this.toastController.create({
+      message: "Debés ser mayor de 18 años para crear un usuario",
+      position: "top",
+      duration: 2000
+    });
+    toast.present();
   }
 }

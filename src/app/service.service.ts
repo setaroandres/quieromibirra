@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
 import { Http, Headers, RequestOptions } from "@angular/http";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -68,11 +68,17 @@ export class ServiceService {
     );
   }
 
+  traerDataUsuario(usuarioid: string) {
+    return this.http.get(
+      this.api_url + "traerdatausuario.php" + "?usuarioid=" + usuarioid
+    );
+  }
+
   // ***********************************************************
   // ---------------- CREATE
   // ***********************************************************
 
-  crearUsuario(registro: any): Observable<any> {
+  crearUsuario(registro: any, fechadecreacion: string): Observable<any> {
     let url = this.api_url + "crearusuario.php";
 
     var headers = new Headers();
@@ -84,7 +90,8 @@ export class ServiceService {
       apellido: registro.apellido,
       email: registro.email,
       password: registro.password,
-      fechanacimiento: registro.nacimiento
+      fechanacimiento: registro.nacimiento,
+      fechadecreacion: fechadecreacion
     });
 
     return this.httpPost.post(url, body, {
@@ -127,8 +134,31 @@ export class ServiceService {
     var body = JSON.stringify({
       usuarioid: dataUser.usuarioid,
       promocionid: promo.promocionid,
-      puntos_promo: promo.puntos_promo,
-      puntos_usuario: dataUser.puntos_usuario
+      puntos_promo: promo.puntos_promo
+    });
+
+    console.log("BODY, entrega: ", body);
+
+    return this.httpPost.post(url, body, {
+      headers: headers,
+      withCredentials: true
+    });
+  }
+
+  retirarCompraCanje(canje: any, dataUser: any) {
+    let url = this.api_url + "retirarcompracanje.php";
+
+    var headers = new Headers();
+    headers.append("Access-Control-Allow-Origin", "*");
+    headers.append("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT");
+    headers.append("Accept", "application/json");
+    headers.append("content-type", "application/json");
+    const requestOptions = new RequestOptions({ headers: headers });
+
+    var body = JSON.stringify({
+      usuarioid: dataUser.usuarioid,
+      canjeid: canje.canjeid,
+      puntos_canje: canje.puntos_canje
     });
 
     console.log("BODY, entrega: ", body);
@@ -152,6 +182,29 @@ export class ServiceService {
     var body = JSON.stringify({
       usuarioid: dataUser.usuarioid,
       promocionid: promo.promocionid
+    });
+
+    console.log("BODY, entrega: ", body);
+
+    return this.httpPost.post(url, body, {
+      headers: headers,
+      withCredentials: true
+    });
+  }
+
+  crearcompracanje(canje: any, dataUser: any) {
+    let url = this.api_url + "crearcompracanje.php";
+
+    var headers = new Headers();
+    headers.append("Access-Control-Allow-Origin", "*");
+    headers.append("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT");
+    headers.append("Accept", "application/json");
+    headers.append("content-type", "application/json");
+    const requestOptions = new RequestOptions({ headers: headers });
+
+    var body = JSON.stringify({
+      usuarioid: dataUser.usuarioid,
+      canjeid: canje.canjeid
     });
 
     console.log("BODY, entrega: ", body);

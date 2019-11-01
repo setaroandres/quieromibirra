@@ -7,13 +7,18 @@
 </ion-header>
 
 <ion-content fullscreen (ionScroll)="onScroll($event)" [scrollEvents]="true">
-  <ion-grid>
+
+  <ion-grid class="main-container">
     <ion-row>
       <ion-col>
         <h1 class="title-cuenta">Crear Cuenta</h1>
       </ion-col>
     </ion-row>
-    <p *ngIf="submitAttempt" style="color: red;">Por favor, llená todos los campos</p>
+    <ion-row class="completar-campos">
+      <ion-col>
+        <p *ngIf="submitAttempt" style="color: white;">Por favor, completá todos los campos</p>
+      </ion-col>
+    </ion-row>
     <ion-list lines="none" class="transparent list_registro">
       <form [formGroup]="registro">
         <ion-row>
@@ -23,11 +28,11 @@
                 <ion-icon name="person"></ion-icon>
                 <span> Nombre</span>
               </ion-label>
-              <ion-input formControlName="nombre" type="text"></ion-input>
+              <ion-input formControlName="nombre" type="text" required></ion-input>
             </ion-item>
-            <ion-item *ngIf="!registro.controls.nombre.valid  && (registro.controls.nombre.dirty || submitAttempt)">
+            <!-- <ion-item *ngIf="!registro.controls.nombre.valid  && (registro.controls.nombre.dirty || submitAttempt)">
               <p>El campo "nombre" es obligatorio</p>
-            </ion-item>
+            </ion-item> -->
           </ion-col>
         </ion-row>
         <ion-row>
@@ -37,11 +42,11 @@
                 <ion-icon name="person"></ion-icon>
                 <span> Apellido</span>
               </ion-label>
-              <ion-input formControlName="apellido" type="text"></ion-input>
+              <ion-input formControlName="apellido" type="text" required></ion-input>
             </ion-item>
-            <ion-item *ngIf="!registro.controls.apellido.valid  && (registro.controls.apellido.dirty || submitAttempt)">
+            <!-- <ion-item *ngIf="!registro.controls.apellido.valid  && (registro.controls.apellido.dirty || submitAttempt)">
               <p>El campo "apellido" es obligatorio</p>
-            </ion-item>
+            </ion-item> -->
           </ion-col>
         </ion-row>
         <ion-row>
@@ -51,11 +56,11 @@
                 <ion-icon name="mail"></ion-icon>
                 <span> Email</span>
               </ion-label>
-              <ion-input formControlName="email" type="text"></ion-input>
+              <ion-input formControlName="email" type="text" required></ion-input>
             </ion-item>
-            <ion-item *ngIf="!registro.controls.email.valid  && (registro.controls.email.dirty || submitAttempt)">
+            <!-- <ion-item *ngIf="!registro.controls.email.valid  && (registro.controls.email.dirty || submitAttempt)">
               <p>El campo "email" es obligatorio</p>
-            </ion-item>
+            </ion-item> -->
           </ion-col>
         </ion-row>
         <ion-row>
@@ -65,11 +70,11 @@
                 <ion-icon name="lock"></ion-icon>
                 <span> Contraseña</span>
               </ion-label>
-              <ion-input formControlName="password" type="password"></ion-input>
+              <ion-input formControlName="password" type="password" required></ion-input>
             </ion-item>
-            <ion-item *ngIf="!registro.controls.password.valid  && (registro.controls.password.dirty || submitAttempt)">
+            <!-- <ion-item *ngIf="!registro.controls.password.valid  && (registro.controls.password.dirty || submitAttempt)">
               <p>Ingrese una contraseña</p>
-            </ion-item>
+            </ion-item> -->
           </ion-col>
         </ion-row>
         <ion-row>
@@ -79,12 +84,12 @@
                 <ion-icon name="gift"></ion-icon>
                 <span> Fecha de nacimiento</span>
               </ion-label>
-              <ion-datetime displayFormat="DD/MM/YYYY" formControlName="nacimiento"></ion-datetime>
+              <ion-datetime displayFormat="DD/MM/YYYY" formControlName="nacimiento" required></ion-datetime>
             </ion-item>
-            <ion-item
+            <!-- <ion-item
               *ngIf="!registro.controls.nacimiento.valid  && (registro.controls.nacimiento.dirty || submitAttempt)">
               <p>Ingresá tu fecha de nacimiento</p>
-            </ion-item>
+            </ion-item> -->
           </ion-col>
         </ion-row>
       </form>
