@@ -1,0 +1,9 @@
+@import '../../theme/variables';
+
+ion-tab-bar {
+  --background: $dark-blue;
+  background: $dark-blue;
+  ion-icon {
+    color: white;
+  }
+}

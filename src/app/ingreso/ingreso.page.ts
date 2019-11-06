@@ -46,7 +46,7 @@ export class IngresoPage implements OnInit {
         if (dataUser.usuarioid > 0) {
           console.log("STORAGE", dataUser);
           this.storage.set("dataUser", dataUser);
-          this.router.navigateByUrl("/home");
+          this.router.navigateByUrl("/tabs/home");
         } else {
           this.presentToast();
         }

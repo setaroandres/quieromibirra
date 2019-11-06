@@ -8,18 +8,23 @@ const routes: Routes = [
     pathMatch: "full"
   },
   {
-    path: "home",
-    loadChildren: "./home/home.module#HomePageModule"
+    path: "ingreso",
+    loadChildren: "./ingreso/ingreso.module#IngresoPageModule"
   },
+  { path: "tabs", loadChildren: "./tabs/tabs.module#TabsPageModule" },
+  // {
+  //   path: "home",
+  //   loadChildren: "./home/home.module#HomePageModule"
+  // },
   { path: "login", loadChildren: "./login/login.module#LoginPageModule" },
   {
     path: "crear-usuario",
     loadChildren: "./crear-usuario/crear-usuario.module#CrearUsuarioPageModule"
   },
-  {
-    path: "lista-hhour",
-    loadChildren: "./lista-hhour/lista-hhour.module#ListaHhourPageModule"
-  },
+  // {
+  //   path: "lista-hhour",
+  //   loadChildren: "./lista-hhour/lista-hhour.module#ListaHhourPageModule"
+  // },
   {
     path: "lista-promos",
     loadChildren: "./lista-promos/lista-promos.module#ListaPromosPageModule"
@@ -29,11 +34,11 @@ const routes: Routes = [
     loadChildren:
       "./lista-birreria/lista-birreria.module#ListaBirreriaPageModule"
   },
-  {
-    path: "detalle-puntos",
-    loadChildren:
-      "./detalle-puntos/detalle-puntos.module#DetallePuntosPageModule"
-  },
+  // {
+  //   path: "detalle-puntos",
+  //   loadChildren:
+  //     "./detalle-puntos/detalle-puntos.module#DetallePuntosPageModule"
+  // },
   {
     path: "interna-birreria",
     loadChildren:
@@ -74,10 +79,6 @@ const routes: Routes = [
     path: "canjear-puntos",
     loadChildren:
       "./canjear-puntos/canjear-puntos.module#CanjearPuntosPageModule"
-  },
-  {
-    path: "ingreso",
-    loadChildren: "./ingreso/ingreso.module#IngresoPageModule"
   },
   {
     path: "interna-hhour",
