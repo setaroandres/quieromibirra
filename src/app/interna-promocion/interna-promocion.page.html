@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
+      <ion-back-button defaultHref="tabs/home"></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-text-center">
       <img src="../../assets/img/logo-header.png">
@@ -17,20 +17,18 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <h2>Código de promoción</h2>
+        <h2>Código de {{ titulo }}</h2>
       </ion-col>
     </ion-row>
   </ion-grid>
 
 
-  <ion-grid class="main-container">
-
+  <ion-grid class="main-container" *ngIf="promo.compra_promoid">
     <ion-row class="row-img">
       <ion-col>
         <img src="assets/img/qr.png" alt="" />
       </ion-col>
     </ion-row>
-
     <ion-row class="row-info">
       <ion-col>
         <!-- <h3>¡Muchas gracias!</h3> -->
@@ -39,10 +37,30 @@
           en tu cuenta</p>
       </ion-col>
     </ion-row>
-
   </ion-grid>
 
 
-  <button (click)="retirarCompraPromo()">ENTREGAR (botón de testing)</button>
+  <ion-grid class="main-container" *ngIf="canje.compra_canjeid">
+    <ion-row class="row-img">
+      <ion-col>
+        <img src="assets/img/qr.png" alt="" />
+      </ion-col>
+    </ion-row>
+    <ion-row class="row-info">
+      <ion-col>
+        <!-- <h3>¡Muchas gracias!</h3> -->
+        <p>Con este código QR podrás obtener {{canje.titulo}} en {{canje.nombre}} de {{canje.direccion}}</p>
+        <p>Una vez que haya sido escaneado, se te descontarán <strong class="puntos">{{canje.puntos_canje}}
+            pts.</strong>
+          de tu cuenta</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <button *ngIf="canje.compra_promoid" (click)="retirarCompraPromo()">ENTREGAR PROMO (botón de testing)</button>
+
+  <button *ngIf="canje.compra_canjeid" (click)="retirarCompraCanje()">ENTREGAR CANJE (botón de testing)</button>
+
 
 </ion-content>

@@ -1,5 +1,6 @@
 @import "../../global";
 @import "../../theme/header-transparent";
+@import "../../theme/buttons";
 
 img {
   width: 100%;
@@ -37,11 +38,11 @@ ion-content {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    img {
-      border-radius: 5px;
-      box-shadow: 1px 3px 10px grey;
-      max-width: 90%;
-    }
+    // img {
+    //   border-radius: 5px;
+    //   box-shadow: 1px 3px 10px grey;
+    //   max-width: 90%;
+    // }
   }
 
   .col-descripcion {
@@ -55,21 +56,6 @@ ion-content {
       width: 80%;
     }
   }
-
-  .col-btn {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    button {
-      border-radius: 10px;
-      background: #e9b418;
-      color: white;
-      font-weight: 700;
-      font-size: $small-font;
-      padding: 15px 30px;
-    }
-  }
 }
 
 ion-buttons,
@@ -77,68 +63,12 @@ ion-title {
   color: black;
 }
 
-// @import "../../global";
-
-// .promo-box {
-//   background: $dark-blue;
-//   margin: 5px;
-//   max-height: 42vh;
-
-//   .copete {
-//     background: $yellow-birra;
-//     border-radius: 5px 5px 0 0;
-
-//     p {
-//       font-size: $default-font;
-//       margin: 0;
-//       padding: 0;
-//     }
-
-//     .puntos {
-//       display: flex;
-//       flex-direction: row;
-//       align-items: center;
-//       justify-content: center;
-//       img {
-//         max-width: 18%;
-//         margin-right: 5px;
-//       }
-//     }
-//   }
-
-//   .col-img {
-//     padding: 0;
-
-//     img {
-//       border-radius: 0 0 5px 5px;
-//     }
-//   }
-
-//   .info {
-//     // background: $light-blue;
-//     border-radius: 0 0 5px 5px;
-//     position: relative;
-//     bottom: 25vh;
-//     text-align: center;
-
-//     p {
-//       margin: 0;
-//       padding: 0;
-//       text-shadow: 1px 1px 3px black;
-//     }
-
-//     .title {
-//       font-size: $giant-font;
-//       font-weight: 700;
-//     }
-
-//     .dir {
-//       font-size: $xbig-font;
-//     }
-
-//     .puntos {
-//       margin-top: 10px;
-//       font-size: $semi-small-font;
-//     }
-//   }
-// }
+#map {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 30vh;
+  border-radius: 5px;
+  box-shadow: 1px 3px 10px grey;
+}

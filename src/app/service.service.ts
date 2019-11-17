@@ -34,9 +34,29 @@ export class ServiceService {
   // ---------------- GET
   // ***********************************************************
 
+  traerPuntos(usuarioid: string) {
+    return this.http.get(
+      this.api_url + "traerpuntos.php" + "?usuarioid=" + usuarioid
+    );
+  }
+
+  traerDataUsuario(usuarioid: string) {
+    return this.http.get(
+      this.api_url + "traerdatausuario.php" + "?usuarioid=" + usuarioid
+    );
+  }
+
   traerCervecerias() {
     return this.http.get(this.api_url + "traercervecerias.php");
   }
+
+  traerPromosPorCerveceria(id) {
+    return this.http.get(
+      this.api_url + "traerpromosporcerveceria.php?cerveceriaid=" + id
+    );
+  }
+
+  // ---- Promos y canjes -> trae si tiene compras tmb para saber si las compró o no
 
   traerPromosPorUsuario(usuarioid: string) {
     return this.http.get(
@@ -50,33 +70,44 @@ export class ServiceService {
     );
   }
 
-  traerPromosPorId(id) {
+  // --- Compras
+
+  traerComprasPromos(usuarioid: string) {
     return this.http.get(
-      this.api_url + "traerpromosporid.php?cerveceriaid=" + id
+      this.api_url + "traercompraspromos.php" + "?usuarioid=" + usuarioid
     );
   }
 
-  traerCompras(usuarioid: string) {
+  traerComprasCanjes(usuarioid: string) {
     return this.http.get(
-      this.api_url + "traercompras.php" + "?usuarioid=" + usuarioid
-    );
-  }
-
-  traerPuntos(usuarioid: string) {
-    return this.http.get(
-      this.api_url + "traerpuntos.php" + "?usuarioid=" + usuarioid
-    );
-  }
-
-  traerDataUsuario(usuarioid: string) {
-    return this.http.get(
-      this.api_url + "traerdatausuario.php" + "?usuarioid=" + usuarioid
+      this.api_url + "traercomprascanjes.php" + "?usuarioid=" + usuarioid
     );
   }
 
   // ***********************************************************
   // ---------------- CREATE
   // ***********************************************************
+
+  crearConsulta(usuarioid, texto, fechayhora) {
+    let url = this.api_url + "crearconsulta.php";
+
+    var headers = new Headers();
+    headers = this.headersAppend(headers);
+    const requestOptions = new RequestOptions({ headers: headers });
+
+    var body = JSON.stringify({
+      usuarioid: usuarioid,
+      texto: texto,
+      fechayhora: fechayhora
+    });
+
+    console.log("BODY, ", body);
+
+    return this.httpPost.post(url, body, {
+      headers: headers,
+      withCredentials: true
+    });
+  }
 
   crearUsuario(registro: any, fechadecreacion: string): Observable<any> {
     let url = this.api_url + "crearusuario.php";
@@ -134,10 +165,11 @@ export class ServiceService {
     var body = JSON.stringify({
       usuarioid: dataUser.usuarioid,
       promocionid: promo.promocionid,
+      compra_promoid: promo.compra_promoid,
       puntos_promo: promo.puntos_promo
     });
 
-    console.log("BODY, entrega: ", body);
+    console.log("BODY, entrega (promo): ", body);
 
     return this.httpPost.post(url, body, {
       headers: headers,
@@ -158,6 +190,7 @@ export class ServiceService {
     var body = JSON.stringify({
       usuarioid: dataUser.usuarioid,
       canjeid: canje.canjeid,
+      compra_canjeid: canje.compra_canjeid,
       puntos_canje: canje.puntos_canje
     });
 
@@ -169,7 +202,7 @@ export class ServiceService {
     });
   }
 
-  crearcomprapromo(promo: any, dataUser: any) {
+  crearcomprapromo(promo: any, fechayhora: number, dataUser: any) {
     let url = this.api_url + "crearcomprapromo.php";
 
     var headers = new Headers();
@@ -181,7 +214,8 @@ export class ServiceService {
 
     var body = JSON.stringify({
       usuarioid: dataUser.usuarioid,
-      promocionid: promo.promocionid
+      promocionid: promo.promocionid,
+      fechayhora: fechayhora
     });
 
     console.log("BODY, entrega: ", body);
@@ -192,7 +226,7 @@ export class ServiceService {
     });
   }
 
-  crearcompracanje(canje: any, dataUser: any) {
+  crearcompracanje(canje: any, fechayhora: number, dataUser: any) {
     let url = this.api_url + "crearcompracanje.php";
 
     var headers = new Headers();
@@ -204,7 +238,8 @@ export class ServiceService {
 
     var body = JSON.stringify({
       usuarioid: dataUser.usuarioid,
-      canjeid: canje.canjeid
+      canjeid: canje.canjeid,
+      fechayhora: fechayhora
     });
 
     console.log("BODY, entrega: ", body);

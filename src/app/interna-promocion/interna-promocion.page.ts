@@ -20,7 +20,9 @@ export class InternaPromocionPage implements OnInit {
   ) {}
 
   promo: any = {};
+  canje: any = {};
   dataUser: any = {};
+  titulo: string;
 
   ngOnInit() {
     console.log("InternaPromocionPage");
@@ -30,9 +32,14 @@ export class InternaPromocionPage implements OnInit {
 
   getParams() {
     this.route.queryParams.subscribe(params => {
-      if (params) {
+      if (params.promo) {
         this.promo = JSON.parse(params.promo);
-        console.log("PARAMS", this.promo);
+        this.titulo = "promoción";
+        console.log("PARAMS int-prom", this.promo);
+      } else if (params.canje) {
+        this.canje = JSON.parse(params.canje);
+        this.titulo = "canje";
+        console.log("CANJE", this.canje);
       }
     });
   }
@@ -44,7 +51,19 @@ export class InternaPromocionPage implements OnInit {
       let response = JSON.parse(x["_body"])["data"];
 
       if (response == "updated") {
-        this.presentAlertConfirm();
+        this.presentAlertConfirm("promo");
+      }
+    });
+  }
+
+  retirarCompraCanje() {
+    this.service.retirarCompraCanje(this.canje, this.dataUser).subscribe(x => {
+      console.log("SUCCES...", JSON.parse(x["_body"]));
+
+      let response = JSON.parse(x["_body"])["data"];
+
+      if (response == "updated") {
+        this.presentAlertConfirm("canje");
       }
     });
   }
@@ -55,16 +74,25 @@ export class InternaPromocionPage implements OnInit {
     });
   }
 
-  async presentAlertConfirm() {
+  async presentAlertConfirm(value) {
+    let msj;
+
+    if (value == "promo") {
+      msj =
+        "Tu código fue escaneado correctamente y tus puntos ya se encuentran sumados a tu cuenta";
+    } else {
+      msj =
+        "Tu código fue escaneado correctamente y ya se descontaron los puntos de tu cuenta";
+    }
+
     const alert = await this.alertController.create({
       header: "¡Muchas gracias!",
-      message:
-        "Ya podés retirar la promoción y tus puntos ya se encuentran sumados a tu cuenta",
+      message: msj,
       buttons: [
         {
           text: "Ok!",
           handler: () => {
-            this.router.navigate(["home"]);
+            this.router.navigate(["tabs/home"]);
           }
         }
       ]

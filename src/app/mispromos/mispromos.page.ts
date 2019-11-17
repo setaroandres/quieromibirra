@@ -3,6 +3,7 @@ import { ServiceService } from "./../service.service";
 import { ActivatedRoute } from "@angular/router";
 import { Router, NavigationExtras } from "@angular/router";
 import { Storage } from "@ionic/storage";
+import { DatePipe } from "@angular/common";
 
 @Component({
   selector: "app-mispromos",
@@ -14,11 +15,13 @@ export class MispromosPage implements OnInit {
     private service: ServiceService,
     private route: ActivatedRoute,
     private router: Router,
-    private storage: Storage
+    private storage: Storage,
+    private datePipe: DatePipe
   ) {}
 
   dataUser: any = {};
   promos: any = [];
+  canjes: any = [];
 
   ngOnInit() {
     console.log("MispromosPage");
@@ -34,17 +37,40 @@ export class MispromosPage implements OnInit {
     this.router.navigate(["interna-promocion"], dataPromo);
   }
 
-  traerCompras(usuarioid) {
-    this.service.traerCompras(usuarioid).subscribe(x => {
+  goToInternaCanje(canje) {
+    let dataPromo: NavigationExtras = {
+      queryParams: {
+        canje: JSON.stringify(canje)
+      }
+    };
+    this.router.navigate(["interna-promocion"], dataPromo);
+  }
+
+  traerComprasPromos(usuarioid) {
+    //promos
+    this.service.traerComprasPromos(usuarioid).subscribe(x => {
       console.log("MIS COMPRAS PROMOS: ", x["data"]);
       this.promos = x["data"];
+    });
+  }
+
+  traerComprasCanjes(usuarioid) {
+    //promos
+    this.service.traerComprasCanjes(usuarioid).subscribe(x => {
+      console.log("MIS COMPRAS CANJES: ", x["data"]);
+      this.canjes = x["data"];
     });
   }
 
   getStorage() {
     this.storage.get("dataUser").then(storageData => {
       this.dataUser = storageData;
-      this.traerCompras(this.dataUser.usuarioid);
+      this.traerComprasPromos(this.dataUser.usuarioid);
+      this.traerComprasCanjes(this.dataUser.usuarioid);
     });
+  }
+
+  setDate(fechayhora) {
+    return this.datePipe.transform(fechayhora, "dd-MM-yyyy");
   }
 }

@@ -1,11 +1,53 @@
 @import "../../global";
 
-.title {
-  color: white;
+.title-row {
+  margin-bottom: 3px;
+  ion-col {
+    .title {
+      color: white;
+    }
+  }
 }
 
-.main-container {
+.promos-list,
+.canjes-list {
   ion-row {
     background: $light-blue;
+  }
+}
+
+.title-row {
+  ion-col {
+    h3 {
+      background: $dark-blue;
+      padding: 5px;
+      border-radius: 2px;
+    }
+  }
+}
+
+.promo-row,
+.canje-row {
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+
+  ion-col {
+    align-items: center;
+    justify-content: center;
+
+    h3 {
+      margin-top: 5px;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      border-radius: 5px;
+      max-width: 90%;
+    }
   }
 }

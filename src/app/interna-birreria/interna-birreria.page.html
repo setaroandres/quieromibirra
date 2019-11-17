@@ -1,7 +1,7 @@
 <ion-header class="header-transparent">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
+      <ion-back-button defaultHref="tabs/home"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
   <h1>{{cerveceria.nombre}}</h1>
@@ -17,7 +17,7 @@
       </ion-col>
 
       <ion-col size="12" class="col-img-map">
-        <img src="assets/img/int-hhour-map.png" alt="">
+        <div #map id="map" allow="geolocation"></div>
       </ion-col>
 
       <ion-col size="12" class="col-descripcion">

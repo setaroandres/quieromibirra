@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center">
       <img src="../../assets/img/logo-header.png">
@@ -14,14 +14,44 @@
 
 <ion-content padding>
 
-  <h3 class="title">Mis promociones no retiradas</h3>
 
-  <ion-grid class="main-container">
-    <ion-row *ngFor="let promo of promos">
-      <ion-col (click)="goToInternaPromo(promo)" *ngIf="promo.retirado == '0'">
+  <ion-grid class="promos-list">
+    <ion-row class="title-row">
+      <ion-col>
+        <h3 class="title">Promociones no retiradas</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row class="promo-row" *ngFor="let promo of promos">
+      <ion-col size="8" (click)="goToInternaPromo(promo)" *ngIf="promo.retirado == '0'">
         <h3>{{promo.titulo}}</h3>
-        <p class="puntos">{{promo.detalle}}</p>
-        <p class="puntos">Puntos a sumar: {{promo.puntos_promo}} pts.</p>
+        <p>{{promo.detalle}}</p>
+        <p>Puntos a sumar: <strong>{{promo.puntos_promo}} pts.</strong></p>
+        <p>Solicitud: {{ setDate(promo.fechayhora) }}</p>
+        <p>Vencimiento: (revisar)</p>
+      </ion-col>
+      <ion-col size="4" (click)="goToInternaPromo(promo)" *ngIf="promo.retirado == '0'">
+        <img src="../../assets/img/qr.png" alt="">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-grid class="canjes-list">
+    <ion-row class="title-row">
+      <ion-col>
+        <h3 class="title">Canjes no retirados</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row class="canje-row" *ngFor="let canje of canjes">
+      <ion-col size="8" (click)="goToInternaCanje(canje)" *ngIf="canje.retirado == '0'">
+        <h3>{{canje.titulo}}</h3>
+        <p>{{canje.detalle}}</p>
+        <p>Puntos a sumar: <strong>{{canje.puntos_promo}} pts.</strong></p>
+        <p>Solicitud: {{ setDate(canje.fechayhora) }}</p>
+        <p>Vencimiento: (revisar)</p>
+      </ion-col>
+      <ion-col size="4" (click)="goToInternaCanje(canje)" *ngIf="canje.retirado == '0'">
+        <img src="../../assets/img/qr.png" alt="">
       </ion-col>
     </ion-row>
   </ion-grid>

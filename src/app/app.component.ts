@@ -12,27 +12,27 @@ export class AppComponent {
   public appPages = [
     {
       title: "Home",
-      url: "/home",
+      url: "/tabs/home",
       icon: "home"
     },
     {
-      title: "Mis Promociones",
+      title: "Mis Canjes y Promociones",
       url: "/mispromos",
       icon: "list"
     },
     {
       title: "Happy Hours",
-      url: "/lista-hhour",
+      url: "/tabs/lista-hhour",
+      icon: "list"
+    },
+    {
+      title: "Detalle de mis puntos",
+      url: "/tabs/detalle-puntos",
       icon: "list"
     },
     {
       title: "Soporte",
       url: "/soporte",
-      icon: "list"
-    },
-    {
-      title: "Detalle de mis puntos",
-      url: "/detalle-puntos",
       icon: "list"
     },
     {

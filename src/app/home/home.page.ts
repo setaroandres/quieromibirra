@@ -65,7 +65,7 @@ export class HomePage {
   getStorage() {
     this.storage.get("dataUser").then(storageData => {
       this.dataUser = storageData;
-      this.traerPromosPorUsuario(this.dataUser.usuarioid);
+      this.traerPromosPorUsuario(storageData.usuarioid);
     });
   }
 }

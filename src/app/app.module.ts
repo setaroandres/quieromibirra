@@ -14,6 +14,8 @@ import { IonicStorageModule } from "@ionic/storage";
 import { MisPuntosComponent } from "./components/mis-puntos/mis-puntos.component";
 import { ComponentsModule } from "./components/components.module";
 import { DatePipe } from "@angular/common";
+import { GoogleMapsService } from "./google-maps.service";
+import { Geolocation } from "@ionic-native/geolocation/ngx";
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,6 +33,8 @@ import { DatePipe } from "@angular/common";
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     ServiceService,
+    GoogleMapsService,
+    Geolocation,
     DatePipe
   ],
   bootstrap: [AppComponent],

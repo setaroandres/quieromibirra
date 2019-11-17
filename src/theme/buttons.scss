@@ -1,0 +1,14 @@
+.col-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  button {
+    border-radius: 10px;
+    background: #e9b418;
+    color: white;
+    font-weight: 700;
+    font-size: $small-font;
+    padding: 15px 30px;
+  }
+}

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref="detalle-puntos"></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-text-center">
       <img src="../../assets/img/logo-header.png">
@@ -12,29 +12,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
 
   <mis-puntos></mis-puntos>
 
-  <ion-grid>
+  <ion-grid class="main-container">
     <ion-row>
       <ion-col>
         <h3 class="title">Canjeá tus puntos</h3>
       </ion-col>
     </ion-row>
-  </ion-grid>
-
-
-  <ion-grid class="main-container">
     <ion-row *ngFor="let canje of canjes">
-      <ion-col size="12">
+      <ion-col size="12" class="info-canje">
         <h3>{{canje.nombre}}</h3>
-        <p>{{canje.titulo}}</p>
-        <p>{{canje.direccion}}</p>
+        <p class="titulo">{{canje.titulo}}</p>
+        <p class="direccion">{{canje.direccion}}</p>
         <p class="detalle">{{canje.detalle}}</p>
-        <p class="puntos">Costo: {{canje.puntos_canje}} pts.</p>
+        <p class="puntos">Costo: <strong>{{canje.puntos_canje}} pts.</strong></p>
       </ion-col>
-      <ion-col size="12">
+      <ion-col size="12" class="col-btn">
         <button (click)="goToInternaCanje(canje)">Canjear</button>
       </ion-col>
     </ion-row>

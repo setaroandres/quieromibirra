@@ -29,19 +29,20 @@
 
     <ion-row class="row-fecha">
       <ion-col>
-        <p class="float-right">20/10/2019</p>
+        <p class="float-right">{{fechaHoy}}</p>
       </ion-col>
     </ion-row>
 
     <ion-row class="row-texto">
       <ion-col>
-        <ion-textarea rows="10" cols="10" maxlength="500" type="text" placeholder="Escribí tu mensaje"></ion-textarea>
+        <ion-textarea [(ngModel)]="texto" rows="10" cols="10" maxlength="500" type="text"
+          placeholder="Escribí tu mensaje"></ion-textarea>
       </ion-col>
     </ion-row>
 
     <ion-row class="row-btn">
       <ion-col>
-        <button>ENVIAR</button>
+        <button (click)="crearConsulta()">ENVIAR</button>
       </ion-col>
     </ion-row>
 

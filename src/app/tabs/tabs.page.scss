@@ -6,4 +6,10 @@ ion-tab-bar {
   ion-icon {
     color: white;
   }
+
+  ion-tab-button {
+    img {
+      max-width: 50%;
+    }
+  }
 }

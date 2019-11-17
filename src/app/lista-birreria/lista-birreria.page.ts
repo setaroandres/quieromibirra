@@ -32,7 +32,7 @@ export class ListaBirreriaPage implements OnInit {
     console.log("ListaBirreriaPage");
     this.getStorage();
     this.getParams();
-    this.traerPromosPorId();
+    this.traerPromosPorCerveceria();
   }
 
   getParams() {
@@ -44,11 +44,13 @@ export class ListaBirreriaPage implements OnInit {
     });
   }
 
-  traerPromosPorId() {
-    this.service.traerPromosPorId(this.cerveceria.cerveceriaid).subscribe(x => {
-      console.log("PROMOS", x["data"]);
-      this.promos = x["data"];
-    });
+  traerPromosPorCerveceria() {
+    this.service
+      .traerPromosPorCerveceria(this.cerveceria.cerveceriaid)
+      .subscribe(x => {
+        console.log("PROMOS", x["data"]);
+        this.promos = x["data"];
+      });
   }
 
   goToQr(promo) {
@@ -61,22 +63,26 @@ export class ListaBirreriaPage implements OnInit {
   }
 
   goToInternaPromo(promo) {
-    this.service.crearcomprapromo(promo, this.dataUser).subscribe(x => {
-      let response = JSON.parse(x["_body"])["data"];
+    let fechayhora = Date.now();
 
-      console.log("RESPONSE; ", response);
+    this.service
+      .crearcomprapromo(promo, fechayhora, this.dataUser)
+      .subscribe(x => {
+        let response = JSON.parse(x["_body"])["data"];
 
-      if (response === "inserted") {
-        let dataPromo: NavigationExtras = {
-          queryParams: {
-            promo: JSON.stringify(promo)
-          }
-        };
-        this.router.navigate(["interna-promocion"], dataPromo);
-      } else {
-        this.presentToast();
-      }
-    });
+        console.log("RESPONSE; ", response);
+
+        if (response === "inserted") {
+          let dataPromo: NavigationExtras = {
+            queryParams: {
+              promo: JSON.stringify(promo)
+            }
+          };
+          this.router.navigate(["interna-promocion"], dataPromo);
+        } else {
+          this.presentToast();
+        }
+      });
   }
 
   async presentToast() {

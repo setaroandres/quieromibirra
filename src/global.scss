@@ -13,6 +13,38 @@
 
 /*Estilos generales*/
 
+.gm-style .gm-style-cc span,
+.gmnoprint,
+.gm-style .gm-style-cc a,
+.gm-style .gm-style-mtc div,
+.gmnoprint,
+.gm-style-cc div div {
+  display: none !important;
+}
+
+// .gm-style-cc {
+//   div {
+//     display: none !important;
+//     div {
+//       display: none !important;
+//     }
+//   }
+// }
+
+.gm-style {
+  div {
+    a {
+      display: none !important;
+      div {
+        display: none !important;
+        img {
+          display: none !important;
+        }
+      }
+    }
+  }
+}
+
 @mixin flex-center {
   display: flex;
   flex-direction: column;
@@ -67,6 +99,13 @@
 ion-buttons,
 ion-title {
   color: white;
+}
+
+.ion-title {
+  max-width: 90%;
+  img {
+    max-width: 30%;
+  }
 }
 
 .swiper-pagination-bullet {
