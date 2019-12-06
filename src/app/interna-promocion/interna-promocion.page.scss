@@ -6,7 +6,7 @@ ion-content {
 .main-container {
   .row-img {
     ion-col {
-      img {
+      ngx-qrcode {
         max-width: 90%;
       }
     }

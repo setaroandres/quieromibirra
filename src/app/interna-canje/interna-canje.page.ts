@@ -36,16 +36,16 @@ export class InternaCanjePage implements OnInit {
     });
   }
 
-  retirarCompraCanje() {
-    this.service.retirarCompraCanje(this.canje, this.dataUser).subscribe(x => {
-      console.log("SUCCES...", JSON.parse(x["_body"]));
-      let response = JSON.parse(x["_body"])["data"];
+  // retirarCompraCanje() {
+  //   this.service.retirarCompraCanje(this.canje, this.dataUser).subscribe(x => {
+  //     console.log("SUCCES...", JSON.parse(x["_body"]));
+  //     let response = JSON.parse(x["_body"])["data"];
 
-      if (response == "updated") {
-        this.presentAlertConfirm();
-      }
-    });
-  }
+  //     if (response == "updated") {
+  //       this.presentAlertConfirm();
+  //     }
+  //   });
+  // }
 
   getStorage() {
     this.storage.get("dataUser").then(storageData => {

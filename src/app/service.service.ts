@@ -152,7 +152,12 @@ export class ServiceService {
   //   });
   // }
 
-  retirarCompraPromo(promo: any, dataUser: any) {
+  retirarCompraPromo(
+    usuarioid: string,
+    promocionid: string,
+    compra_promoid: string,
+    puntos_promo: string
+  ) {
     let url = this.api_url + "retirarcomprapromo.php";
 
     var headers = new Headers();
@@ -163,10 +168,10 @@ export class ServiceService {
     const requestOptions = new RequestOptions({ headers: headers });
 
     var body = JSON.stringify({
-      usuarioid: dataUser.usuarioid,
-      promocionid: promo.promocionid,
-      compra_promoid: promo.compra_promoid,
-      puntos_promo: promo.puntos_promo
+      usuarioid: usuarioid,
+      promocionid: promocionid,
+      compra_promoid: compra_promoid,
+      puntos_promo: puntos_promo
     });
 
     console.log("BODY, entrega (promo): ", body);
@@ -177,7 +182,12 @@ export class ServiceService {
     });
   }
 
-  retirarCompraCanje(canje: any, dataUser: any) {
+  retirarCompraCanje(
+    usuarioid: string,
+    canjeid: string,
+    compra_canjeid: string,
+    puntos_canje: string
+  ) {
     let url = this.api_url + "retirarcompracanje.php";
 
     var headers = new Headers();
@@ -188,10 +198,10 @@ export class ServiceService {
     const requestOptions = new RequestOptions({ headers: headers });
 
     var body = JSON.stringify({
-      usuarioid: dataUser.usuarioid,
-      canjeid: canje.canjeid,
-      compra_canjeid: canje.compra_canjeid,
-      puntos_canje: canje.puntos_canje
+      usuarioid: usuarioid,
+      canjeid: canjeid,
+      compra_canjeid: compra_canjeid,
+      puntos_canje: puntos_canje
     });
 
     console.log("BODY, entrega: ", body);

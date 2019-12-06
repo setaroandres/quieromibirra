@@ -23,11 +23,11 @@ export class InternaPromocionPage implements OnInit {
   canje: any = {};
   dataUser: any = {};
   titulo: string;
+  qrCode: string = "";
 
   ngOnInit() {
     console.log("InternaPromocionPage");
     this.getStorage();
-    this.getParams();
   }
 
   getParams() {
@@ -35,35 +35,41 @@ export class InternaPromocionPage implements OnInit {
       if (params.promo) {
         this.promo = JSON.parse(params.promo);
         this.titulo = "promoción";
+
+        // 0: promo/canje
+        // 1: usuarioid
+        // 2: promocionid
+        // 3: compra_promoid
+        // 4: puntos_promo
+
+        this.qrCode =
+          "promo" +
+          "." +
+          this.dataUser.usuarioid +
+          "." +
+          this.promo.promocionid +
+          "." +
+          this.promo.compra_promoid +
+          "." +
+          this.promo.puntos_promo;
+
         console.log("PARAMS int-prom", this.promo);
       } else if (params.canje) {
         this.canje = JSON.parse(params.canje);
         this.titulo = "canje";
+
+        this.qrCode =
+          "canje" +
+          "." +
+          this.dataUser.usuarioid +
+          "." +
+          this.canje.canjeid +
+          "." +
+          this.canje.compra_canjeid +
+          "." +
+          this.canje.puntos_canje;
+
         console.log("CANJE", this.canje);
-      }
-    });
-  }
-
-  retirarCompraPromo() {
-    this.service.retirarCompraPromo(this.promo, this.dataUser).subscribe(x => {
-      console.log("SUCCES...", JSON.parse(x["_body"]));
-
-      let response = JSON.parse(x["_body"])["data"];
-
-      if (response == "updated") {
-        this.presentAlertConfirm("promo");
-      }
-    });
-  }
-
-  retirarCompraCanje() {
-    this.service.retirarCompraCanje(this.canje, this.dataUser).subscribe(x => {
-      console.log("SUCCES...", JSON.parse(x["_body"]));
-
-      let response = JSON.parse(x["_body"])["data"];
-
-      if (response == "updated") {
-        this.presentAlertConfirm("canje");
       }
     });
   }
@@ -71,33 +77,7 @@ export class InternaPromocionPage implements OnInit {
   getStorage() {
     this.storage.get("dataUser").then(storageData => {
       this.dataUser = storageData;
+      this.getParams();
     });
-  }
-
-  async presentAlertConfirm(value) {
-    let msj;
-
-    if (value == "promo") {
-      msj =
-        "Tu código fue escaneado correctamente y tus puntos ya se encuentran sumados a tu cuenta";
-    } else {
-      msj =
-        "Tu código fue escaneado correctamente y ya se descontaron los puntos de tu cuenta";
-    }
-
-    const alert = await this.alertController.create({
-      header: "¡Muchas gracias!",
-      message: msj,
-      buttons: [
-        {
-          text: "Ok!",
-          handler: () => {
-            this.router.navigate(["tabs/home"]);
-          }
-        }
-      ]
-    });
-
-    await alert.present();
   }
 }

@@ -16,6 +16,8 @@ import { ComponentsModule } from "./components/components.module";
 import { DatePipe } from "@angular/common";
 import { GoogleMapsService } from "./google-maps.service";
 import { Geolocation } from "@ionic-native/geolocation/ngx";
+import { BarcodeScanner } from "@ionic-native/barcode-scanner/ngx";
+import { NgxQRCodeModule } from "ngx-qrcode2";
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +28,8 @@ import { Geolocation } from "@ionic-native/geolocation/ngx";
     HttpClientModule,
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    NgxQRCodeModule
   ],
   providers: [
     StatusBar,
@@ -35,7 +38,8 @@ import { Geolocation } from "@ionic-native/geolocation/ngx";
     ServiceService,
     GoogleMapsService,
     Geolocation,
-    DatePipe
+    DatePipe,
+    BarcodeScanner
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

@@ -9,6 +9,7 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
 @import './theme/variables';
 
 /*Estilos generales*/
@@ -123,6 +124,15 @@ ion-back-button {
 }
 
 ion-header {
+  .back-button-toolbar {
+    ion-title {
+      width: 80%;
+      img {
+        max-width: 33%;
+      }
+    }
+  }
+
   ion-toolbar {
     background: $dark-blue;
     --background: $dark-blue;

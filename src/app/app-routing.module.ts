@@ -26,6 +26,10 @@ const routes: Routes = [
   //   loadChildren: "./lista-hhour/lista-hhour.module#ListaHhourPageModule"
   // },
   {
+    path: "admin",
+    loadChildren: "./admin/admin.module#AdminPageModule"
+  },
+  {
     path: "lista-promos",
     loadChildren: "./lista-promos/lista-promos.module#ListaPromosPageModule"
   },
@@ -100,7 +104,8 @@ const routes: Routes = [
   {
     path: "interna-canje",
     loadChildren: "./interna-canje/interna-canje.module#InternaCanjePageModule"
-  }
+  },
+  { path: "admin", loadChildren: "./admin/admin.module#AdminPageModule" }
 ];
 
 @NgModule({

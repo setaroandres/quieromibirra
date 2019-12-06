@@ -44,9 +44,15 @@ export class IngresoPage implements OnInit {
         console.log("DATA: ", dataUser);
 
         if (dataUser.usuarioid > 0) {
-          console.log("STORAGE", dataUser);
-          this.storage.set("dataUser", dataUser);
-          this.router.navigateByUrl("/tabs/home");
+          if (dataUser.rol == "cliente") {
+            console.log("STORAGE", dataUser);
+            this.storage.set("dataUser", dataUser);
+            this.router.navigateByUrl("/tabs/home");
+          } else {
+            console.log("ADMIN", dataUser);
+            this.storage.set("dataUser", dataUser);
+            this.router.navigateByUrl("/admin");
+          }
         } else {
           this.presentToast();
         }
