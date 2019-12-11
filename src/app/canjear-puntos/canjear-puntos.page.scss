@@ -7,14 +7,68 @@
 
 .main-container {
   ion-row {
-    background: $light-blue;
     margin-top: 5px;
     padding: 5px;
+  }
+}
 
-    .info-canje {
-      p {
-        padding: 0;
-        margin: 0;
+.canjes {
+  background: $light-blue;
+  padding: 0;
+
+  ion-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .square-promo-col {
+      background: $dark-blue;
+      margin: 5px;
+
+      .square-promo {
+        .copete {
+          background: $yellow-birra;
+          border-radius: 5px 5px 0 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          span {
+            color: white;
+            font-size: $small-font;
+            margin: 0;
+            padding: 0;
+          }
+        }
+
+        .col-img {
+          padding: 0;
+
+          img {
+            border-radius: 0 0 5px 5px;
+          }
+        }
+
+        .info {
+          p {
+            margin: 0;
+            padding: 0;
+          }
+
+          .title {
+            font-size: $default-font;
+          }
+
+          .dir {
+            font-size: $small-font;
+          }
+
+          // .puntos {
+          //   margin-top: 10px;
+          //   font-size: $semi-small-font;
+          // }
+        }
       }
     }
   }

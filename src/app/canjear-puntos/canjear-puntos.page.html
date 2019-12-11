@@ -22,18 +22,35 @@
         <h3 class="title">Canjeá tus puntos</h3>
       </ion-col>
     </ion-row>
-    <ion-row *ngFor="let canje of canjes">
-      <ion-col size="12" class="info-canje">
-        <h3>{{canje.nombre}}</h3>
-        <p class="titulo">{{canje.titulo}}</p>
-        <p class="direccion">{{canje.direccion}}</p>
-        <p class="detalle">{{canje.detalle}}</p>
-        <p class="puntos">Costo: <strong>{{canje.puntos_canje}} pts.</strong></p>
+  </ion-grid>
+
+  <ion-grid class="canjes">
+    <ion-row>
+
+      <ion-col size="5" *ngFor="let canje of canjes" class="square-promo-col round-standard">
+
+        <ion-row (click)="goToInternaCanje(canje)" class="square-promo">
+
+          <ion-col size="12" class="copete">
+            <span class="name">{{canje.nombre}}</span>
+            <span class="puntos"><strong>{{canje.puntos_canje}}</strong> pts.</span>
+          </ion-col>
+
+          <ion-col size="12" class="col-img">
+            <img [src]="api_url_super + canje.imgpath" />
+          </ion-col>
+
+          <ion-col size="12" class="info">
+            <p class="title"><strong>{{canje.titulo}}</strong></p>
+            <p class="dir">{{canje.direccion}}</p>
+          </ion-col>
+
+        </ion-row>
+
       </ion-col>
-      <ion-col size="12" class="col-btn">
-        <button (click)="goToInternaCanje(canje)">Canjear</button>
-      </ion-col>
+
     </ion-row>
+
   </ion-grid>
 
 </ion-content>

@@ -27,9 +27,11 @@ export class ListaBirreriaPage implements OnInit {
   promos: any = [];
   cerveceria: any = {};
   dataUser: any = {};
+  api_url_super: string;
 
   ngOnInit() {
     console.log("ListaBirreriaPage");
+    this.api_url_super = this.service.api_url_super;
     this.getStorage();
     this.getParams();
     this.traerPromosPorCerveceria();

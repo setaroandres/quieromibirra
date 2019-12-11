@@ -4,11 +4,12 @@
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
         <ion-title class="ion-text-center">
-            <img src="../../assets/img/logo-header.png">
+            <img src="assets/img/logo-header.png">
         </ion-title>
-        <div class="lupa">
-            <img src="../../assets/img/lupa-header.png">
-        </div>
+        <ion-buttons class="lupa" slot="end">
+            <!-- <img src="assets/img/lupa-header.png"> -->
+            <img src="assets/img/lupa-hidden.png">
+        </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
@@ -30,7 +31,7 @@
                 <ion-slides pager="true" [options]="slideOptsTwo">
                     <ion-slide *ngFor="let promo of promos">
                         <p class="promo-semana-title">{{promo.titulo}}</p>
-                        <img src="{{promo.imgpath}}">
+                        <img [src]="api_url_super + promo.imgpath">
                     </ion-slide>
                 </ion-slides>
             </ion-col>
@@ -63,18 +64,15 @@
                 <ion-row (click)="goToBirreria(cerve)" class="square-promo">
 
                     <ion-col size="12" class="copete">
-                        <p float-left>{{cerve.nombre}}</p>
-                        <!-- <p float-right>{{promo.puntos}} pts</p> -->
+                        <p>{{cerve.nombre}}</p>
                     </ion-col>
 
                     <ion-col size="12" class="col-img">
-                        <img src="{{cerve.logo}}" />
+                        <img [src]="api_url_super + cerve.logo" />
                     </ion-col>
 
                     <ion-col size="12" class="info">
-                        <!-- <p class="title">{{cerve.titulo}}</p> -->
                         <p class="dir">{{cerve.direccion}}</p>
-                        <!-- <p class="puntos">{{promo.puntos}} pts</p> -->
                     </ion-col>
 
                 </ion-row>

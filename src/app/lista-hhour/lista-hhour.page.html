@@ -25,7 +25,7 @@
             <p>{{cerve.happyhourinicio}} a {{cerve.happyhourfin}} hs.</p>
           </ion-col>
           <ion-col size="12" class="col-img">
-            <img src="{{cerve.logo}}" alt="">
+            <img [src]="api_url_super + cerve.logo" alt="">
           </ion-col>
           <ion-col size="12" class="col-btn">
             <button class="btn-vermapa">Ver Mapa</button>

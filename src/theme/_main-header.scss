@@ -1,0 +1,40 @@
+.button-inner.sc-ion-back-button-md {
+  color: white;
+}
+
+ion-buttons,
+ion-title {
+  color: white;
+}
+
+ion-header {
+  ion-toolbar {
+    background: $dark-blue;
+    --background: $dark-blue;
+
+    ion-title {
+      max-width: 100%;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 100%;
+      img {
+        max-width: 25%;
+      }
+    }
+
+    .lupa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        max-width: 55%;
+      }
+    }
+  }
+}
+
+.toolbar-content {
+  display: flex !important;
+}

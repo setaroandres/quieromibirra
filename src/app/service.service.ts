@@ -13,6 +13,8 @@ export class ServiceService {
   dataUser: any = {};
 
   api_url: string = "https://ctrlztest.com.ar/quiero-mi-birra/apirest/";
+  api_url_super: string = "https://ctrlztest.com.ar/quiero-mi-birra/apirest/superadmin/"; // Para imgs
+
   // api_url: string = "assets/data/"
 
   // getPromos(): Observable<any>{

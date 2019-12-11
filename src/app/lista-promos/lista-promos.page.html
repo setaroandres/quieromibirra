@@ -1,14 +1,15 @@
 <ion-header no-border>
-  <ion-toolbar no-border class="back-button-toolbar">
+  <ion-toolbar no-border>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="tabs/home"></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-text-center">
-      <img src="../../assets/img/logo-header.png">
+      <img src="assets/img/logo-header.png">
     </ion-title>
-    <div class="lupa">
-      <!-- <img src="../../assets/img/lupa-header.png"> -->
-    </div>
+    <ion-buttons class="lupa" slot="end">
+      <!-- <img src="assets/img/lupa-header.png"> -->
+      <img src="assets/img/lupa-hidden.png">
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -20,11 +21,10 @@
 
       <ion-col size="12" class="copete">
         <p float-left>{{promo.nombre}}</p>
-
       </ion-col>
 
       <ion-col class="col-img " size="12">
-        <img src="{{promo.imgpath}}" />
+        <img [src]="api_url_super + promo.imgpath" />
       </ion-col>
 
       <ion-col size="12" class="info">

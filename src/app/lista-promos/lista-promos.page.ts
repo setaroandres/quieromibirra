@@ -22,9 +22,11 @@ export class ListaPromosPage implements OnInit {
 
   promos: any = [];
   dataUser: any = {};
+  api_url_super: string;
 
   ngOnInit() {
     console.log("ListaPromosPage");
+    this.api_url_super = this.service.api_url_super;
 
     this.getStorage();
     this.getParams();

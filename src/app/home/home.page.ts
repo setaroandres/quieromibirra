@@ -22,9 +22,11 @@ export class HomePage {
   promos: any = [];
   cervecerias: any = [];
   dataUser: any = {};
+  api_url_super: string;
 
   ngOnInit() {
     console.log("HomePage");
+    this.api_url_super = this.service.api_url_super;
 
     this.getStorage();
     this.traerCervecerias();
@@ -32,14 +34,14 @@ export class HomePage {
 
   traerPromosPorUsuario(usuarioid) {
     this.service.traerPromosPorUsuario(usuarioid).subscribe(x => {
-      console.log("Promos", x["data"]);
+      console.log("2 - Promos", x["data"]);
       this.promos = x["data"];
     });
   }
 
   traerCervecerias() {
     this.service.traerCervecerias().subscribe(x => {
-      console.log("Cervecerias", x["data"]);
+      console.log("1 - Cervecerias", x["data"]);
       this.cervecerias = x["data"];
     });
   }
@@ -65,6 +67,7 @@ export class HomePage {
   getStorage() {
     this.storage.get("dataUser").then(storageData => {
       this.dataUser = storageData;
+      console.log("0 - STORAGE HOME: ", storageData);
       this.traerPromosPorUsuario(storageData.usuarioid);
     });
   }

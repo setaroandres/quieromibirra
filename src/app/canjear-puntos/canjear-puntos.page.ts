@@ -22,8 +22,12 @@ export class CanjearPuntosPage implements OnInit {
   dataUser: any = {};
   canjes: any = [];
 
+  api_url_super: string;
+
   ngOnInit() {
     console.log("CanjearPuntosPage");
+    this.api_url_super = this.service.api_url_super;
+
     this.getStorage();
   }
 
@@ -47,7 +51,7 @@ export class CanjearPuntosPage implements OnInit {
     if (+this.puntos >= +canje.puntos_canje) {
       const alert = await this.alertController.create({
         // header: '',
-        message: "¿Estás seguro que deseás solicitar este canje?",
+        message: "¿Estás seguro que deseás solicitar este voucher?",
         buttons: [
           {
             text: "Cancelar",

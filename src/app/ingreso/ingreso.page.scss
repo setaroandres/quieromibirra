@@ -90,3 +90,10 @@ ion-content {
     }
   }
 }
+
+.item-has-focus.label-floating.sc-ion-label-md-h,
+item-has-focus .label-floating.sc.ion-label-md-h,
+.item-has-focus.label-stacked.sc-ion-label-md-h,
+.item-has-focus .label-stacked.sc-ion-label-md-h {
+  color: white !important;
+}

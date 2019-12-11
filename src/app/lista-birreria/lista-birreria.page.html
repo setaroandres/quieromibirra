@@ -1,13 +1,13 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
+      <ion-back-button defaultHref="tabs/lista-hhour"></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-text-center">
       <img src="../../assets/img/logo-header.png">
     </ion-title>
     <div class="lupa">
-      <img src="../../assets/img/lupa-header.png">
+      <!-- <img src="../../assets/img/lupa-header.png"> -->
     </div>
   </ion-toolbar>
 </ion-header>
@@ -32,15 +32,15 @@
 
           <ion-col size="12" class="copete">
             <!-- <p float-left>{{promo.nombre}}</p> -->
-            <p float-right>{{promo.puntos_promo}} pts</p>
+            <p><strong>{{promo.puntos_promo}}</strong> pts</p>
           </ion-col>
 
           <ion-col size="12" class="col-img">
-            <img src="{{promo.imgpath}}" />
+            <img [src]="api_url_super + promo.imgpath" />
           </ion-col>
 
           <ion-col size="12" class="info">
-            <p class="title">{{promo.titulo}}</p>
+            <p class="title"><strong>{{promo.titulo}}</strong></p>
             <p class="dir">{{promo.direccion}}</p>
             <!-- <p class="puntos">{{promo.puntos}} pts</p> -->
           </ion-col>
