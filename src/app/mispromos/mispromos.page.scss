@@ -5,6 +5,11 @@
   ion-col {
     .title {
       color: white;
+      h3 {
+        background: $dark-blue;
+        padding: 5px;
+        border-radius: 2px;
+      }
     }
   }
 }
@@ -13,16 +18,6 @@
 .canjes-list {
   ion-row {
     background: $light-blue;
-  }
-}
-
-.title-row {
-  ion-col {
-    h3 {
-      background: $dark-blue;
-      padding: 5px;
-      border-radius: 2px;
-    }
   }
 }
 
@@ -48,6 +43,20 @@
     img {
       border-radius: 5px;
       max-width: 90%;
+    }
+  }
+
+  .puntos-a-sumar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    strong {
+      margin: 0 5px;
+    }
+
+    img {
+      max-width: 5%;
     }
   }
 }

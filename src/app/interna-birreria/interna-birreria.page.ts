@@ -21,8 +21,10 @@ export class InternaBirreriaPage implements OnInit {
   @ViewChild("map") mapElement: ElementRef;
 
   cerveceria: any = {};
+  api_url_super: string;
 
   ngOnInit() {
+    this.api_url_super = this.service.api_url_super;
     console.log("InternaBirreriaPage");
     this.getParams();
     this.initMap();

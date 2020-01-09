@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title class="ion-text-center">
-      <img src="assets/img/logo-header.png">
+      <img src="assets/img/logos/logo-header.png">
     </ion-title>
     <ion-buttons class="lupa" slot="end">
       <!-- <img src="assets/img/lupa-header.png"> -->
@@ -15,43 +15,55 @@
 
 <ion-content padding>
 
-  <ion-grid class="promos-list">
+  <ion-grid class="promos-list" *ngIf="promos?.length >= 1">
     <ion-row class="title-row">
       <ion-col>
         <h3 class="title">Promociones no retiradas</h3>
       </ion-col>
     </ion-row>
     <ion-row class="promo-row" *ngFor="let promo of promos">
-      <ion-col size="8" (click)="goToInternaPromo(promo)" *ngIf="promo.retirado == '0'">
+      <ion-col size="11">
         <h3>{{promo.titulo}}</h3>
         <p>{{promo.detalle}}</p>
-        <p>Puntos a sumar: <strong>{{promo.puntos_promo}} pts.</strong></p>
-        <p>Solicitud: {{ setDate(promo.fechayhora) }}</p>
-        <p>Vencimiento: (revisar)</p>
+        <p class="puntos-a-sumar">
+          <span>Puntos a sumar: </span>
+          <strong center text-center>
+            {{promo.puntos_promo}}
+          </strong>
+          <img src="assets/img/coin.png" alt="">
+        </p>
+        <p>Solicitud: {{ setDate(promo.fecha) }}</p>
+        <p>Vencimiento: {{ setVencimiento(promo.fecha) }}</p>
       </ion-col>
-      <ion-col size="4" (click)="goToInternaPromo(promo)" *ngIf="promo.retirado == '0'">
-        <img src="../../assets/img/qr.png" alt="">
+      <ion-col class="col-btn-yellow" size="12" *ngIf="promo.retirado == '0'">
+        <button class="btn-yellow" (click)="goToInternaPromo(promo)">Canjear</button>
       </ion-col>
     </ion-row>
   </ion-grid>
 
 
-  <ion-grid class="canjes-list">
+  <ion-grid class="canjes-list" *ngIf="canjes?.length > 0">
     <ion-row class="title-row">
       <ion-col>
-        <h3 class="title">Canjes no retirados</h3>
+        <h3 class="title">Vouchers no retirados</h3>
       </ion-col>
     </ion-row>
     <ion-row class="canje-row" *ngFor="let canje of canjes">
-      <ion-col size="8" (click)="goToInternaCanje(canje)" *ngIf="canje.retirado == '0'">
+      <ion-col size="11">
         <h3>{{canje.titulo}}</h3>
         <p>{{canje.detalle}}</p>
-        <p>Puntos a sumar: <strong>{{canje.puntos_promo}} pts.</strong></p>
+        <p class="puntos-a-sumar">
+          <span>Costo: </span>
+          <strong center text-center>
+            {{canje.puntos_canje}}
+          </strong>
+          <img src="assets/img/coin.png" alt="">
+        </p>
         <p>Solicitud: {{ setDate(canje.fechayhora) }}</p>
-        <p>Vencimiento: (revisar)</p>
+        <!-- <p>Vencimiento: {{ setVencimiento(canje.fechayhora)</p> -->
       </ion-col>
-      <ion-col size="4" (click)="goToInternaCanje(canje)" *ngIf="canje.retirado == '0'">
-        <img src="../../assets/img/qr.png" alt="">
+      <ion-col class="col-btn-yellow" size="12" *ngIf="canje.retirado == '0'">
+        <button class="btn-yellow" (click)="goToInternaCanje(canje)">Canjear</button>
       </ion-col>
     </ion-row>
   </ion-grid>

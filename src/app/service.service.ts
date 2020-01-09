@@ -214,7 +214,7 @@ export class ServiceService {
     });
   }
 
-  crearcomprapromo(promo: any, fechayhora: number, dataUser: any) {
+  crearcomprapromo(promo: any, fecha: any, hora: any, dataUser: any) {
     let url = this.api_url + "crearcomprapromo.php";
 
     var headers = new Headers();
@@ -227,7 +227,8 @@ export class ServiceService {
     var body = JSON.stringify({
       usuarioid: dataUser.usuarioid,
       promocionid: promo.promocionid,
-      fechayhora: fechayhora
+      fecha: fecha,
+      hora: hora
     });
 
     console.log("BODY, entrega: ", body);

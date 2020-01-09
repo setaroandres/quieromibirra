@@ -4,6 +4,7 @@ import { ServiceService } from "./../service.service";
 import { ActivatedRoute } from "@angular/router";
 import { Router, NavigationExtras } from "@angular/router";
 import { Storage } from "@ionic/storage";
+import { DatePipe } from "@angular/common";
 
 @Component({
   selector: "app-lista-birreria",
@@ -21,7 +22,8 @@ export class ListaBirreriaPage implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     public toastController: ToastController,
-    private storage: Storage
+    private storage: Storage,
+    private datePipe: DatePipe
   ) {}
 
   promos: any = [];
@@ -65,10 +67,13 @@ export class ListaBirreriaPage implements OnInit {
   }
 
   goToInternaPromo(promo) {
-    let fechayhora = Date.now();
+    var fechayhora = new Date();
+
+    var fecha = this.datePipe.transform(fechayhora, "yyyy/MM/dd");
+    var hora = this.datePipe.transform(fechayhora, "hh:mm");
 
     this.service
-      .crearcomprapromo(promo, fechayhora, this.dataUser)
+      .crearcomprapromo(promo, fecha, hora, this.dataUser)
       .subscribe(x => {
         let response = JSON.parse(x["_body"])["data"];
 

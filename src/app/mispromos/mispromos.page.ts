@@ -23,6 +23,8 @@ export class MispromosPage implements OnInit {
   promos: any = [];
   canjes: any = [];
 
+  fechaVencimiento: string;
+
   ngOnInit() {
     console.log("MispromosPage");
     this.getStorage();
@@ -55,7 +57,6 @@ export class MispromosPage implements OnInit {
   }
 
   traerComprasCanjes(usuarioid) {
-    //promos
     this.service.traerComprasCanjes(usuarioid).subscribe(x => {
       console.log("MIS COMPRAS CANJES: ", x["data"]);
       this.canjes = x["data"];
@@ -70,7 +71,19 @@ export class MispromosPage implements OnInit {
     });
   }
 
-  setDate(fechayhora) {
-    return this.datePipe.transform(fechayhora, "dd-MM-yyyy");
+  setDate(fecha) {
+    return this.datePipe.transform(fecha, "dd/MM/yyyy");
+  }
+
+  // ************ set vencimientos
+
+  setVencimiento(fechayhora) {
+    let fechaPedido = this.datePipe.transform(fechayhora, "yyyy/MM/dd");
+    let newFechaPedido = new Date(fechaPedido);
+
+    let a = newFechaPedido.setDate(newFechaPedido.getDate() + 2);
+    let b = this.datePipe.transform(a, "dd/MM/yyyy");
+
+    return b;
   }
 }

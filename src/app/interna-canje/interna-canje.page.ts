@@ -57,7 +57,7 @@ export class InternaCanjePage implements OnInit {
     const alert = await this.alertController.create({
       header: "¡Muchas gracias!",
       message:
-        "Gracias por utilizar QMB, los puntos de este cupón ya fueron descontados de tu cuenta",
+        "Gracias por utilizar Birráh, los puntos de este cupón ya fueron descontados de tu cuenta",
       buttons: [
         {
           text: "Ok!",

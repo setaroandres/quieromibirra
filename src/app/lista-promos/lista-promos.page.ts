@@ -4,6 +4,7 @@ import { Router, NavigationExtras } from "@angular/router";
 import { Storage } from "@ionic/storage";
 import { ServiceService } from "../service.service";
 import { ToastController, AlertController } from "@ionic/angular";
+import { DatePipe } from "@angular/common";
 
 @Component({
   selector: "app-lista-promos",
@@ -17,7 +18,8 @@ export class ListaPromosPage implements OnInit {
     private storage: Storage,
     private service: ServiceService,
     public toastController: ToastController,
-    public alertController: AlertController
+    public alertController: AlertController,
+    private datePipe: DatePipe
   ) {}
 
   promos: any = [];
@@ -83,16 +85,20 @@ export class ListaPromosPage implements OnInit {
   }
 
   solicitar(promo) {
-    console.log(promo);
+    var fechayhora = new Date();
 
-    let fechayhora = Date.now();
+    var fecha = this.datePipe.transform(fechayhora, "yyyy/MM/dd");
+    var hora = this.datePipe.transform(fechayhora, "hh:mm");
+
+    console.log(fecha);
+    console.log(hora);
 
     this.service
-      .crearcomprapromo(promo, fechayhora, this.dataUser)
+      .crearcomprapromo(promo, fecha, hora, this.dataUser)
       .subscribe(x => {
         let response = JSON.parse(x["_body"])["data"];
 
-        console.log("RESPONSE; ");
+        console.log("RESPONSE; ", response);
 
         if (response[0].retirado === "0") {
           let dataPromo: NavigationExtras = {

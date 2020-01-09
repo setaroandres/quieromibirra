@@ -87,6 +87,24 @@
   }
 }
 
+.col-btn-yellow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+}
+
+.btn-yellow {
+  border-radius: 10px;
+  background: #e8b519;
+  color: white;
+  font-weight: 700;
+  font-size: $small-font;
+  padding: 10px 20px;
+  width: 75%;
+  margin: 8px;
+}
+
 .swiper-pagination-bullet {
   background: white !important;
   opacity: .6;

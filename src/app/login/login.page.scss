@@ -17,9 +17,16 @@ ion-content {
   ion-grid {
     z-index: 999;
 
-    .logo-login {
-      img {
-        width: 35vw;
+    ion-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .logo-login {
+        background: #202734;
+        border-radius: 50%;
+        img {
+          width: 38vw;
+        }
       }
     }
 

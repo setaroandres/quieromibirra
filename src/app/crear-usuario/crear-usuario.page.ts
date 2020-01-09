@@ -47,6 +47,7 @@ export class CrearUsuarioPage implements OnInit {
     if (!this.registro.valid) {
       console.log("nooo!");
       console.log(this.registro.value);
+      this.errorValid();
     } else {
       console.log("success!");
 
@@ -117,6 +118,15 @@ export class CrearUsuarioPage implements OnInit {
   async errorEdad() {
     const toast = await this.toastController.create({
       message: "Debés ser mayor de 18 años para crear un usuario",
+      position: "top",
+      duration: 2000
+    });
+    toast.present();
+  }
+
+  async errorValid() {
+    const toast = await this.toastController.create({
+      message: "Revisá los campos y volvé a intentarlo",
       position: "top",
       duration: 2000
     });
