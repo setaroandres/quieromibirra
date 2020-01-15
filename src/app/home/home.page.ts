@@ -52,7 +52,7 @@ export class HomePage {
         promos: JSON.stringify(this.promos)
       }
     };
-    this.router.navigate(["lista-promos"], dataPromo);
+    this.router.navigate(["tabs/lista-promos"], dataPromo);
   }
 
   goToBirreria(cerve) {
@@ -61,7 +61,7 @@ export class HomePage {
         cerveceria: JSON.stringify(cerve)
       }
     };
-    this.router.navigate(["interna-birreria"], data);
+    this.router.navigate(["tabs/interna-birreria"], data);
   }
 
   getStorage() {

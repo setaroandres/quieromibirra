@@ -19,7 +19,7 @@ export class AppComponent {
     },
     {
       title: "Mis Vouchers y Promociones",
-      url: "/mispromos",
+      url: "/tabs/mispromos",
       icon: "list"
     },
     {

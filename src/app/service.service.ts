@@ -12,8 +12,8 @@ export class ServiceService {
   access_token: string = "";
   dataUser: any = {};
 
-  api_url: string = "https://ctrlztest.com.ar/quiero-mi-birra/apirest/";
-  api_url_super: string = "https://ctrlztest.com.ar/quiero-mi-birra/apirest/superadmin/"; // Para imgs
+  api_url: string = "https://ctrlztest.com.ar/birrah/apirest/";
+  api_url_super: string = "https://ctrlztest.com.ar/birrah/apirest/superadmin/"; // Para imgs
 
   // api_url: string = "assets/data/"
 
@@ -30,6 +30,23 @@ export class ServiceService {
         "&password=" +
         data.password
     );
+  }
+
+  recuperarPassword(email) {
+    let url = this.api_url + "recuperarpassword.php";
+
+    var headers = new Headers();
+    headers = this.headersAppend(headers);
+    const requestOptions = new RequestOptions({ headers: headers });
+
+    var body = JSON.stringify({
+      email: email
+    });
+
+    return this.httpPost.post(url, body, {
+      headers: headers,
+      withCredentials: true
+    });
   }
 
   // ***********************************************************

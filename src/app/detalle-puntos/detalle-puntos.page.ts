@@ -27,7 +27,7 @@ export class DetallePuntosPage implements OnInit {
   }
 
   goToListaCanje() {
-    this.router.navigate(["canjear-puntos"]);
+    this.router.navigate(["tabs/canjear-puntos"]);
   }
 
   // traerPuntos(usuarioid) {
@@ -60,5 +60,9 @@ export class DetallePuntosPage implements OnInit {
     let newDate = new Date(date);
     let newDateOk = this.datePipe.transform(newDate, "dd/MM/yyyy");
     return newDateOk;
+  }
+
+  goToTerminos() {
+    window.open("https://ctrlztest.com.ar/birrah/terminos-y-condiciones/");
   }
 }

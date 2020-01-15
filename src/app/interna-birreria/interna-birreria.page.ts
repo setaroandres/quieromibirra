@@ -53,6 +53,6 @@ export class InternaBirreriaPage implements OnInit {
         cerveceria: JSON.stringify(this.cerveceria)
       }
     };
-    this.router.navigate(["lista-birreria"], data);
+    this.router.navigate(["tabs/lista-birreria"], data);
   }
 }

@@ -36,7 +36,7 @@ export class ListaHhourPage implements OnInit {
         cerveceria: JSON.stringify(cerveceria)
       }
     };
-    this.router.navigate(["interna-birreria"], data);
+    this.router.navigate(["tabs/interna-birreria"], data);
   }
 
   traerCervecerias() {

@@ -12,42 +12,30 @@ const routes: Routes = [
     loadChildren: "./ingreso/ingreso.module#IngresoPageModule"
   },
   { path: "tabs", loadChildren: "./tabs/tabs.module#TabsPageModule" },
-  // {
-  //   path: "home",
-  //   loadChildren: "./home/home.module#HomePageModule"
-  // },
+
   { path: "login", loadChildren: "./login/login.module#LoginPageModule" },
   {
     path: "crear-usuario",
     loadChildren: "./crear-usuario/crear-usuario.module#CrearUsuarioPageModule"
   },
-  // {
-  //   path: "lista-hhour",
-  //   loadChildren: "./lista-hhour/lista-hhour.module#ListaHhourPageModule"
-  // },
   {
     path: "admin",
     loadChildren: "./admin/admin.module#AdminPageModule"
   },
-  {
-    path: "lista-promos",
-    loadChildren: "./lista-promos/lista-promos.module#ListaPromosPageModule"
-  },
-  {
-    path: "lista-birreria",
-    loadChildren:
-      "./lista-birreria/lista-birreria.module#ListaBirreriaPageModule"
-  },
   // {
-  //   path: "detalle-puntos",
-  //   loadChildren:
-  //     "./detalle-puntos/detalle-puntos.module#DetallePuntosPageModule"
+  //   path: "lista-promos",
+  //   loadChildren: "./lista-promos/lista-promos.module#ListaPromosPageModule"
   // },
-  {
-    path: "interna-birreria",
-    loadChildren:
-      "./interna-birreria/interna-birreria.module#InternaBirreriaPageModule"
-  },
+  // {
+  //   path: "lista-birreria",
+  //   loadChildren:
+  //     "./lista-birreria/lista-birreria.module#ListaBirreriaPageModule"
+  // },
+  // {
+  //   path: "interna-birreria",
+  //   loadChildren:
+  //     "./interna-birreria/interna-birreria.module#InternaBirreriaPageModule"
+  // },
   {
     path: "interna-canje",
     loadChildren: "./interna-canje/interna-canje.module#InternaCanjePageModule"
@@ -67,10 +55,10 @@ const routes: Routes = [
       "./recuperar-contrasena/recuperar-contrasena.module#RecuperarContrasenaPageModule"
   },
   { path: "bases", loadChildren: "./bases/bases.module#BasesPageModule" },
-  {
-    path: "mispromos",
-    loadChildren: "./mispromos/mispromos.module#MispromosPageModule"
-  },
+  // {
+  //   path: "mispromos",
+  //   loadChildren: "./mispromos/mispromos.module#MispromosPageModule"
+  // },
   {
     path: "soporte",
     loadChildren: "./soporte/soporte.module#SoportePageModule"
@@ -79,20 +67,20 @@ const routes: Routes = [
     path: "tutorial",
     loadChildren: "./tutorial/tutorial.module#TutorialPageModule"
   },
-  {
-    path: "canjear-puntos",
-    loadChildren:
-      "./canjear-puntos/canjear-puntos.module#CanjearPuntosPageModule"
-  },
+  // {
+  //   path: "canjear-puntos",
+  //   loadChildren:
+  //     "./canjear-puntos/canjear-puntos.module#CanjearPuntosPageModule"
+  // },
   {
     path: "interna-hhour",
     loadChildren: "./interna-hhour/interna-hhour.module#InternaHhourPageModule"
   },
-  {
-    path: "detalle-puntos",
-    loadChildren:
-      "./detalle-puntos/detalle-puntos.module#DetallePuntosPageModule"
-  },
+  // {
+  //   path: "detalle-puntos",
+  //   loadChildren:
+  //     "./detalle-puntos/detalle-puntos.module#DetallePuntosPageModule"
+  // },
   {
     path: "lista-promos",
     loadChildren: "./lista-promos/lista-promos.module#ListaPromosPageModule"

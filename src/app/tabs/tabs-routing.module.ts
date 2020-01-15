@@ -19,6 +19,30 @@ const routes: Routes = [
         path: "detalle-puntos",
         loadChildren:
           "../detalle-puntos/detalle-puntos.module#DetallePuntosPageModule"
+      },
+      {
+        path: "canjear-puntos",
+        loadChildren:
+          "../canjear-puntos/canjear-puntos.module#CanjearPuntosPageModule"
+      },
+      {
+        path: "interna-birreria",
+        loadChildren:
+          "../interna-birreria/interna-birreria.module#InternaBirreriaPageModule"
+      },
+      {
+        path: "lista-promos",
+        loadChildren:
+          "../lista-promos/lista-promos.module#ListaPromosPageModule"
+      },
+      {
+        path: "lista-birreria",
+        loadChildren:
+          "../lista-birreria/lista-birreria.module#ListaBirreriaPageModule"
+      },
+      {
+        path: "mispromos",
+        loadChildren: "../mispromos/mispromos.module#MispromosPageModule"
       }
     ]
   },

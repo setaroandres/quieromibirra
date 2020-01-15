@@ -59,4 +59,8 @@ export class LoginPage implements OnInit {
   //       console.log("Error logging into Facebook", e);
   //     });
   // }
+
+  goToTerminos() {
+    window.open("https://ctrlztest.com.ar/birrah/terminos-y-condiciones/");
+  }
 }

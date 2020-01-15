@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { ServiceService } from "../service.service";
 import { ToastController } from "@ionic/angular";
 import { Storage } from "@ionic/storage";
+import { AlertController } from "@ionic/angular";
 
 @Component({
   selector: "app-ingreso",
@@ -16,7 +17,8 @@ export class IngresoPage implements OnInit {
     public formBuilder: FormBuilder,
     private service: ServiceService,
     public toastController: ToastController,
-    private storage: Storage
+    private storage: Storage,
+    private alertController: AlertController
   ) {}
 
   slideOneForm: FormGroup;
@@ -92,5 +94,53 @@ export class IngresoPage implements OnInit {
       duration: 2000
     });
     toast.present();
+  }
+
+  recuperarPassword() {
+    this.promtAlert();
+  }
+
+  async promtAlert() {
+    const alert = await this.alertController.create({
+      header: "Ingresá el email con el que te registraste",
+      inputs: [
+        {
+          name: "email",
+          type: "email",
+          placeholder: "ejemplo@gmail.com"
+        }
+      ],
+      buttons: [
+        {
+          text: "Cancelar",
+          role: "cancel",
+          cssClass: "secondary",
+          handler: () => {
+            console.log("Confirm Cancel");
+          }
+        },
+        {
+          text: "Ok",
+          handler: data => {
+            console.log("Confirm Ok", data.email);
+            this.service.recuperarPassword(data.email).subscribe(x => {
+              this.emailEnviado();
+            });
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+  async emailEnviado() {
+    const alert = await this.alertController.create({
+      header: "Muchas gracias",
+      message: "Enviamos un email a tu dirección con la contraseña",
+      buttons: ["OK"]
+    });
+
+    await alert.present();
   }
 }
