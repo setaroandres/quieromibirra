@@ -23,6 +23,8 @@ export class ServiceService {
   // }
 
   validarUsuario(data) {
+    console.log(data);
+
     return this.http.get(
       this.api_url +
         "validarusuario.php" +

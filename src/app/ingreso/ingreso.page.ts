@@ -76,14 +76,7 @@ export class IngresoPage implements OnInit {
           Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")
         ])
       ],
-      password: [
-        "",
-        Validators.compose([
-          Validators.maxLength(30),
-          Validators.pattern("[a-zA-Z ]*"),
-          Validators.required
-        ])
-      ]
+      password: [""]
     });
   }
 
