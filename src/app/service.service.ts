@@ -11,6 +11,7 @@ export class ServiceService {
 
   access_token: string = "";
   dataUser: any = {};
+  fbid: any = 0;
 
   api_url: string = "https://ctrlztest.com.ar/birrah/apirest/";
   api_url_super: string = "https://ctrlztest.com.ar/birrah/apirest/superadmin/"; // Para imgs
@@ -57,6 +58,14 @@ export class ServiceService {
     return this.http.get(
       this.api_url + "traerpuntos.php" + "?usuarioid=" + usuarioid
     );
+  }
+
+  validarFBUser(fb_id) {
+    let url = this.api_url + "validarfbuser.php?fbuser=" + fb_id;
+    console.log("url fb", url);
+    
+    return this.http.get(url);
+
   }
 
   traerDataUsuario(usuarioid: string) {
@@ -141,7 +150,8 @@ export class ServiceService {
       email: registro.email,
       password: registro.password,
       fechanacimiento: registro.nacimiento,
-      fechadecreacion: fechadecreacion
+      fechadecreacion: fechadecreacion,
+      facebookid: this.fbid
     });
 
     return this.httpPost.post(url, body, {

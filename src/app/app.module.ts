@@ -18,6 +18,8 @@ import { GoogleMapsService } from "./google-maps.service";
 import { Geolocation } from "@ionic-native/geolocation/ngx";
 import { BarcodeScanner } from "@ionic-native/barcode-scanner/ngx";
 import { NgxQRCodeModule } from "ngx-qrcode2";
+import { Facebook } from '@ionic-native/facebook/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,7 +41,8 @@ import { NgxQRCodeModule } from "ngx-qrcode2";
     GoogleMapsService,
     Geolocation,
     DatePipe,
-    BarcodeScanner
+    BarcodeScanner,
+    Facebook
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

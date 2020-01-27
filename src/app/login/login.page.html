@@ -8,11 +8,11 @@
       </ion-row>
       <ion-row class="facebook ion-margin-bottom">
         <ion-col>
-          <ion-button class="fb-button">
+          <ion-button class="fb-button" (click)="fblogin()">
             <ion-icon name="logo-facebook"></ion-icon> <span>Ingresar con Facebook</span>
           </ion-button>
         </ion-col>
-      </ion-row>
+      </ion-row> 
       <ion-row class="cuenta ion-margin-top">
         <ion-col>
           <ion-button [routerLink]="'/ingreso/'" routerDirection="forward" class="cuenta-button ion-no-margin">
