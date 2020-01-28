@@ -42,10 +42,16 @@ export class IngresoPage implements OnInit {
 
       this.service.validarUsuario(this.slideOneForm.value).subscribe(x => {
         let dataUser = x["data"];
+        console.log("USER EXISTE: ", dataUser);
 
-        console.log("DATA: ", dataUser);
-
-        if (dataUser.usuarioid > 0) {
+        if (dataUser === "password incorrecta") {
+          let msj = "La contraseña es incorrecta";
+          this.errorLogin(msj);
+        } else if (dataUser === "no existe") {
+          let msj = "Este email no se encuentra registrado";
+          this.errorLogin(msj);
+        } else if (dataUser.usuarioid > 0) {
+          // --------- Si es cliente o admin
           if (dataUser.rol == "cliente") {
             console.log("STORAGE", dataUser);
             this.storage.set("dataUser", dataUser);
@@ -55,6 +61,7 @@ export class IngresoPage implements OnInit {
             this.storage.set("dataUser", dataUser);
             this.router.navigateByUrl("/admin");
           }
+          // ---------
         } else {
           this.presentToast();
         }
@@ -132,6 +139,22 @@ export class IngresoPage implements OnInit {
       header: "Muchas gracias",
       message: "Enviamos un email a tu dirección con la contraseña",
       buttons: ["OK"]
+    });
+
+    await alert.present();
+  }
+
+  async errorLogin(detalle) {
+    const alert = await this.alertController.create({
+      message: detalle,
+      buttons: [
+        {
+          text: "Ok",
+          handler: () => {
+            console.log("Confirm Okay");
+          }
+        }
+      ]
     });
 
     await alert.present();

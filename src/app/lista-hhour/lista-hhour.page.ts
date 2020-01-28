@@ -24,7 +24,9 @@ export class ListaHhourPage implements OnInit {
   cervecerias: any = [];
   api_url_super: string;
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ionViewWillEnter() {
     console.log("ListaHhourPage");
     this.api_url_super = this.service.api_url_super;
     this.traerCervecerias();

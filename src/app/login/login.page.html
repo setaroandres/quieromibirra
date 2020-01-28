@@ -12,7 +12,7 @@
             <ion-icon name="logo-facebook"></ion-icon> <span>Ingresar con Facebook</span>
           </ion-button>
         </ion-col>
-      </ion-row> 
+      </ion-row>
       <ion-row class="cuenta ion-margin-top">
         <ion-col>
           <ion-button [routerLink]="'/ingreso/'" routerDirection="forward" class="cuenta-button ion-no-margin">
@@ -30,8 +30,8 @@
       </ion-row>
       <ion-row class="notas-pie">
         <ion-col>
-          <p class="ion-text-center">
-            Al crear un usuario o iniciar sesión estás aceptando nuestros <span (click)="goToTerminos()">términos y
+          <p class="ion-text-center" (click)="goToTerminos()">
+            Al crear un usuario o iniciar sesión estás aceptando nuestros <span>términos y
               condiciones y politicas de
               privacidad</span>
           </p>

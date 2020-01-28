@@ -3,6 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { ServiceService } from "../service.service";
 import { Router, NavigationExtras } from "@angular/router";
 import { GoogleMapsService } from "../google-maps.service";
+import { NavController } from "@ionic/angular";
 
 @Component({
   selector: "app-interna-birreria",
@@ -14,7 +15,8 @@ export class InternaBirreriaPage implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private service: ServiceService,
-    public maps: GoogleMapsService
+    public maps: GoogleMapsService,
+    private navCtrl: NavController
   ) {}
 
   // @ViewChild(Nav) nav: Nav;
@@ -24,8 +26,8 @@ export class InternaBirreriaPage implements OnInit {
   api_url_super: string;
 
   ngOnInit() {
+    console.log("InternaBirreria Page");
     this.api_url_super = this.service.api_url_super;
-    console.log("InternaBirreriaPage");
     this.getParams();
     this.initMap();
   }
@@ -53,6 +55,7 @@ export class InternaBirreriaPage implements OnInit {
         cerveceria: JSON.stringify(this.cerveceria)
       }
     };
+    this.navCtrl.setDirection("root");
     this.router.navigate(["tabs/lista-birreria"], data);
   }
 }

@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { Platform } from "@ionic/angular";
+import { Platform, NavController } from "@ionic/angular";
 import { SplashScreen } from "@ionic-native/splash-screen/ngx";
 import { StatusBar } from "@ionic-native/status-bar/ngx";
 import { Router } from "@angular/router";
@@ -44,7 +44,8 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private router: Router,
-    private storage: Storage
+    private storage: Storage,
+    private navController: NavController
   ) {
     this.initializeApp();
   }
@@ -63,6 +64,22 @@ export class AppComponent {
       } else {
         this.statusBar.styleDefault();
         this.statusBar.backgroundColorByHexString("#ffffff");
+      }
+
+      this.inicio();
+    });
+  }
+
+  inicio() {
+    this.storage.get("dataUser").then(storageData => {
+      if (storageData) {
+        if (storageData.usuarioid) {
+          this.navController.navigateRoot(["tabs/home"]);
+          this.splashScreen.hide();
+        } else {
+          this.navController.navigateRoot("");
+          this.splashScreen.hide();
+        }
       }
     });
   }

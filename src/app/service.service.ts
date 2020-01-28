@@ -65,9 +65,8 @@ export class ServiceService {
   validarFBUser(fb_id) {
     let url = this.api_url + "validarfbuser.php?fbuser=" + fb_id;
     console.log("url fb", url);
-    
-    return this.http.get(url);
 
+    return this.http.get(url);
   }
 
   traerDataUsuario(usuarioid: string) {
@@ -83,6 +82,12 @@ export class ServiceService {
   traerPromosPorCerveceria(id) {
     return this.http.get(
       this.api_url + "traerpromosporcerveceria.php?cerveceriaid=" + id
+    );
+  }
+
+  traerCanjesPorCerveceria(id) {
+    return this.http.get(
+      this.api_url + "traercanjesporcerveceria.php?cerveceriaid=" + id
     );
   }
 

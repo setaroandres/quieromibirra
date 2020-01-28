@@ -1,11 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
+import { Facebook, FacebookLoginResponse } from "@ionic-native/facebook/ngx";
 import { ServiceService } from "../service.service";
 import { Router } from "@angular/router";
 import { ToastController } from "@ionic/angular";
-import { Storage } from '@ionic/storage';
-
-
+import { Storage } from "@ionic/storage";
 
 @Component({
   selector: "app-login",
@@ -13,7 +11,13 @@ import { Storage } from '@ionic/storage';
   styleUrls: ["./login.page.scss"]
 })
 export class LoginPage implements OnInit {
-  constructor(public fb: Facebook, public service: ServiceService,private router: Router,private storage: Storage,public toastController: ToastController) {}
+  constructor(
+    public fb: Facebook,
+    public service: ServiceService,
+    private router: Router,
+    private storage: Storage,
+    public toastController: ToastController
+  ) {}
 
   ngOnInit() {
     console.log("LoginPage");
@@ -26,11 +30,9 @@ export class LoginPage implements OnInit {
     this.fb
       .login(["public_profile", "email"])
       .then((res: FacebookLoginResponse) => {
-
         if (res.status == "connected") {
-
           //Get user ID an Token
-          console.log("res",res);
+          console.log("res", res);
           var fb_id = res.authResponse.userID;
           // this.service.fbIdUser = fb_id;
           // this.service.fbIdUser = fb_id;
@@ -38,14 +40,14 @@ export class LoginPage implements OnInit {
           //si existe, voy al home
           //si no existe, hago esto de aca abajo
           this.service.validarFBUser(fb_id).subscribe(x => {
-            console.log('data', x);
+            console.log("data", x);
             let data = x["data"];
-            console.log('uid', data);
-            if (data != '0') {
+            console.log("uid", data);
+            if (data != "0") {
               let dataUser = x["data"];
 
               console.log("DATA: ", dataUser);
-      
+
               if (dataUser.usuarioid > 0) {
                 if (dataUser.rol == "cliente") {
                   console.log("STORAGE", dataUser);
@@ -62,14 +64,13 @@ export class LoginPage implements OnInit {
             } else {
               //Get user infos from the API
               this.fb.api("/me?fields=name,email", []).then(user => {
-                console.log("user",user);
+                console.log("user", user);
                 var email = user.email;
                 if (email != "") {
                   //this.navCtrl.push(SignupPage, { fbid: fb_id });
                   //redirect to create user con fbid
                   this.service.fbid = fb_id;
                   this.router.navigate(["/crear-usuario/"]);
-                 
                 }
               });
             }

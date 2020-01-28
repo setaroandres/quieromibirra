@@ -20,13 +20,6 @@
         <div #map id="map" allow="geolocation"></div>
       </ion-col>
 
-      <!-- <ion-col size="12" class="col-descripcion">
-        <p>
-          <strong>Happy Hour:</strong>
-          {{ cerveceria.happyhourinicio }} - {{ cerveceria.happyhourfin }}
-        </p>
-      </ion-col> -->
-
       <ion-col size="12" class="col-btn">
         <button (click)="goToListaPromosBirreria()">VER PROMOCIONES</button>
       </ion-col>
@@ -37,43 +30,3 @@
   </ion-grid>
 
 </ion-content>
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
-    </ion-buttons>
-    <ion-title class="ion-text-center title_center">
-      <img src="../../assets/img/logos/logo-header.png">
-    </ion-title>
-    <div class="lupa">
-      <img src="../../assets/img/lupa-header.png">
-    </div>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-  <ion-grid>
-
-    <ion-row class="promo-box" justify-content-center *ngFor="let cerve of cerveceria" (click)="goToBirreria(promo)">
-
-      <ion-col size="12" class="copete">
-        <p float-left>{{cerve.nombre}}</p>
-        <p float-right class="puntos"> <img src="assets/img/coin.png" alt=""> {{cerve.puntos}} pts</p>
-      </ion-col>
-
-      <ion-col class="col-img " size="12">
-        <img src="{{cerve.imagen}}" />
-      </ion-col>
-
-      <ion-col size="12" class="info">
-        <p class="title">{{cerve.titulo}}</p>
-        <p class="dir">{{cerve.direccion}}</p>
-        <p class="puntos">{{cerve.puntos}} pts</p>
-      </ion-col>
-
-    </ion-row>
-
-  </ion-grid>
-
-</ion-content> -->

@@ -24,7 +24,9 @@ export class CanjearPuntosPage implements OnInit {
 
   api_url_super: string;
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ionViewWillEnter() {
     console.log("CanjearPuntosPage");
     this.api_url_super = this.service.api_url_super;
 

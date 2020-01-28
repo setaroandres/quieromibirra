@@ -26,7 +26,9 @@ export class ListaPromosPage implements OnInit {
   dataUser: any = {};
   api_url_super: string;
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ionViewWillEnter() {
     console.log("ListaPromosPage");
     this.api_url_super = this.service.api_url_super;
 

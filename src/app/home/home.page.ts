@@ -24,12 +24,22 @@ export class HomePage {
   dataUser: any = {};
   api_url_super: string;
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ionViewWillEnter() {
     console.log("HomePage");
     this.api_url_super = this.service.api_url_super;
 
     this.getStorage();
     this.traerCervecerias();
+  }
+
+  getStorage() {
+    this.storage.get("dataUser").then(storageData => {
+      this.dataUser = storageData;
+      console.log("0 - STORAGE HOME: ", storageData);
+      this.traerPromosPorUsuario(storageData.usuarioid);
+    });
   }
 
   traerPromosPorUsuario(usuarioid) {
@@ -62,13 +72,5 @@ export class HomePage {
       }
     };
     this.router.navigate(["tabs/interna-birreria"], data);
-  }
-
-  getStorage() {
-    this.storage.get("dataUser").then(storageData => {
-      this.dataUser = storageData;
-      console.log("0 - STORAGE HOME: ", storageData);
-      this.traerPromosPorUsuario(storageData.usuarioid);
-    });
   }
 }

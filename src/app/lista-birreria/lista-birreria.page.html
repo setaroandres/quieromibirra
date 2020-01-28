@@ -16,23 +16,24 @@
 
   <mis-puntos></mis-puntos>
 
-  <ion-grid class="lugares-cercanos round-standard">
+  <h2>{{cerveceria.nombre}}</h2>
+
+  <ion-grid class="bg-light round-standard">
 
     <ion-row>
-      <ion-col>
-        <h2>{{cerveceria.nombre}}</h2>
+
+      <ion-col size="12">
+        <h3>Promociones</h3>
       </ion-col>
-    </ion-row>
-
-    <ion-row>
 
       <ion-col size="5" *ngFor="let promo of promos" class="square-promo-col round-standard">
 
         <ion-row (click)="goToInternaPromo(promo)" class="square-promo">
 
           <ion-col size="12" class="copete">
-            <!-- <p float-left>{{promo.nombre}}</p> -->
-            <p><strong>{{promo.puntos_promo}}</strong> pts</p>
+            <span class="puntos">
+              <p class="puntos_promo">{{promo.puntos_promo}} <img src="assets/img/coin.png" alt=""></p>
+            </span>
           </ion-col>
 
           <ion-col size="12" class="col-img">
@@ -42,7 +43,38 @@
           <ion-col size="12" class="info">
             <p class="title"><strong>{{promo.titulo}}</strong></p>
             <p class="dir">{{promo.direccion}}</p>
-            <!-- <p class="puntos">{{promo.puntos}} pts</p> -->
+          </ion-col>
+
+        </ion-row>
+
+      </ion-col>
+
+    </ion-row>
+
+
+    <ion-row *ngIf="canjes?.length > 0">
+
+      <ion-col size="12">
+        <h3>Vouchers</h3>
+      </ion-col>
+
+      <ion-col size="5" *ngFor="let canje of canjes" class="square-promo-col round-standard">
+
+        <ion-row (click)="goToInternaCanje(canje)" class="square-promo">
+
+          <ion-col size="12" class="copete">
+            <span class="puntos">
+              <p class="puntos_promo">{{canje.puntos_canje}} <img src="assets/img/coin.png" alt=""></p>
+            </span>
+          </ion-col>
+
+          <ion-col size="12" class="col-img">
+            <img [src]="api_url_super + canje.imgpath" />
+          </ion-col>
+
+          <ion-col size="12" class="info">
+            <p class="title"><strong>{{canje.titulo}}</strong></p>
+            <p class="dir">{{canje.direccion}}</p>
           </ion-col>
 
         </ion-row>
@@ -52,4 +84,10 @@
     </ion-row>
 
   </ion-grid>
+
+
+
+
+
+
 </ion-content>
