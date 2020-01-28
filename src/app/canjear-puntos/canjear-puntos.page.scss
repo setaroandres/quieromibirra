@@ -73,3 +73,26 @@
     }
   }
 }
+
+.puntos {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+
+  .puntos_promo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 15px;
+    font-size: $semi-small-font;
+    margin: 0;
+    padding: 3px 3px;
+    margin-left: 3px;
+
+    img {
+      margin-left: 5px;
+      max-width: 20%;
+    }
+  }
+}

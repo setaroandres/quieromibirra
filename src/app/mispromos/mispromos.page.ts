@@ -25,7 +25,9 @@ export class MispromosPage implements OnInit {
 
   fechaVencimiento: string;
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ionViewWillEnter() {
     console.log("MispromosPage");
     this.getStorage();
   }
