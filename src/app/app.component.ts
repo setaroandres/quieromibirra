@@ -45,7 +45,8 @@ export class AppComponent {
     private statusBar: StatusBar,
     private router: Router,
     private storage: Storage,
-    private navController: NavController
+    private navController: NavController,
+    private navCtrl: NavController
   ) {
     this.initializeApp();
   }
@@ -85,7 +86,8 @@ export class AppComponent {
   }
 
   logOut() {
-    this.storage.set("dataUser", {});
+    this.storage.set("dataUser", null);
+    this.navCtrl.setDirection("root");
     this.router.navigateByUrl("/login");
   }
 }

@@ -17,7 +17,7 @@ export class MisPuntosComponent implements OnInit {
     console.log("MisPuntosComponent");
   }
 
-  ngAfterViewInit() {
+  ionViewWillEnter() {
     this.getStorage();
   }
 
