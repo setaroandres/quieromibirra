@@ -26,19 +26,13 @@ export class LoginPage implements OnInit {
   //----FACEBOOK------
   fblogin() {
     let existe = false;
-    //permissions
     this.fb
       .login(["public_profile", "email"])
       .then((res: FacebookLoginResponse) => {
         if (res.status == "connected") {
-          //Get user ID an Token
           console.log("res", res);
           var fb_id = res.authResponse.userID;
-          // this.service.fbIdUser = fb_id;
-          // this.service.fbIdUser = fb_id;
-          //voy a la base con el id
-          //si existe, voy al home
-          //si no existe, hago esto de aca abajo
+
           this.service.validarFBUser(fb_id).subscribe(x => {
             console.log("data", x);
             let data = x["data"];
@@ -62,13 +56,10 @@ export class LoginPage implements OnInit {
                 this.presentToast();
               }
             } else {
-              //Get user infos from the API
               this.fb.api("/me?fields=name,email", []).then(user => {
                 console.log("user", user);
                 var email = user.email;
                 if (email != "") {
-                  //this.navCtrl.push(SignupPage, { fbid: fb_id });
-                  //redirect to create user con fbid
                   this.service.fbid = fb_id;
                   this.router.navigate(["/crear-usuario/"]);
                 }
@@ -76,7 +67,6 @@ export class LoginPage implements OnInit {
             }
           });
         } else {
-          //error ocurred while loging-in
           console.log("Error ocurred");
         }
       })
