@@ -18,8 +18,7 @@ import { GoogleMapsService } from "./google-maps.service";
 import { Geolocation } from "@ionic-native/geolocation/ngx";
 import { BarcodeScanner } from "@ionic-native/barcode-scanner/ngx";
 import { NgxQRCodeModule } from "ngx-qrcode2";
-import { Facebook } from '@ionic-native/facebook/ngx';
-
+import { Facebook } from "@ionic-native/facebook/ngx";
 
 @NgModule({
   declarations: [AppComponent],
