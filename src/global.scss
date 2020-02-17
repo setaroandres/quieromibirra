@@ -203,3 +203,28 @@ p {
 .item-has-focus .label-stacked.sc-ion-label-md-h {
   color: white;
 }
+
+
+.ios {
+
+  ion-header {
+
+    ion-toolbar {
+
+      ion-title {
+
+        img {
+          max-width: 16%!important;
+        }
+      }
+    }
+  }
+
+  ion-tab-bar {
+    ion-tab-button {
+      img {
+        max-width: 30px!important;
+      }
+    } 
+  }
+}
