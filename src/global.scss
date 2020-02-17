@@ -215,6 +215,7 @@ p {
 
         img {
           max-width: 16%!important;
+          padding-top: 5px;
         }
       }
     }
@@ -226,5 +227,14 @@ p {
         max-width: 30px!important;
       }
     } 
+  }
+
+  ion-footer {
+    padding: 10px!important;
+
+    p {
+      margin: 0!important;
+      padding: 0!important;
+    }
   }
 }
