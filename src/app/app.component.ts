@@ -60,11 +60,11 @@ export class AppComponent {
       this.statusBar.overlaysWebView(false);
       // set status bar to white
       if (this.platform.is("android")) {
-        this.statusBar.styleDefault();
-        this.statusBar.backgroundColorByHexString("#ffffff");
+        this.statusBar.styleLightContent();
+        this.statusBar.backgroundColorByHexString("#202734");
       } else {
-        this.statusBar.styleDefault();
-        this.statusBar.backgroundColorByHexString("#ffffff");
+        this.statusBar.styleLightContent();
+        this.statusBar.backgroundColorByHexString("#202734");
       }
 
       this.inicio();

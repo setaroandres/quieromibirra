@@ -53,6 +53,7 @@ export class HomePage {
     this.service.traerCervecerias().subscribe(x => {
       console.log("1 - Cervecerias", x["data"]);
       this.cervecerias = x["data"];
+      this.cervecerias = this.cervecerias.filter(x => {return x.activo == "1"});
     });
   }
 

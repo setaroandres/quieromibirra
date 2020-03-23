@@ -45,6 +45,7 @@ export class ListaHhourPage implements OnInit {
     this.service.traerCervecerias().subscribe(x => {
       console.log("Cervecerias", x["data"]);
       this.cervecerias = x["data"];
+      this.cervecerias = this.cervecerias.filter(x => {return x.activo == "1"});
     });
   }
 }

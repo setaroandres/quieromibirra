@@ -102,7 +102,8 @@ export class ListaPromosPage implements OnInit {
 
         console.log("RESPONSE; ", response);
 
-        if (response[0].retirado === "0") {
+        //if (response[0].retirado === "0") {
+          if (response != "ya compro") {
           let dataPromo: NavigationExtras = {
             queryParams: {
               promo: JSON.stringify(response[0])

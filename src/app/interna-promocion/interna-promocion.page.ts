@@ -31,7 +31,10 @@ export class InternaPromocionPage implements OnInit {
   }
 
   getParams() {
+   
+    
     this.route.queryParams.subscribe(params => {
+      console.log("params",params);
       if (params.promo) {
         this.promo = JSON.parse(params.promo);
         this.titulo = "promoción";
@@ -54,6 +57,7 @@ export class InternaPromocionPage implements OnInit {
           this.promo.puntos_promo;
 
         console.log("PARAMS int-prom", this.promo);
+        console.log("qrCode", this.qrCode);
       } else if (params.canje) {
         this.canje = JSON.parse(params.canje);
         this.titulo = "canje";

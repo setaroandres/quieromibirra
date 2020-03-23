@@ -6,7 +6,7 @@
           <img src="../../assets/img/logos/logo.png" alt="logo-qmb" title="Logo QMB" />
         </ion-col>
       </ion-row>
-      <ion-row class="facebook ion-margin-bottom">
+      <ion-row class="facebook ion-margin-bottom" *ngIf="habilitar">
         <ion-col>
           <ion-button class="fb-button" (click)="fblogin()">
             <ion-icon name="logo-facebook"></ion-icon> <span>Ingresar con Facebook</span>

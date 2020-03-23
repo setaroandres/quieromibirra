@@ -100,9 +100,10 @@ export class ServiceService {
   }
 
   traerCanjesPorUsuario(usuarioid: string) {
-    return this.http.get(
-      this.api_url + "traercanjesporusuario.php" + "?usuarioid=" + usuarioid
-    );
+    let url = this.api_url + "traercanjesporusuario.php" + "?usuarioid=" + usuarioid;
+    console.log("url", url);
+    
+    return this.http.get(url);
   }
 
   // --- Compras
@@ -117,6 +118,11 @@ export class ServiceService {
     return this.http.get(
       this.api_url + "traercomprascanjes.php" + "?usuarioid=" + usuarioid
     );
+  }
+
+  habilitar(){
+    return this.http.get(this.api_url + "habilitar.php");
+    
   }
 
   // ***********************************************************
@@ -273,7 +279,7 @@ export class ServiceService {
     });
   }
 
-  crearcompracanje(canje: any, fechayhora: number, dataUser: any) {
+  crearcompracanje(canje, fecha, hora , dataUser) {
     let url = this.api_url + "crearcompracanje.php";
 
     var headers = new Headers();
@@ -286,7 +292,8 @@ export class ServiceService {
     var body = JSON.stringify({
       usuarioid: dataUser.usuarioid,
       canjeid: canje.canjeid,
-      fechayhora: fechayhora
+      fecha: fecha,
+      hora: hora
     });
 
     console.log("BODY, entrega: ", body);

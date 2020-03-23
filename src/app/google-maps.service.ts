@@ -9,7 +9,9 @@ declare var google: any;
   providedIn: "root"
 })
 export class GoogleMapsService {
-  constructor(private geolocation: Geolocation) {}
+  constructor(private geolocation: Geolocation) {
+    
+  }
 
   map: any;
   markers: any = [];
@@ -62,6 +64,7 @@ export class GoogleMapsService {
   }
 
   addMarker(coords) {
+    this.markers = [];
     let dirs = {
       lat: coords.lat(),
       lng: coords.lng()

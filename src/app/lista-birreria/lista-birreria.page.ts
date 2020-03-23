@@ -95,10 +95,13 @@ export class ListaBirreriaPage implements OnInit {
   }
 
   goToInternaPromo(promo) {
+   
     var fechayhora = new Date();
-
+    console.log("fecha nueva", fechayhora);
+    
     var fecha = this.datePipe.transform(fechayhora, "yyyy/MM/dd");
     var hora = this.datePipe.transform(fechayhora, "hh:mm");
+    console.log("hora nueva", hora);
 
     this.service
       .crearcomprapromo(promo, fecha, hora, this.dataUser)
@@ -107,10 +110,10 @@ export class ListaBirreriaPage implements OnInit {
 
         console.log("RESPONSE; ", response);
 
-        if (response === "inserted") {
+        if (response != "ya compro") {
           let dataPromo: NavigationExtras = {
             queryParams: {
-              promo: JSON.stringify(promo)
+              promo: JSON.stringify(response[0])
             }
           };
           this.router.navigate(["interna-promocion"], dataPromo);
@@ -169,16 +172,20 @@ export class ListaBirreriaPage implements OnInit {
   }
 
   solicitar(canje) {
-    let fechayhora = Date.now();
+    var fechayhora = new Date();
+
+    var fecha = this.datePipe.transform(fechayhora, "yyyy/MM/dd");
+    var hora = this.datePipe.transform(fechayhora, "hh:mm");
 
     this.service
-      .crearcompracanje(canje, fechayhora, this.dataUser)
+      .crearcompracanje(canje, fecha,hora, this.dataUser)
       .subscribe(x => {
         let response = JSON.parse(x["_body"])["data"];
 
         console.log("RESPONSE; ", response[0]);
 
-        if (response[0].retirado === "0") {
+        //if (response[0].retirado === "0") {
+          if (response != "ya compro") {
           let data: NavigationExtras = {
             queryParams: {
               canje: JSON.stringify(response[0])

@@ -3,6 +3,7 @@ import { ServiceService } from "../service.service";
 import { Storage } from "@ionic/storage";
 import { Router, NavigationExtras } from "@angular/router";
 import { ToastController, AlertController } from "@ionic/angular";
+import { DatePipe } from "@angular/common";
 
 @Component({
   selector: "app-canjear-puntos",
@@ -14,6 +15,7 @@ export class CanjearPuntosPage implements OnInit {
     private service: ServiceService,
     private storage: Storage,
     private router: Router,
+    private datePipe: DatePipe,
     public toastController: ToastController,
     public alertController: AlertController
   ) {}
@@ -80,10 +82,13 @@ export class CanjearPuntosPage implements OnInit {
   }
 
   solicitar(canje) {
-    let fechayhora = Date.now();
+    var fechayhora = new Date();
+
+    var fecha = this.datePipe.transform(fechayhora, "yyyy/MM/dd");
+    var hora = this.datePipe.transform(fechayhora, "hh:mm");
 
     this.service
-      .crearcompracanje(canje, fechayhora, this.dataUser)
+      .crearcompracanje(canje, fecha, hora, this.dataUser)
       .subscribe(x => {
         let response = JSON.parse(x["_body"])["data"];
 

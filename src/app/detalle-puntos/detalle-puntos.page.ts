@@ -3,6 +3,7 @@ import { Router, NavigationExtras } from "@angular/router";
 import { ServiceService } from "./../service.service";
 import { Storage } from "@ionic/storage";
 import { DatePipe } from "@angular/common";
+import { InAppBrowser } from "@ionic-native/in-app-browser/ngx";
 
 @Component({
   selector: "app-detalle-puntos",
@@ -14,7 +15,8 @@ export class DetallePuntosPage implements OnInit {
     private router: Router,
     private service: ServiceService,
     private storage: Storage,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private iab: InAppBrowser
   ) {}
 
   puntos: string;
@@ -63,6 +65,11 @@ export class DetallePuntosPage implements OnInit {
   }
 
   goToTerminos() {
-    window.open("https://ctrlztest.com.ar/birrah/terminos-y-condiciones/");
+    const browser = this.iab.create(
+      "https://ctrlztest.com.ar/birrah/terminos-y-condiciones/", '_system', 'location=yes'
+    );
+    browser.on("loadstop").subscribe(event => {});
+    //window.open("https://ctrlztest.com.ar/birrah/terminos-y-condiciones/", "_system");
+    //browser.close();
   }
 }

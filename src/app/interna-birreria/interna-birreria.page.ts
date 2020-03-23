@@ -29,12 +29,22 @@ export class InternaBirreriaPage implements OnInit {
     console.log("InternaBirreria Page");
     this.api_url_super = this.service.api_url_super;
     this.getParams();
+    
+  }
+
+  ionViewWillEnter(){
     this.initMap();
   }
 
+
+
   initMap() {
+    
     this.maps.parseLocation(this.cerveceria).then(coordenadas => {
+      console.log("coordenadas", coordenadas);
       this.maps.initMap(coordenadas, this.mapElement.nativeElement).then(x => {
+        console.log("coordenadas x", x);
+        console.log("coordenadas x 2", coordenadas);
         this.maps.addMarker(coordenadas);
       });
     });

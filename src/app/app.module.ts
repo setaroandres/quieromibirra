@@ -19,6 +19,7 @@ import { Geolocation } from "@ionic-native/geolocation/ngx";
 import { BarcodeScanner } from "@ionic-native/barcode-scanner/ngx";
 import { NgxQRCodeModule } from "ngx-qrcode2";
 import { Facebook } from "@ionic-native/facebook/ngx";
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -41,7 +42,8 @@ import { Facebook } from "@ionic-native/facebook/ngx";
     Geolocation,
     DatePipe,
     BarcodeScanner,
-    Facebook
+    Facebook,
+    InAppBrowser
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

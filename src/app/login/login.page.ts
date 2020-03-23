@@ -11,6 +11,7 @@ import { Storage } from "@ionic/storage";
   styleUrls: ["./login.page.scss"]
 })
 export class LoginPage implements OnInit {
+  habilitar: boolean;
   constructor(
     public fb: Facebook,
     public service: ServiceService,
@@ -21,6 +22,9 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     console.log("LoginPage");
+    this.service.habilitar().subscribe(x => {
+      this.habilitar = (x == true);
+    });
   }
 
   //----FACEBOOK------
