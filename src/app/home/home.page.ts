@@ -1,6 +1,6 @@
 import { ServiceService } from "./../service.service";
 import { Component } from "@angular/core";
-import { NavController } from "@ionic/angular";
+import { NavController, AlertController, ToastController } from "@ionic/angular";
 import { Router, NavigationExtras } from "@angular/router";
 import { Storage } from "@ionic/storage";
 
@@ -13,7 +13,8 @@ export class HomePage {
   constructor(
     private router: Router,
     private service: ServiceService,
-    private storage: Storage
+    private storage: Storage,
+    public toastController: ToastController
   ) {}
 
   slideOptsTwo = {
@@ -67,11 +68,29 @@ export class HomePage {
   }
 
   goToBirreria(cerve) {
-    let data: NavigationExtras = {
-      queryParams: {
-        cerveceria: JSON.stringify(cerve)
+    this.service.traerEstadoCerveceria(cerve.cerveceriaid).subscribe(x => {
+      if(x["data"] == "1"){
+        let data: NavigationExtras = {
+          queryParams: {
+            cerveceria: JSON.stringify(cerve)
+          }
+        };
+        this.router.navigate(["tabs/interna-birreria"], data);
       }
-    };
-    this.router.navigate(["tabs/interna-birreria"], data);
+      else{
+        this.presentToast();
+        this.ionViewWillEnter();
+      }
+    });
+    
+  }
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: "Esa birreria fue deshabilitada",
+      position: "top",
+      duration: 2000
+    });
+    toast.present();
   }
 }

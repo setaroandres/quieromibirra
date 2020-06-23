@@ -76,7 +76,11 @@ export class ServiceService {
   }
 
   traerCervecerias() {
-    return this.http.get(this.api_url + "traercervecerias.php");
+    return this.http.get(this.api_url + "traercerveceriasactivas.php");
+  }
+
+  traerEstadoCerveceria(cerveceriaid) {
+    return this.http.get(this.api_url + "traerestadocerveceria.php?cerveceriaid=" + cerveceriaid);
   }
 
   traerPromosPorCerveceria(id) {
