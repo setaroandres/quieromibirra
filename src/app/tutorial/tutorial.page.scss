@@ -1,48 +1,33 @@
 ion-content {
-  --background: #32415d;
-  background: linear-gradient(
-    180deg,
-    rgba(43, 40, 107, 0) 0%,
-    rgba(32, 39, 52, 1) 70%
-  );
-
-  ion-grid {
-    padding: 0;
-
-    ion-slides {
-      height: 90vh;
-
-      .slide-img {
-        img {
-          max-width: 55%;
-        }
-      }
-
-      .slide-txt {
-        p {
-          color: #fff;
-          font-size: 0.8rem;
-          line-height: 23px;
-          padding: 0px 20px;
-        }
-      }
-    }
-
-    .row-btn-tutorial {
-      height: 10vh;
-      position: relative;
-
-      .btn-tutorial {
+    --background: var(--celeste-tuto);
+    background: var(--celeste-tuto);
+    ion-grid {
         padding: 0;
-
-        ion-button {
-          &.yellow-button {
-            position: absolute;
-            width: 100%;
-            bottom: 0px;
-          }
+        ion-slides {
+            height: 90vh;
+            .slide-img {}
+            .slide-txt {
+                p {
+                    color: #fff;
+                    font-size: 0.8rem;
+                    line-height: 23px;
+                    padding: 0px 20px;
+                }
+            }
         }
-      }
+        .row-btn-tutorial {
+            height: 10vh;
+            position: relative;
+            .btn-tutorial {
+                padding: 0;
+                ion-button {
+                    &.yellow-button {
+                        position: absolute;
+                        width: 100%;
+                        bottom: 0px;
+                    }
+                }
+            }
+        }
     }
-  }
 }

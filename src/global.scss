@@ -3,238 +3,216 @@
 @import '~@ionic/angular/css/normalize.css';
 @import '~@ionic/angular/css/structure.css';
 @import '~@ionic/angular/css/typography.css';
-
 @import '~@ionic/angular/css/padding.css';
 @import '~@ionic/angular/css/float-elements.css';
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
-
 @import './theme/variables';
 @import './theme/main-header';
-
 .gm-style .gm-style-cc span,
 .gmnoprint,
 .gm-style .gm-style-cc a,
 .gm-style .gm-style-mtc div,
 .gmnoprint,
 .gm-style-cc div div {
-  display: none !important;
+    display: none !important;
 }
 
 .gm-style {
-  div {
-    a {
-      display: none !important;
-      div {
-        display: none !important;
-        img {
-          display: none !important;
+    div {
+        a {
+            display: none !important;
+            div {
+                display: none !important;
+                img {
+                    display: none !important;
+                }
+            }
         }
-      }
     }
-  }
 }
 
 @mixin flex-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  ion-row {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    ion-col {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-}
-
-.saldo-puntos {
-  @include flex-center;
-  ion-row {
-    ion-col {
-      color: white;
-      flex-direction: row;
-      text-transform: uppercase;
-      font-size: $small-font;
-
-      // .desc-puntos {
-      // }
-
-      .puntos {
+    ion-row {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        font-size: $semi-big-font;
-        padding: 4px 10px;
-        margin-left: 5px;
-        background: #e8b519;
-        font-weight: 800;
-        border-radius: 30px;
-        img {
-          margin-right: 5px;
-          max-width: 25%;
+        ion-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-      }
     }
-  }
+}
+
+.saldo-puntos {
+    @include flex-center;
+    ion-row {
+        ion-col {
+            color: white;
+            flex-direction: row;
+            text-transform: uppercase;
+            font-size: $small-font;
+            // .desc-puntos {
+            // }
+            .puntos {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                font-size: $semi-big-font;
+                padding: 4px 10px;
+                margin-left: 5px;
+                background: #e8b519;
+                font-weight: 800;
+                border-radius: 30px;
+                img {
+                    margin-right: 5px;
+                    max-width: 25%;
+                }
+            }
+        }
+    }
 }
 
 .col-btn-yellow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
 }
 
 .btn-yellow {
-  border-radius: 10px;
-  background: #e8b519;
-  color: white;
-  font-weight: 700;
-  font-size: $small-font;
-  padding: 10px 20px;
-  width: 75%;
-  margin: 8px;
+    border-radius: 10px;
+    background: #e8b519;
+    color: white;
+    font-weight: 700;
+    font-size: $small-font;
+    padding: 10px 20px;
+    width: 75%;
+    margin: 8px;
 }
 
 .swiper-pagination-bullet {
-  background: white !important;
-  opacity: .6;
+    background: white !important;
+    opacity: .6;
 }
 
 .swiper-pagination-bullet-active {
-  background: white !important;
-  opacity: 1;
+    background: white !important;
+    opacity: 1;
 }
 
 ion-content {
-  --background: #202734;
-  padding: 0 5%;
-  &.dark-bg {
-    background-color: var(--qmb-dark-gray);
-    --background: none;
-  }
-
-  /*Estilos grales de Form*/
-
-  ion-list {
-    &.transparent {
-      background: transparent;
+    --background: #202734;
+    padding: 0 5%;
+    &.dark-bg {
+        background-color: var(--qmb-dark-gray);
+        --background: none;
     }
-  }
-
-  ion-col {
-    &.gral-form {
-      padding: 5px 0;
-
-      ion-item {
-        --background: transparent;
-        border-bottom: 1px solid #fff;
-
-        ion-label {
-          --color: #fff !important;
-          --font-size: 0.7rem;
-          letter-spacing: 1px;
-          font-weight: 100;
-
-          ion-icon {
-            font-size: 1.2rem;
-          }
+    /*Estilos grales de Form*/
+    ion-list {
+        &.transparent {
+            background: transparent;
         }
-      }
     }
-  }
-
-  ion-button {
-    &.yellow-button {
-      --background: var(--qmb-yellow);
-      --border-radius: none;
-      height: 45px;
-      margin: 0;
-      text-transform: none;
+    ion-col {
+        &.gral-form {
+            padding: 5px 0;
+            ion-item {
+                --background: transparent;
+                ion-label {
+                    --color: #fff !important;
+                    --font-size: 0.7rem;
+                    letter-spacing: 1px;
+                    font-weight: 100;
+                    ion-icon {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
     }
-  }
+    ion-button {
+        &.yellow-button {
+            --background: var(--qmb-yellow);
+            --border-radius: none;
+            height: 45px;
+            margin: 0;
+            text-transform: none;
+        }
+    }
 }
 
 .light-bg {
-  --background: white;
+    --background: white;
 }
 
 .invalid {
-  border: 1px solid #ea6153;
+    border: 1px solid #ea6153;
 }
 
 .round-standard {
-  border-radius: 5px;
+    border-radius: 5px;
 }
 
 .vermas {
-  color: white;
-  font-size: $default-font;
+    color: white;
+    font-size: $default-font;
 }
 
 h2 {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 h3 {
-  font-size: $semi-big-font;
-  color: white;
+    font-size: $semi-big-font;
+    color: white;
 }
 
 p {
-  color: white;
-  font-size: $default-font;
+    color: white;
+    font-size: $default-font;
 }
 
 // iconito del login que se ponian en azul:
-
 .item-has-focus.label-floating.sc-ion-label-md-h,
 .item-has-focus .label-floating.sc-ion-label-md-h,
 .item-has-focus.label-stacked.sc-ion-label-md-h,
 .item-has-focus .label-stacked.sc-ion-label-md-h {
-  color: white;
+    color: white;
 }
 
-
 .ios {
-
-  ion-header {
-
-    ion-toolbar {
-
-      ion-title {
-
-        img {
-          max-width: 16%!important;
-          padding-top: 5px;
+    ion-header {
+        ion-toolbar {
+            ion-title {
+                img {
+                    max-width: 16%!important;
+                    padding-top: 5px;
+                }
+            }
         }
-      }
     }
-  }
-
-  ion-tab-bar {
-    ion-tab-button {
-      img {
-        max-width: 30px!important;
-      }
-    } 
-  }
-
-  ion-footer {
-    padding: 10px!important;
-
-    p {
-      margin: 0!important;
-      padding: 0!important;
+    ion-tab-bar {
+        ion-tab-button {
+            img {
+                max-width: 30px!important;
+            }
+        }
     }
-  }
+    ion-footer {
+        padding: 10px!important;
+        p {
+            margin: 0!important;
+            padding: 0!important;
+        }
+    }
 }

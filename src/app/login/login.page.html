@@ -1,42 +1,38 @@
-<ion-content align-self-center align-items-center justify-content-center text-center>
-  <div class="overlay">
-    <ion-grid padding>
-      <ion-row>
-        <ion-col size="6" class="logo-login">
-          <img src="../../assets/img/logos/logo.png" alt="logo-qmb" title="Logo QMB" />
-        </ion-col>
-      </ion-row>
-      <ion-row class="facebook ion-margin-bottom" *ngIf="habilitar">
-        <ion-col>
-          <ion-button class="fb-button" (click)="fblogin()">
-            <ion-icon name="logo-facebook"></ion-icon> <span>Ingresar con Facebook</span>
-          </ion-button>
-        </ion-col>
-      </ion-row>
-      <ion-row class="cuenta ion-margin-top">
-        <ion-col>
-          <ion-button [routerLink]="'/ingreso/'" routerDirection="forward" class="cuenta-button ion-no-margin">
-            <ion-icon name="person-add"></ion-icon> Ingresá con tu cuenta
-          </ion-button>
-        </ion-col>
-      </ion-row>
-      <ion-row class="crear-cuenta">
-        <ion-col>
-          <ion-button [routerLink]="'/crear-usuario/'" routerDirection="forward"
-            class="crear-cuenta-button ion-no-margin">
-            Crear una cuenta
-          </ion-button>
-        </ion-col>
-      </ion-row>
-      <ion-row class="notas-pie">
-        <ion-col>
-          <p class="ion-text-center" (click)="goToTerminos()">
-            Al crear un usuario o iniciar sesión estás aceptando nuestros <span>términos y
+<ion-content>
+    <ion-grid class="ion-padding">
+        <div class="wrapper-botones">
+            <!-- <ion-row class="facebook ion-margin-bottom" *ngIf="habilitar"> -->
+            <ion-row class="facebook">
+                <ion-col>
+                    <ion-button class="fb-button ion-no-margin" (click)="fblogin()">
+                        <ion-icon name="logo-facebook"></ion-icon> <span>Ingresá con Facebook</span>
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row class="cuenta">
+                <ion-col>
+                    <ion-button [routerLink]="'/ingreso/'" routerDirection="forward" class="cuenta-button ion-no-margin">
+                        Ingresá con tu cuenta
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+            <ion-row class="crear-cuenta">
+                <ion-col>
+                    <ion-button [routerLink]="'/crear-usuario/'" routerDirection="forward" class="crear-cuenta-button ion-no-margin">
+                        Creá tu cuenta
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </div>
+        <ion-row class="notas-pie">
+            <ion-col>
+                <p class="ion-text-center" (click)="goToTerminos()">
+                    Al crear un usuario o iniciar sesión estás aceptando nuestros <span>términos y
               condiciones y politicas de
               privacidad</span>
-          </p>
-        </ion-col>
-      </ion-row>
+                </p>
+            </ion-col>
+        </ion-row>
     </ion-grid>
-  </div>
+
 </ion-content>
