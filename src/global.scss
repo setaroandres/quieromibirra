@@ -56,9 +56,8 @@
     @include flex-center;
     ion-row {
         ion-col {
-            color: white;
+            color: var(--qmb-dark-gray);
             flex-direction: row;
-            text-transform: uppercase;
             font-size: $small-font;
             // .desc-puntos {
             // }
@@ -111,7 +110,7 @@
 }
 
 ion-content {
-    --background: #202734;
+    --background: var(--bg-light)!important;
     padding: 0 5%;
     &.dark-bg {
         background-color: var(--qmb-dark-gray);
@@ -164,7 +163,7 @@ ion-content {
 }
 
 .vermas {
-    color: white;
+    color: var(--qmb-dark-gray);
     font-size: $default-font;
 }
 
@@ -202,6 +201,8 @@ p {
         }
     }
     ion-tab-bar {
+        --background: #fff;
+        background: #fff;
         ion-tab-button {
             img {
                 max-width: 30px!important;

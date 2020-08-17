@@ -1,106 +1,114 @@
 // @import "../../theme/variables";
 @import "../../global";
-
 ion-content {
-  --background: #202734;
-  padding: 0 5%;
-
-  .promo-semana-title {
-    color: white;
-    position: absolute;
-    text-shadow: 1px 2px 3px black;
-    font-size: $xbig-font;
-    font-weight: 800;
-  }
-
-  .promos-semana {
-    --background: #323f56;
-    background: #323f56;
-
-    .title {
-      padding: 0;
-      margin: 0;
-      ion-col {
-        padding: 0;
-        margin: 0;
-        border-bottom: 1px solid white;
-      }
+    --background: #202734;
+    padding: 0 5%;
+    .promo-semana-title {
+        color: white;
+        position: absolute;
+        text-shadow: 1px 2px 3px black;
+        font-size: $xbig-font;
+        font-weight: 800;
     }
-  }
-
-  .row-slides {
-    ion-col {
-      ion-slides {
-        ion-slide {
-          margin-right: 8px;
-          margin-top: 8px;
-          img {
-            border-radius: 5px;
-          }
+    .title-cercanos {
+        h3 {
+            color: var(--qmb-dark-gray)!important;
+            padding-left: 7px;
         }
-      }
     }
-  }
-
-  .lugares-cercanos {
-    background: $light-blue;
-    padding: 0;
-
-    ion-row {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-
-      .square-promo-col {
-        background: $dark-blue;
-        margin: 5px;
-
-        .square-promo {
-          .copete {
-            background: $yellow-birra;
-            border-radius: 5px 5px 0 0;
-
-            p {
-              font-size: $small-font;
-              margin: 0;
-              padding: 0;
-            }
-          }
-
-          .col-img {
+    .promos-semana {
+        --background: #fff;
+        background: #fff;
+        .title {
             padding: 0;
-
-            img {
-              border-radius: 0 0 5px 5px;
+            margin: 0;
+            ion-col {
+                padding: 0;
+                margin: 0;
+                border-bottom: 1px solid white;
+                h3 {
+                    color: var(--qmb-dark-gray)!important;
+                    padding-left: 7px;
+                }
             }
-          }
-
-          .info {
-            p {
-              margin: 0;
-              padding: 0;
-            }
-
-            .title {
-              font-size: $default-font;
-            }
-
-            .dir {
-              font-size: $small-font;
-            }
-
-            // .puntos {
-            //   margin-top: 10px;
-            //   font-size: $semi-small-font;
-            // }
-          }
         }
-      }
+        .vermas {
+            color: var(--qmb-dark-gray);
+            font-size: 1rem;
+            width: 100%;
+            text-align: center;
+            background: var(--qmb-yellow);
+            padding: 10px;
+            font-size: 700;
+            border-radius: 6px;
+            margin: 0;
+            font-weight: 700;
+        }
     }
-  }
+    .row-slides {
+        ion-col {
+            ion-slides {
+                ion-slide {
+                    margin-right: 8px;
+                    margin-top: 8px;
+                    img {
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+    .lugares-cercanos {
+        background: #fff;
+        padding: 0;
+        ion-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            .square-promo-col {
+                background: transparent;
+                margin: 5px;
+                .square-promo {
+                    .copete {
+                        background: var(--qmb-yellow);
+                        border-radius: 5px 5px 0 0;
+                        p {
+                            font-size: $small-font;
+                            margin: 0;
+                            padding: 0;
+                            color: var(--qmb-dark-gray);
+                            font-weight: 600;
+                        }
+                    }
+                    .col-img {
+                        padding: 0;
+                        img {
+                            border-radius: 0 0 5px 5px;
+                        }
+                    }
+                    .info {
+                        p {
+                            margin: 0;
+                            padding: 0;
+                        }
+                        .title {
+                            font-size: $default-font;
+                        }
+                        .dir {
+                            font-size: $small-font;
+                        }
+                        // .puntos {
+                        //   margin-top: 10px;
+                        //   font-size: $semi-small-font;
+                        // }
+                    }
+                }
+            }
+        }
+    }
 }
 
 ion-buttons {
-  color: white;
+    color: white;
 }
