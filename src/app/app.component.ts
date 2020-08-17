@@ -15,27 +15,27 @@ export class AppComponent {
     {
       title: "Home",
       url: "/tabs/home",
-      icon: "home"
+      icon: "assets/icon/home.png"
     },
     {
       title: "Mis Vouchers y Promociones",
       url: "/tabs/mispromos",
-      icon: "list"
+      icon: "assets/icon/promos.png"
     },
     {
       title: "Happy Hours",
       url: "/tabs/lista-hhour",
-      icon: "list"
+      icon: "assets/icon/vaso.png"
     },
     {
       title: "Detalle de mis puntos",
       url: "/tabs/detalle-puntos",
-      icon: "list"
+      icon: "assets/icon/pesos.png"
     },
     {
       title: "Soporte",
       url: "/soporte",
-      icon: "list"
+      icon: "assets/icon/headset.png"
     }
   ];
 
@@ -75,7 +75,7 @@ export class AppComponent {
     this.storage.get("dataUser").then(storageData => {
       if (storageData) {
         if (storageData.usuarioid) {
-          this.navController.navigateRoot(["tabs/home"]);
+          //this.navController.navigateRoot(["tabs/home"]);
           this.splashScreen.hide();
         } else {
           this.navController.navigateRoot("");

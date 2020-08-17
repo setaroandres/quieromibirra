@@ -1,33 +1,35 @@
 <ion-app>
-  <ion-split-pane>
-    <ion-menu>
-      <ion-header>
-        <ion-toolbar>
-          <ion-title class="ion-text-center">Menú</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="light-bg">
-        <ion-list class="sidemenu-list">
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-              <ion-icon slot="start" [name]="p.icon"></ion-icon>
-              <ion-label>
-                {{p.title}}
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-          <ion-menu-toggle auto-hide="false">
-            <ion-item (click)="logOut()">
-              <ion-icon slot="start" name="return-left"></ion-icon>
-              <ion-label>
-                Log Out
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-        </ion-list>
+    <ion-split-pane>
+        <ion-menu class="menu-lateral">
+            <ion-header>
+                <ion-toolbar>
+                    <ion-title class="ion-text-center">Menú</ion-title>
+                </ion-toolbar>
+            </ion-header>
+            <ion-content class="light-bg">
+                <ion-list lines="none" class="sidemenu-list">
+                    <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+                        <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+                            <img slot="start" [src]="p.icon">
+                            <ion-label>
+                                {{p.title}}
+                            </ion-label>
+                            <ion-icon slot="end" name="ios-arrow-forward"></ion-icon>
+                        </ion-item>
+                    </ion-menu-toggle>
+                    <ion-menu-toggle auto-hide="false">
+                        <ion-item (click)="logOut()">
+                            <img slot="start" src="../assets/icon/salir.png" />
+                            <ion-label>
+                                Log Out
+                            </ion-label>
+                            <ion-icon slot="end" name="ios-arrow-forward"></ion-icon>
+                        </ion-item>
+                    </ion-menu-toggle>
+                </ion-list>
 
-      </ion-content>
-    </ion-menu>
-    <ion-router-outlet main></ion-router-outlet>
-  </ion-split-pane>
+            </ion-content>
+        </ion-menu>
+        <ion-router-outlet main></ion-router-outlet>
+    </ion-split-pane>
 </ion-app>

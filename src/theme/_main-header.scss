@@ -34,6 +34,33 @@ ion-header {
     }
 }
 
+ion-menu {
+    &.menu-lateral {
+        ion-header {
+            ion-toolbar {
+                --background: none;
+                ion-title {
+                    color: var(--qmb-yellow);
+                }
+            }
+        }
+        ion-content {
+            ion-list {
+                ion-item {
+                    img {
+                        width: 25px;
+                        margin-right: 15px;
+                    }
+                    ion-label {
+                        font-size: 0.9rem!important;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .toolbar-content {
     display: flex !important;
 }
