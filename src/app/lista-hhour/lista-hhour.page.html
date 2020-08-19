@@ -1,40 +1,40 @@
 <ion-header class="header-transparent">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-  </ion-toolbar>
-  <h1>Happy Hours</h1>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+    <h1>Happy Hours</h1>
 
 </ion-header>
 
 <ion-content>
 
-  <!-- <div class="main-img">
+    <!-- <div class="main-img">
     <img src="assets/img/hhour-background.jpg" alt="">
     <h1>Happy Hours</h1>
   </div> -->
 
-  <ion-grid class="main-container">
-    <ion-row>
+    <ion-grid class="main-container">
+        <ion-row>
 
-      <ion-col *ngFor="let cerve of cervecerias" size="6" class="hhour-box">
-        <ion-row (click)="goToBirreria(cerve)">
-          <ion-col size="12" class="copete">
-            <h3>{{cerve.nombre}}</h3>
-            <p>{{cerve.happyhourinicio}} a {{cerve.happyhourfin}} hs.</p>
-          </ion-col>
-          <ion-col size="12" class="col-img">
-            <img [src]="api_url_super + cerve.logo" alt="">
-          </ion-col>
-          <ion-col size="12" class="col-btn">
-            <button class="btn-vermapa">Ver Mapa</button>
-          </ion-col>
+            <ion-col *ngFor="let cerve of cervecerias" size="6" class="hhour-box">
+                <ion-row (click)="goToBirreria(cerve)">
+                    <ion-col size="12" class="copete">
+                        <h3>{{cerve.nombre}}</h3>
+                        <p>{{cerve.happyhourinicio}} a {{cerve.happyhourfin}} hs.</p>
+                    </ion-col>
+                    <ion-col size="12" class="col-img">
+                        <img [src]="api_url_super + cerve.logo" alt="">
+                    </ion-col>
+                    <ion-col size="12" class="col-btn" text-center>
+                        <button class="btn-vermapa">Ver Mapa</button>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+
         </ion-row>
-      </ion-col>
 
-    </ion-row>
-
-  </ion-grid>
+    </ion-grid>
 
 </ion-content>

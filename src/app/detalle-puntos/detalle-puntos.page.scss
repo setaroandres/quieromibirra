@@ -1,143 +1,129 @@
 @import "../../global";
+ion-content {
+    --background: url("../../assets/bgs/canjea-puntos.jpg") no-repeat center center / cover;
+}
+
+ion-footer {
+    border: none;
+    --background: transparent!important;
+    background: transparent!important;
+    position: absolute;
+    bottom: 0;
+}
 
 .card {
-  background: white;
-  border-radius: 5px;
-  padding: 10px;
-
-  ion-row {
-    padding: 0;
-    margin: 0;
-    ion-col {
-      padding: 0;
-      margin: 0;
-      p {
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+    ion-row {
         padding: 0;
         margin: 0;
-      }
+        ion-col {
+            padding: 0;
+            margin: 0;
+            p {
+                padding: 0;
+                margin: 0;
+            }
+        }
     }
-  }
-
-  .row-1 {
-    .col-titulo {
-      h2 {
-        font-size: $big-font;
-      }
-    }
-
-    .col-miembro {
-      p {
-        color: #202734 !important;
-        text-align: right;
-        font-size: $semi-small-font;
-      }
-    }
-  }
-
-  .row-2 {
-    .col-btn {
-      div {
-        padding: 5px 0;
-        max-width: 65%;
-        background: $dark-blue;
+    .row-1 {
         display: flex;
         align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-
-        img {
-          width: 85%;
+        .col-titulo {
+            h2 {
+                margin: 0;
+                font-size: $semi-big-font;
+                text-transform: uppercase;
+                line-height: 100%;
+                color: var(--qmb-dark-gray);
+            }
+            p {
+                &.testigo {
+                    color: var(--qmb-mgray);
+                    font-size: 0.75rem;
+                    font-weight: 500;
+                    margin-bottom: 10px;
+                }
+                &.saldo-actual {
+                    color: var(--qmb-dark-gray);
+                    font-size: $small-font;
+                    font-weight: 700;
+                    margin-bottom: 5px;
+                }
+            }
         }
-      }
-
-      .credit-card {
-        color: grey;
-      }
+        .n-puntos {
+            font-size: $big-font;
+            color: var(--qmb-dark-gray);
+            font-weight: 800;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            img {
+                margin-right: 8px;
+                max-width: 30px;
+            }
+        }
     }
+    .row-btn {
+        ion-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            button {
+                border-radius: 10px;
+                background: var(--qmb-yellow);
+                color: var(--ion-dark-gray);
+                font-weight: 500;
+                font-size: $small-font;
+                padding: 13px 20px;
+                width: 100%;
+                margin-top: 5px;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
 
-    .puntos {
-      p {
-        color: #4d525d;
-        text-align: center;
-        font-size: $semi-small-font;
-        border-radius: 5px;
-      }
-
-      .n-puntos {
-        text-align: center;
-        background: #eaeaea;
-        font-size: $semi-giant-font;
-        color: #202734;
-        font-weight: 800;
+.grid-img {
+    position: relative;
+    top: 10%;
+    ion-row {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        img {
-          margin-right: 5px;
-          max-width: 18%;
+        ion-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            img {
+                width: 62%;
+            }
         }
-      }
     }
-  }
-
-  .row-btn {
-    ion-col {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 5px;
-
-      button {
-        border-radius: 10px;
-        background: #e8b519;
-        color: white;
-        font-weight: 700;
-        font-size: $small-font;
-        padding: 10px 20px;
-        width: 90%;
-        margin-top: 5px;
-      }
-    }
-  }
-}
-
-.grid-img {
-  position: relative;
-  top: 10%;
-  ion-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    ion-col {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      img {
-        width: 62%;
-      }
-    }
-  }
 }
 
 ion-footer {
-  border: none;
-  --background: #202734;
-  background: #202734;
-  p {
-    text-align: center;
-    font-size: $xsmall-font;
-    span {
-      color: #b38f20;
+    border: none;
+    --background: #202734;
+    background: #202734;
+    p {
+        text-align: center;
+        font-size: $xsmall-font;
+        span {
+            color: #b38f20;
+        }
     }
-  }
 }
 
 ion-footer {
-  &.footer-md::before {
-    background-image: none;
-  }
+    &.footer-md::before {
+        background-image: none;
+    }
 }

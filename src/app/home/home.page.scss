@@ -1,7 +1,7 @@
 // @import "../../theme/variables";
 @import "../../global";
 ion-content {
-    --background: #202734;
+    --background: var(--bg-light)!important;
     padding: 0 5%;
     .promo-semana-title {
         color: white;

@@ -1,63 +1,53 @@
 <ion-header no-border>
-  <ion-toolbar no-border>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title class="ion-text-center">
-      <img src="assets/img/logos/logo-header.png">
-    </ion-title>
-    <ion-buttons class="lupa" slot="end">
-      <!-- <img src="assets/img/lupa-header.png"> -->
-      <img src="assets/img/lupa-hidden.png">
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar no-border>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="ion-text-center">
+            <img src="assets/img/logos/logo-header.png">
+        </ion-title>
+        <ion-buttons class="lupa" slot="end">
+            <!-- <img src="assets/img/lupa-header.png"> -->
+            <img src="assets/img/lupa-hidden.png">
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
 
-  <ion-grid class="card" *ngFor="let user of usuario">
-    <ion-row class="row-1">
-      <ion-col size="6" class="col-titulo">
-        <h2>{{user.nombre}} {{user.apellido}}</h2>
-      </ion-col>
-      <ion-col size="6" class="col-miembro">
-        <p>Miembro desde</p>
-        <p>{{ setDate(user.fechadecreacion)}}</p>
-      </ion-col>
-    </ion-row>
+    <ion-grid class="card" *ngFor="let user of usuario">
+        <ion-row class="row-1">
+            <ion-col size="5" class="col-btn">
+                <img src="../../assets/img/logos/logo-ingreso.png" alt="">
+            </ion-col>
+            <ion-col size="7" class="col-titulo">
+                <h2>{{user.nombre}} {{user.apellido}}</h2>
+                <p class="testigo">Testigo desde {{ setDate(user.fechadecreacion)}}</p>
+                <p class="saldo-actual">Saldo actual en puntos</p>
+                <p class="n-puntos"> <img src="assets/icon/pesos-yellow.png" alt=""> {{user.puntos_usuario}}</p>
+            </ion-col>
+        </ion-row>
 
-    <ion-row class="row-2">
-      <ion-col size="6" class="col-btn">
-        <div>
-          <img src="../../assets/img/logos/logo-ingreso.png" alt="">
-        </div>
-      </ion-col>
-      <ion-col size="6" class="puntos">
-        <p>Total de puntos Birráh</p>
-        <p class="n-puntos"> <img src="assets/img/coin.png" alt=""> {{user.puntos_usuario}}</p>
-      </ion-col>
-    </ion-row>
+        <ion-row class="row-btn">
+            <ion-col>
+                <button (click)="goToListaCanje()">Canjear puntos</button>
+            </ion-col>
+        </ion-row>
 
-    <ion-row class="row-btn">
-      <ion-col>
-        <button (click)="goToListaCanje()">CANJEAR PUNTOS</button>
-      </ion-col>
-    </ion-row>
-
-  </ion-grid>
+    </ion-grid>
 
 
-  <ion-grid class="grid-img">
+    <!-- <ion-grid class="grid-img">
     <ion-row>
       <ion-col>
         <img src="assets/img/detalle-puntos-img.png" alt="">
       </ion-col>
     </ion-row>
-  </ion-grid>
+  </ion-grid> -->
 
 </ion-content>
 
 <ion-footer no-border (click)="goToTerminos()">
-  <p>AL UTILIZAR LOS PUNTOS O INICIAR SESIÓN ESTÁS ACEPTANDO NUESTROS <span>TÉRMINOS Y
+    <p>AL UTILIZAR LOS PUNTOS O INICIAR SESIÓN ESTÁS ACEPTANDO NUESTROS <span>TÉRMINOS Y
       CONDICIONES Y POLÍTICA DE PRIVACIDAD</span></p>
 </ion-footer>
