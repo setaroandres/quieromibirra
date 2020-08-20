@@ -1,59 +1,56 @@
 <ion-header no-border>
-  <ion-toolbar no-border class="back-button-toolbar">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="tabs/home"></ion-back-button>
-    </ion-buttons>
-    <ion-title class="ion-text-center">
-      <img src="../../assets/img/logos/logo-header.png">
-    </ion-title>
-    <ion-buttons class="lupa" slot="end">
-      <img src="assets/img/lupa-hidden.png">
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar no-border class="back-button-toolbar">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="tabs/home"></ion-back-button>
+        </ion-buttons>
+        <ion-title class="ion-text-center">
+        </ion-title>
+        <ion-buttons class="lupa" slot="end">
+            <img src="assets/img/lupa-hidden.png">
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding text-center>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <h2>Código de {{ titulo }}</h2>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <h2>Código de {{ titulo }}</h2>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
 
-  <ion-grid class="main-container" *ngIf="promo.compra_promoid">
-    <ion-row class="row-img">
-      <ion-col>
-        <ngx-qrcode [qrc-value]="qrCode"></ngx-qrcode>
-      </ion-col>
-    </ion-row>
-    <ion-row class="row-info">
-      <ion-col>
-        <!-- <h3>¡Muchas gracias!</h3> -->
-        <p>Con este código QR podrás obtener {{promo.titulo}} en {{promo.nombre}} de {{promo.direccion}}</p>
-        <p>Una vez que haya sido escaneado, se te descontarán <strong class="puntos">{{promo.puntos_promo}} puntos</strong>
-          en tu cuenta</p>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    <ion-grid class="main-container" *ngIf="promo.compra_promoid">
+        <ion-row class="row-img">
+            <ion-col>
+                <ngx-qrcode [qrc-value]="qrCode"></ngx-qrcode>
+            </ion-col>
+        </ion-row>
+        <ion-row class="row-info">
+            <ion-col>
+                <!-- <h3>¡Muchas gracias!</h3> -->
+                <p>Con este código QR podrás obtener {{promo.titulo}} en {{promo.nombre}} de {{promo.direccion}}</p>
+                <p>Una vez que haya sido escaneado, se te descontarán <strong class="puntos">{{promo.puntos_promo}} puntos</strong> en tu cuenta</p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
 
-  <ion-grid class="main-container" *ngIf="canje.compra_canjeid">
-    <ion-row class="row-img">
-      <ion-col>
-        <ngx-qrcode [qrc-value]="qrCode"></ngx-qrcode>
-      </ion-col>
-    </ion-row>
-    <ion-row class="row-info">
-      <ion-col>
-        <!-- <h3>¡Muchas gracias!</h3> -->
-        <p>Con este código QR podrás obtener {{canje.titulo}} en {{canje.nombre}} de {{canje.direccion}}</p>
-        <p>Una vez que haya sido escaneado, vas a acumular  <strong class="puntos">{{canje.puntos_canje}}
-            puntos</strong>
-          de tu cuenta</p>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    <ion-grid class="main-container" *ngIf="canje.compra_canjeid">
+        <ion-row class="row-img">
+            <ion-col>
+                <ngx-qrcode [qrc-value]="qrCode"></ngx-qrcode>
+            </ion-col>
+        </ion-row>
+        <ion-row class="row-info">
+            <ion-col>
+                <!-- <h3>¡Muchas gracias!</h3> -->
+                <p>Con este código QR podrás obtener {{canje.titulo}} en {{canje.nombre}} de {{canje.direccion}}</p>
+                <p>Una vez que haya sido escaneado, vas a acumular <strong class="puntos">{{canje.puntos_canje}}
+            puntos</strong> de tu cuenta</p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

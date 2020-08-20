@@ -116,6 +116,12 @@
     opacity: 1;
 }
 
+ion-header {
+    ion-buttons {
+        color: var(--qmb-yellow);
+    }
+}
+
 ion-content {
     //--background: var(--bg-light)!important;
     padding: 0 5%;
