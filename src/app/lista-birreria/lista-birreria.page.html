@@ -1,89 +1,89 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="tabs/lista-hhour"></ion-back-button>
-    </ion-buttons>
-    <ion-title class="ion-text-center">
-      <img src="../../assets/img/logos/logo-header.png">
-    </ion-title>
-    <ion-buttons class="lupa" slot="end">
-      <img src="assets/img/lupa-hidden.png">
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="tabs/lista-hhour"></ion-back-button>
+        </ion-buttons>
+        <ion-title class="ion-text-center">
+            <img src="../../assets/img/logos/logo-header.png">
+        </ion-title>
+        <ion-buttons class="lupa" slot="end">
+            <img src="assets/img/lupa-hidden.png">
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
 
-  <mis-puntos></mis-puntos>
+    <mis-puntos></mis-puntos>
 
-  <h2>{{cerveceria.nombre}}</h2>
+    <h2>{{cerveceria.nombre}}</h2>
 
-  <ion-grid class="bg-light round-standard">
+    <ion-grid class="bg-light round-standard">
 
-    <ion-row>
+        <ion-row class="lista-birreria-wrapper">
 
-      <ion-col size="12">
-        <h3>Promociones</h3>
-      </ion-col>
+            <ion-col size="12">
+                <h3 class="titulo-wrapper">Promos Bíblicas</h3>
+            </ion-col>
 
-      <ion-col size="5" *ngFor="let promo of promos" class="square-promo-col round-standard">
+            <ion-col size="5" *ngFor="let promo of promos" class="square-promo-col round-standard">
 
-        <ion-row (click)="goToInternaPromo(promo)" class="square-promo">
+                <ion-row (click)="goToInternaPromo(promo)" class="square-promo">
 
-          <ion-col size="12" class="copete">
-            <span class="puntos">
-              <p class="puntos_promo">{{promo.puntos_promo}} <img src="assets/img/coin.png" alt=""></p>
+                    <ion-col size="12" class="copete">
+                        <span class="puntos">
+              <p class="puntos_promo"><img src="assets/icon/pesos.png" alt=""> {{promo.puntos_promo}}</p>
             </span>
-          </ion-col>
+                    </ion-col>
 
-          <ion-col size="12" class="col-img">
-            <img [src]="api_url_super + promo.imgpath" />
-          </ion-col>
+                    <ion-col size="12" class="col-img">
+                        <img [src]="api_url_super + promo.imgpath" />
+                    </ion-col>
 
-          <ion-col size="12" class="info">
-            <p class="title"><strong>{{promo.titulo}}</strong></p>
-            <p class="dir">{{promo.direccion}}</p>
-          </ion-col>
+                    <ion-col size="12" class="info">
+                        <p class="title"><strong>{{promo.titulo}}</strong></p>
+                        <p class="dir">{{promo.direccion}}</p>
+                    </ion-col>
+
+                </ion-row>
+
+            </ion-col>
 
         </ion-row>
 
-      </ion-col>
 
-    </ion-row>
+        <ion-row *ngIf="canjes?.length > 0">
 
+            <ion-col size="12">
+                <h3>Vouchers</h3>
+            </ion-col>
 
-    <ion-row *ngIf="canjes?.length > 0">
+            <ion-col size="5" *ngFor="let canje of canjes" class="square-promo-col round-standard">
 
-      <ion-col size="12">
-        <h3>Vouchers</h3>
-      </ion-col>
+                <ion-row (click)="goToInternaCanje(canje)" class="square-promo">
 
-      <ion-col size="5" *ngFor="let canje of canjes" class="square-promo-col round-standard">
-
-        <ion-row (click)="goToInternaCanje(canje)" class="square-promo">
-
-          <ion-col size="12" class="copete">
-            <span class="puntos">
+                    <ion-col size="12" class="copete">
+                        <span class="puntos">
               <p class="puntos_promo">{{canje.puntos_canje}} <img src="assets/img/coin.png" alt=""></p>
             </span>
-          </ion-col>
+                    </ion-col>
 
-          <ion-col size="12" class="col-img">
-            <img [src]="api_url_super + canje.imgpath" />
-          </ion-col>
+                    <ion-col size="12" class="col-img">
+                        <img [src]="api_url_super + canje.imgpath" />
+                    </ion-col>
 
-          <ion-col size="12" class="info">
-            <p class="title"><strong>{{canje.titulo}}</strong></p>
-            <p class="dir">{{canje.direccion}}</p>
-          </ion-col>
+                    <ion-col size="12" class="info">
+                        <p class="title"><strong>{{canje.titulo}}</strong></p>
+                        <p class="dir">{{canje.direccion}}</p>
+                    </ion-col>
+
+                </ion-row>
+
+            </ion-col>
 
         </ion-row>
 
-      </ion-col>
-
-    </ion-row>
-
-  </ion-grid>
+    </ion-grid>
 
 
 

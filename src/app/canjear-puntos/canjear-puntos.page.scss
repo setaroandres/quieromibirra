@@ -1,98 +1,101 @@
 @import "../../global";
 @import "../../theme/buttons";
-
 .title {
-  color: white;
+    color: var(--qmb-dark-gray);
+    margin: 0;
 }
 
 .main-container {
-  ion-row {
-    margin-top: 5px;
-    padding: 5px;
-  }
+    ion-row {
+        margin-top: 5px;
+        padding: 5px;
+    }
+}
+
+ion-content {
+    --background: #f6f8f8;
 }
 
 .canjes {
-  background: $light-blue;
-  padding: 0;
-
-  ion-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    .square-promo-col {
-      background: $dark-blue;
-      margin: 5px;
-
-      .square-promo {
-        .copete {
-          background: $yellow-birra;
-          border-radius: 5px 5px 0 0;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-
-          span {
-            color: white;
-            font-size: $small-font;
+    background: #fff;
+    padding: 0;
+    border-top-right-radius: 12px!important;
+    border-top-left-radius: 12px!important;
+    ion-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+        &.square-promo {
+            padding: 0 0 5px 0;
+            box-shadow: 0px 0px 3px #e2e2e2;
+            border-radius: 6px;
+        }
+        .square-promo-col {
+            background: transparent;
             margin: 0;
-            padding: 0;
-          }
+            align-self: flex-start;
+            //min-height: 225px;
+            .square-promo {
+                .copete {
+                    background: var(--qmb-yellow);
+                    border-radius: 5px 5px 0 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 8px;
+                    min-height: 42px;
+                    span {
+                        color: var(--qmb-dark-gray);
+                        font-size: $xsmall-font;
+                        font-weight: 700;
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+                .col-img {
+                    padding: 0;
+                }
+                .info {
+                    p {
+                        margin: 0;
+                        padding: 0;
+                    }
+                    .title {
+                        color: var(--qmb-dark-gray);
+                        font-size: $xsmall-font;
+                        font-weight: 700;
+                    }
+                    .dir {
+                        font-size: $xsmall-font;
+                        color: #8f9192;
+                        font-size: $xsmall-font;
+                    }
+                }
+            }
         }
-
-        .col-img {
-          padding: 0;
-
-          img {
-            border-radius: 0 0 5px 5px;
-          }
-        }
-
-        .info {
-          p {
-            margin: 0;
-            padding: 0;
-          }
-
-          .title {
-            font-size: $default-font;
-          }
-
-          .dir {
-            font-size: $small-font;
-          }
-
-          // .puntos {
-          //   margin-top: 10px;
-          //   font-size: $semi-small-font;
-          // }
-        }
-      }
     }
-  }
 }
 
 .puntos {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  text-align: center;
-
-  .puntos_promo {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    border-radius: 15px;
-    font-size: $semi-small-font;
-    margin: 0;
-    padding: 3px 3px;
-    margin-left: 3px;
-
-    img {
-      margin-left: 5px;
-      max-width: 20%;
+    text-align: center;
+    .puntos_promo {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        border-radius: 15px;
+        font-size: $semi-small-font;
+        margin: 0;
+        padding: 0 0 0 3px;
+        color: var(--qmb-dark-gray);
+        font-weight: 700;
+        img {
+            margin-right: 3px;
+            max-width: 20px;
+        }
     }
-  }
 }

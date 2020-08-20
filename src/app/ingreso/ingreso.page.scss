@@ -1,99 +1,122 @@
-@import "../../theme/variables.scss";
-
-/* Transparent standard */
-
-/* Show background if class is active */
-.show-background {
-  border-style: none !important;
-  background: transparent;
-}
-
-/* Remove bottom border on md */
-.header-md::after {
-  background-image: none !important;
-}
-
-/* Remove bottom border on ios */
-
-ion-content {
-  .logo-ingreso {
-    text-align: center;
-
-    img {
-      max-width: 50%;
+    @import "../../theme/variables.scss";
+    /* Transparent standard */
+    /* Show background if class is active */
+    
+    .show-background {
+        border-style: none !important;
+        background: transparent;
     }
-  }
-}
-
-.olvide {
-  align-items: center;
-  justify-content: center;
-  ion-col {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-    p {
-      font-size: $small-font;
-      color: #a9abae;
+    /* Remove bottom border on md */
+    
+    .header-md::after {
+        background-image: none !important;
     }
-  }
-}
-
-.crear-cuenta {
-  margin-top: 5%;
-  ion-row {
-    align-items: center;
-    justify-content: center;
-    ion-col {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      p {
-        font-size: $small-font;
-        color: #a9abae;
-        .crea {
-          color: white !important;
-          font-weight: 700;
+    /* Remove bottom border on ios */
+    
+    ion-header {
+        ion-toolbar {
+            --background: none;
         }
-      }
     }
-  }
-}
-
-.gral-form {
-  ion-item {
-    ion-label {
-      ion-icon {
-        margin-right: 8px;
-      }
+    
+    ion-content {
+        --background: #fff;
+        background: #fff;
+        .logo-ingreso {
+            text-align: center;
+            margin-top: 45px;
+            img {
+                max-width: 85px;
+            }
+        }
     }
-
-    ion-input {
-      color: white;
+    
+    .olvide {
+        align-items: center;
+        justify-content: center;
+        ion-col {
+            p {
+                font-size: $small-font;
+                color: var(--qmb-dark-gray);
+                padding: 0 10px;
+                margin: 0;
+            }
+        }
     }
-  }
-}
-
-.logo-ingreso {
-  ion-row {
-    ion-col {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      img {
-        max-width: 20%;
-      }
+    
+    ion-button {
+        &.yellow-button {
+            color: var(--qmb-dark-gray);
+            padding: 3px 30px;
+            margin-top: 25px;
+            width: 180px;
+        }
     }
-  }
-}
-
-.item-has-focus.label-floating.sc-ion-label-md-h,
-item-has-focus .label-floating.sc.ion-label-md-h,
-.item-has-focus.label-stacked.sc-ion-label-md-h,
-.item-has-focus .label-stacked.sc-ion-label-md-h {
-  color: white !important;
-}
+    
+    .crear-cuenta {
+        margin-top: 5%;
+        ion-row {
+            align-items: center;
+            justify-content: center;
+            ion-col {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                p {
+                    font-size: $small-font;
+                    color: var(--qmb-dark-gray);
+                    margin: 0;
+                    .crea {
+                        color: var(--qmb-dark-gray) !important;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+    
+    .gral-form {
+        ion-item {
+            ion-label {
+                margin-left: 8px;
+                font-size: 1.3rem;
+                font-weight: 400;
+                letter-spacing: 0;
+                color: var(--qmb-yellow);
+                ion-icon {
+                    font-size: 2rem;
+                    vertical-align: bottom;
+                    color: var(--qmb-yellow);
+                }
+            }
+            ion-input {
+                background: #f6f8f8;
+                border-radius: 10px;
+                margin-top: 15px;
+                color: var(--qmb-dark-gray);
+                padding: 0 8px!important;
+            }
+        }
+    }
+    
+    .logo-ingreso {
+        ion-row {
+            ion-col {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                img {
+                    max-width: 20%;
+                }
+            }
+        }
+    }
+    
+    .item-has-focus.label-floating.sc-ion-label-md-h,
+    item-has-focus .label-floating.sc.ion-label-md-h,
+    .item-has-focus.label-stacked.sc-ion-label-md-h,
+    .item-has-focus .label-stacked.sc-ion-label-md-h {
+        //color: white !important;
+    }

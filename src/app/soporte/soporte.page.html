@@ -1,51 +1,44 @@
 <ion-header class="header-transparent">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <!-- <ion-title>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <!-- <ion-title>
         Happy Hours
       </ion-title> -->
-  </ion-toolbar>
-  <h1>Soporte</h1>
+    </ion-toolbar>
+    <h1 class="pin">Soporte</h1>
 
 </ion-header>
 
 <ion-content>
 
 
-  <!-- <div class="main-img">
+    <!-- <div class="main-img">
     <img src="assets/img/hhour-background.jpg" alt="">
     <h1>Soporte</h1>
   </div> -->
 
-  <ion-grid class="main-container">
+    <ion-grid class="main-container">
 
-    <ion-row class="row-descripcion">
-      <ion-col>
-        <p>Descripción</p>
-      </ion-col>
-    </ion-row>
+        <ion-row class="row-descripcion">
+            <ion-col>
+                <p>Descripción <span>{{fechaHoy}}</span></p>
+            </ion-col>
+        </ion-row>
 
-    <ion-row class="row-fecha">
-      <ion-col>
-        <p class="float-right">{{fechaHoy}}</p>
-      </ion-col>
-    </ion-row>
+        <ion-row class="row-texto">
+            <ion-col>
+                <ion-textarea [(ngModel)]="texto" rows="10" cols="10" maxlength="500" type="text" placeholder="Escribí tu mensaje"></ion-textarea>
+            </ion-col>
+        </ion-row>
 
-    <ion-row class="row-texto">
-      <ion-col>
-        <ion-textarea [(ngModel)]="texto" rows="10" cols="10" maxlength="500" type="text"
-          placeholder="Escribí tu mensaje"></ion-textarea>
-      </ion-col>
-    </ion-row>
+        <ion-row class="row-btn">
+            <ion-col>
+                <button (click)="crearConsulta()">Enviar</button>
+            </ion-col>
+        </ion-row>
 
-    <ion-row class="row-btn">
-      <ion-col>
-        <button (click)="crearConsulta()">ENVIAR</button>
-      </ion-col>
-    </ion-row>
-
-  </ion-grid>
+    </ion-grid>
 
 </ion-content>

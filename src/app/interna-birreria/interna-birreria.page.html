@@ -1,32 +1,32 @@
 <ion-header class="header-transparent">
-  <ion-toolbar [style.background-image]="'url(' + api_url_super + cerveceria.imgpath + ')'" style="background-position: center center;background-repeat: no-repeat;background-size: cover;min-height: 30vh;">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="tabs/home"></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-  <h1>{{cerveceria.nombre}}</h1>
+    <ion-toolbar [style.background-image]="'url(' + api_url_super + cerveceria.imgpath + ')'" style="background-position: center center;background-repeat: no-repeat;background-size: cover;min-height: 30vh;">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="tabs/home"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+    <h1>{{cerveceria.nombre}}</h1>
 </ion-header>
 <ion-content>
 
-  <ion-grid class="main-container">
+    <ion-grid class="main-container">
 
-    <ion-row class="hhour-box">
+        <ion-row class="hhour-box">
 
-      <ion-col size="12" class="titulo">
-        <h3>{{cerveceria.direccion}}</h3>
-      </ion-col>
+            <ion-col size="12" class="titulo">
+                <h3>{{cerveceria.direccion}}</h3>
+            </ion-col>
 
-      <ion-col size="12" class="col-img-map">
-        <div #map id="map" allow="geolocation"></div>
-      </ion-col>
+            <ion-col size="12" class="col-img-map">
+                <div #map id="map" allow="geolocation"></div>
+            </ion-col>
 
-      <ion-col size="12" class="col-btn">
-        <button (click)="goToListaPromosBirreria()">VER PROMOCIONES</button>
-      </ion-col>
+            <ion-col size="12" class="col-btn">
+                <button (click)="goToListaPromosBirreria()">Ver Promos Bíblicas</button>
+            </ion-col>
 
 
-    </ion-row>
+        </ion-row>
 
-  </ion-grid>
+    </ion-grid>
 
 </ion-content>

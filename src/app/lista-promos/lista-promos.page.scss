@@ -1,117 +1,100 @@
 @import "../../global";
+ion-content {
+    --background: #f6f8f8;
+}
 
 .promo-box {
-  background: $dark-blue;
-  margin: 5px;
-  max-height: 38vh;
-  position: relative;
-  height: 38vh;
-  margin-bottom: 15px;
-
-  .copete {
-    background: $yellow-birra;
-    border-radius: 5px 5px 0 0;
-
-    p {
-      font-size: $default-font;
-      margin: 0;
-      padding: 0;
-    }
-
-    // .puntos {
-    //   display: flex;
-    //   flex-direction: row;
-    //   align-items: center;
-    //   justify-content: center;
-    //   img {
-    //     max-width: 18%;
-    //     margin-right: 5px;
-    //   }
-    // }
-  }
-
-  .col-img {
-    padding: 0;
-
-    img {
-      border-radius: 0 0 5px 5px;
-      height: 33vh;
-      width: 100%;
-    }
-  }
-
-  .info {
-    // background: $light-blue;
-    border-radius: 0 0 5px 5px;
+    background: transparent;
+    margin: 5px;
+    max-height: 38vh;
     position: relative;
-    /* bottom: 25vh; */
-    text-align: center;
-    position: absolute;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    p {
-      margin: 0;
-      padding: 0;
-      text-shadow: 1px 1px 3px black;
+    height: 38vh;
+    margin-bottom: 15px;
+    .copete {
+        background: var(--qmb-yellow);
+        border-radius: 5px 5px 0 0;
+        p {
+            font-size: $semi-small-font;
+            margin: 0;
+            padding: 0;
+            color: var(--qmb-dark-gray);
+            font-weight: 700;
+        }
     }
-
-    .title {
-      font-size: $xbig-font;
-      font-weight: 700;
+    .col-img {
+        padding: 0;
+        img {
+            border-radius: 0 0 5px 5px;
+            height: 33vh;
+            width: 100%;
+        }
     }
-
-    .dir {
-      font-size: $big-font;
+    .info {
+        // background: $light-blue;
+        border-radius: 0 0 5px 5px;
+        position: relative;
+        /* bottom: 25vh; */
+        text-align: center;
+        position: absolute;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        p {
+            margin: 0;
+            padding: 0;
+            text-shadow: 1px 1px 3px black;
+        }
+        .title {
+            font-size: $xbig-font;
+            font-weight: 700;
+        }
+        .dir {
+            font-size: $big-font;
+        }
+        .puntos {
+            margin-top: 10px;
+        }
     }
-
-    .puntos {
-      margin-top: 10px;
-    }
-  }
-
-  .suma-puntos {
-    position: absolute;
-    bottom: 3px;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    .title {
-      margin: 0;
-      padding: 0;
-      font-size: $default-font;
-      font-weight: 600;
-      text-shadow: 1px 1px 3px black;
-    }
-
-    .puntos {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding: 3px;
-      text-align: center;
-
-      .puntos_promo {
+    .suma-puntos {
+        position: absolute;
+        bottom: 12px;
+        right: 0;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        background: green;
-        border-radius: 15px;
-        font-size: $small-font;
-        margin: 0;
-        padding: 3px 3px;
-        margin-left: 0;
-
-        img {
-          margin-left: 5px;
-          max-width: 17%;
+        .title {
+            margin: 0 0 5px 0;
+            padding: 0;
+            font-size: $xsmall-font;
+            font-weight: 400;
+            text-shadow: 1px 1px 3px black;
         }
-      }
+        .puntos {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 3px;
+            text-align: center;
+            .puntos_promo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: var(--qmb-yellow);
+                border-radius: 15px;
+                font-size: $small-font;
+                margin: 0;
+                padding: 6px 15px;
+                margin-left: 0;
+                color: var(--qmb-dark-gray);
+                font-weight: 700;
+                border-radius: 10px;
+                img {
+                    margin-right: 5px;
+                    max-width: 20px;
+                }
+            }
+        }
     }
-  }
 }

@@ -33,6 +33,13 @@
     }
 }
 
+@font-face {
+    font-family: 'Hackney';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Hackney'), url('/assets/fonts/HackneyPersonalUseOnly.ttf') format('ttf');
+}
+
 @mixin flex-center {
     display: flex;
     flex-direction: column;
@@ -69,7 +76,7 @@
                 font-size: $semi-big-font;
                 padding: 4px 10px;
                 margin-left: 5px;
-                background: #e8b519;
+                background: var(--qmb-yellow);
                 font-weight: 800;
                 border-radius: 30px;
                 img {
@@ -90,7 +97,7 @@
 
 .btn-yellow {
     border-radius: 10px;
-    background: #e8b519;
+    background: var(--qmb-yellow);
     color: white;
     font-weight: 700;
     font-size: $small-font;
@@ -142,10 +149,10 @@ ion-content {
     ion-button {
         &.yellow-button {
             --background: var(--qmb-yellow);
-            --border-radius: none;
             height: 45px;
             margin: 0;
             text-transform: none;
+            --border-radius: 10px;
         }
     }
 }
