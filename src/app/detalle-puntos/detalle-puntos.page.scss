@@ -33,10 +33,12 @@ ion-footer {
         .col-titulo {
             h2 {
                 margin: 0;
-                font-size: $semi-big-font;
+                font-size: $semi-giant-font;
                 text-transform: uppercase;
                 line-height: 100%;
                 color: var(--qmb-dark-gray);
+                font-family: 'Hackney';
+                line-height: 100%;
             }
             p {
                 &.testigo {

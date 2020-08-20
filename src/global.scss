@@ -34,10 +34,18 @@
 }
 
 @font-face {
-    font-family: 'Hackney';
-    font-style: normal;
+    font-family: "Hackney";
+    src: url("/assets/fonts/HackneyPersonalUseOnly.eot");
+    /* IE9 Compat Modes */
+    src: url("/assets/fonts/HackneyPersonalUseOnly.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("/assets/fonts/HackneyPersonalUseOnly.otf") format("opentype"), /* Open Type Font */
+    url("/assets/fonts/HackneyPersonalUseOnly.svg") format("svg"), /* Legacy iOS */
+    url("/assets/fonts/HackneyPersonalUseOnly.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("/assets/fonts/HackneyPersonalUseOnly.woff") format("woff"), /* Modern Browsers */
+    url("/assets/fonts/HackneyPersonalUseOnly.woff2") format("woff2");
+    /* Modern Browsers */
     font-weight: normal;
-    src: local('Hackney'), url('/assets/fonts/HackneyPersonalUseOnly.ttf') format('ttf');
+    font-style: normal;
 }
 
 @mixin flex-center {
@@ -93,6 +101,13 @@
     align-items: center;
     justify-content: center;
     max-width: 90%;
+}
+
+element.style {}
+
+ion-header ion-toolbar ion-buttons ion-menu-button,
+.header-transparent ion-toolbar ion-buttons ion-menu-button {
+    color: var(--qmb-yellow)!important;
 }
 
 .btn-yellow {

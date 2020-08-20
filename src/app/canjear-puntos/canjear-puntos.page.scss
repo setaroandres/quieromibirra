@@ -1,5 +1,15 @@
 @import "../../global";
 @import "../../theme/buttons";
+.header-transparent {
+    ion-toolbar {
+        background: url("../../assets/img/canjear-puntos.jpg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 30vh;
+    }
+}
+
 .title {
     color: var(--qmb-dark-gray);
     margin: 0;

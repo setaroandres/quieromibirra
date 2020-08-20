@@ -32,6 +32,23 @@ ion-header {
             }
         }
     }
+    &.header-transparent {
+        ion-toolbar {
+            background-color: #fff;
+            --background-color: #fff;
+            --background: none;
+        }
+        h1 {
+            font-family: 'Hackney';
+            font-size: 3rem!important;
+            position: absolute;
+            text-shadow: 1px 1px 5px black;
+            top: 14vh!important;
+            left: 8vw;
+            z-index: 999;
+            color: white;
+        }
+    }
 }
 
 ion-menu {
