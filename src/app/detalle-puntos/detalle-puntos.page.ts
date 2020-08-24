@@ -47,6 +47,8 @@ export class DetallePuntosPage implements OnInit {
       let result = x["data"];
 
       this.usuario = result;
+      console.log("Usuario: ", this.usuario);
+      
     });
   }
 

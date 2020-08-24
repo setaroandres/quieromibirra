@@ -7,11 +7,12 @@ ion-content {
         color: white;
         position: absolute;
         text-shadow: 1px 2px 3px black;
-        font-size: $semi-big-font;
+        font-size: $semi-giant-font;
         font-weight: 800;
         padding: 0 35px;
         width: 100%;
-        line-height: 100%;
+        line-height: 20px;
+        font-family: 'Hackney';
     }
     .title-cercanos {
         h3 {
@@ -69,6 +70,8 @@ ion-content {
             flex-direction: row;
             align-items: center;
             justify-content: center;
+            box-shadow: 0px 0px 3px #e2e2e2;
+            border-radius: 10px;
             .square-promo-col {
                 background: transparent;
                 margin: 5px;

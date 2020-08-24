@@ -17,7 +17,15 @@
     <ion-grid class="card" *ngFor="let user of usuario">
         <ion-row class="row-1">
             <ion-col size="5" class="col-btn">
-                <img src="../../assets/img/logos/logo-ingreso.png" alt="">
+                <div class="" [ngStyle]="{
+                    'background-image': 'url(../../assets/img/logos/logo-ingreso.png)',
+                    'background-size': 'contain',
+                    'background-repeat': 'no-repeat',
+                    'background-position': 'center center',
+                    'height': '100px',
+                    'width': '100px',
+                    'margin': '0 auto',
+                    'border-radius': '50%'}"></div>
             </ion-col>
             <ion-col size="7" class="col-titulo">
                 <h2>{{user.nombre}} {{user.apellido}}</h2>

@@ -18,7 +18,8 @@ export class HomePage {
   ) {}
 
   slideOptsTwo = {
-    slidesPerView: 1.5
+    slidesPerView: 1.5,
+    bullet: false
   };
   promos: any = [];
   cervecerias: any = [];
