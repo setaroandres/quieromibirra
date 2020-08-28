@@ -75,7 +75,7 @@ export class AppComponent {
     this.storage.get("dataUser").then(storageData => {
       if (storageData) {
         if (storageData.usuarioid) {
-          //this.navController.navigateRoot(["tabs/home"]);
+          this.navController.navigateRoot(["tabs/home"]);
           this.splashScreen.hide();
         } else {
           this.navController.navigateRoot("");
