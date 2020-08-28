@@ -27,6 +27,12 @@ ion-toolbar {
     --border-width: 0;
 }
 
+ion-header {
+    ion-title {
+        width: 83%;
+    }
+}
+
 ion-content {
     --background: url("../../assets/bgs/crear-cuenta.jpg") no-repeat center center / cover;
     ion-grid {

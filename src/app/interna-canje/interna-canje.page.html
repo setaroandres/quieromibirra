@@ -1,50 +1,49 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
-    </ion-buttons>
-    <ion-title class="ion-text-center">
-      <img src="../../assets/img/logos/logo-header.png">
-    </ion-title>
-    <ion-buttons class="lupa" slot="end">
-      <img src="assets/img/lupa-hidden.png">
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+        <ion-title class="ion-text-center">
+            <img src="assets/logo-main.png">
+        </ion-title>
+        <ion-buttons class="lupa" slot="end">
+            <img src="assets/img/lupa-hidden.png">
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <h2>Código de canje</h2>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <h2>Código de canje</h2>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
-  <ion-grid class="main-container">
+    <ion-grid class="main-container">
 
-    <ion-row class="row-img">
-      <ion-col>
-        <img src="assets/img/qr.png" alt="" />
-      </ion-col>
-    </ion-row>
+        <ion-row class="row-img">
+            <ion-col>
+                <img src="assets/img/qr.png" alt="" />
+            </ion-col>
+        </ion-row>
 
-    <ion-row class="row-info">
-      <ion-col>
-        <!-- <h3>¡Muchas gracias!</h3> -->
-        <p>Con este código QR podrás obtener recibirás {{canje.titulo}} del bar {{canje.nombre}} ubicado en
-          {{canje.direccion}}</p>
-        <p>Una vez que haya sido escaneado, se te descontarán <strong class="puntos">{{canje.puntos_canje}}
-            puntos</strong>
-          de tu cuenta</p>
-      </ion-col>
-    </ion-row>
+        <ion-row class="row-info">
+            <ion-col>
+                <!-- <h3>¡Muchas gracias!</h3> -->
+                <p>Con este código QR recibirás {{canje.titulo}} del bar {{canje.nombre}} ubicado en {{canje.direccion}}
+                </p>
+                <p>Una vez que haya sido escaneado, se te descontarán <strong class="puntos">{{canje.puntos_canje}}
+            puntos</strong> de tu cuenta</p>
+            </ion-col>
+        </ion-row>
 
-  </ion-grid>
+    </ion-grid>
 
 
-  <!-- <button (click)="retirarCompraCanje()">ENTREGAR (botón de testing)</button> -->
+    <!-- <button (click)="retirarCompraCanje()">ENTREGAR (botón de testing)</button> -->
 
 
 </ion-content>

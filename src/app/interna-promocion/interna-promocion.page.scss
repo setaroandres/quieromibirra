@@ -1,30 +1,39 @@
 ion-content {
-  background: white;
-  --background: white;
+    background: white;
+    --background: white;
+}
+
+ion-header {
+    ion-toolbar {
+        ion-title {
+            width: 80%;
+            img {
+                max-width: 37%;
+            }
+        }
+    }
 }
 
 .main-container {
-  .row-img {
-    ion-col {
-      ngx-qrcode {
-        max-width: 90%;
-      }
+    .row-img {
+        ion-col {
+            ngx-qrcode {
+                max-width: 90%;
+            }
+        }
     }
-  }
-
-  .row-info {
-    ion-col {
-      h3 {
-        color: grey;
-      }
-
-      p {
-        color: grey;
-      }
+    .row-info {
+        ion-col {
+            h3 {
+                color: grey;
+            }
+            p {
+                color: grey;
+            }
+        }
     }
-  }
 }
 
 .puntos {
-  color: green;
+    color: green;
 }

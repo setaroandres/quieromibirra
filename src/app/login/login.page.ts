@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Facebook, FacebookLoginResponse } from "@ionic-native/facebook/ngx";
 import { ServiceService } from "../service.service";
 import { Router } from "@angular/router";
-import { ToastController } from "@ionic/angular";
+import { ToastController, MenuController } from "@ionic/angular";
 import { Storage } from "@ionic/storage";
 
 @Component({
@@ -17,8 +17,11 @@ export class LoginPage implements OnInit {
     public service: ServiceService,
     private router: Router,
     private storage: Storage,
-    public toastController: ToastController
-  ) {}
+    public toastController: ToastController,
+    public menuCtrl: MenuController
+  ) {
+    // this.menuCtrl.enable(false, 'menuLateral');
+  }
 
   ngOnInit() {
     console.log("LoginPage");

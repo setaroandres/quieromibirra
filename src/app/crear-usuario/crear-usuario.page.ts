@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { ScrollDetail } from "@ionic/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { ToastController } from "@ionic/angular";
+import { ToastController, MenuController } from "@ionic/angular";
 import { DatePipe } from "@angular/common";
 import { Storage } from "@ionic/storage";
 
@@ -19,8 +19,11 @@ export class CrearUsuarioPage implements OnInit {
     public formBuilder: FormBuilder,
     public toastController: ToastController,
     private datePipe: DatePipe,
-    private storage: Storage
-  ) {}
+    private storage: Storage,
+    public menuCtrl: MenuController
+  ) {
+    this.menuCtrl.enable(false, 'menuLateral');
+  }
 
   date: any = new Date();
   registro: FormGroup;

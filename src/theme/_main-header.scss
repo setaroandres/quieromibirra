@@ -1,5 +1,11 @@
-.button-inner.sc-ion-back-button-md {
-    color: var(--qmb-yellow);
+.button-inner {
+    color: var(--qmb-yellow)!important;
+    --color: var(--qmb-yellow)!important;
+    .button-text {
+        color: var(--qmb-yellow)!important;
+        --color: var(--qmb-yellow)!important;
+        text-transform: capitalize;
+    }
 }
 
 ion-buttons,
@@ -11,7 +17,7 @@ ion-header {
     ion-toolbar {
         background-color: #fff;
         --background-color: #fff;
-        --background: url('/assets/logo-main.png') center center /19% 40% no-repeat;
+        // --background: url('/assets/logo-main.png') center center /19% 40% no-repeat;
         ion-title {
             max-width: 100%;
             padding: 0;

@@ -28,7 +28,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
     BrowserModule,
     HttpModule,
     HttpClientModule,
-    IonicModule.forRoot(),
+    IonicModule.forRoot( {backButtonText: 'Atras'}),
     IonicStorageModule.forRoot(),
     AppRoutingModule,
     NgxQRCodeModule

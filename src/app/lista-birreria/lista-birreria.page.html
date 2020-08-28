@@ -4,6 +4,7 @@
             <ion-back-button defaultHref="tabs/lista-hhour"></ion-back-button>
         </ion-buttons>
         <ion-title class="ion-text-center">
+            <img src="assets/logo-main.png">
         </ion-title>
         <ion-buttons class="lupa" slot="end">
             <img src="assets/img/lupa-hidden.png">
@@ -54,7 +55,7 @@
         <ion-row *ngIf="canjes?.length > 0">
 
             <ion-col size="12">
-                <h3>Vouchers</h3>
+                <h3>Promos por puntos</h3>
             </ion-col>
 
             <ion-col size="5" *ngFor="let canje of canjes" class="square-promo-col round-standard">
@@ -63,7 +64,7 @@
 
                     <ion-col size="12" class="copete">
                         <span class="puntos">
-              <p class="puntos_promo">{{canje.puntos_canje}} <img src="assets/img/coin.png" alt=""></p>
+              <p class="puntos_promo"><img src="assets/icon/pesos.png" alt=""> {{canje.puntos_canje}}</p>
             </span>
                     </ion-col>
 
