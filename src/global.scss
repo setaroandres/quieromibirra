@@ -110,6 +110,10 @@ ion-header ion-toolbar ion-buttons ion-menu-button,
     color: var(--qmb-yellow)!important;
 }
 
+ion-header ion-toolbar:first-child {
+    padding-top: 20px;
+}
+
 .btn-yellow {
     border-radius: 10px;
     background: var(--qmb-yellow);
