@@ -93,7 +93,7 @@ export class CrearUsuarioPage implements OnInit {
         "",
         Validators.compose([
           Validators.maxLength(20),
-          Validators.pattern("[a-zA-Z ]*"),
+          Validators.pattern("^[ñA-Za-z _]*[ñA-Za-z][ñA-Za-z _]*$"),
           Validators.required
         ])
       ], //Contener letras y espacios, y tener menos de 30 caracteres.
@@ -101,7 +101,7 @@ export class CrearUsuarioPage implements OnInit {
         "",
         Validators.compose([
           Validators.maxLength(20),
-          Validators.pattern("[a-zA-Z ]*"),
+          Validators.pattern("^[ñA-Za-z _]*[ñA-Za-z][ñA-Za-z _]*$"),
           Validators.required
         ])
       ], //Contener letras y espacios, y tener menos de 30 caracteres.

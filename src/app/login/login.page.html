@@ -1,8 +1,8 @@
 <ion-content>
     <ion-grid class="ion-padding">
         <div class="wrapper-botones">
-            <!-- <ion-row class="facebook ion-margin-bottom" *ngIf="habilitar"> -->
-            <ion-row class="facebook">
+            <!-- <ion-row class="facebook ion-margin-bottom"> -->
+            <ion-row class="facebook" *ngIf="habilitar">
                 <ion-col>
                     <ion-button class="fb-button ion-no-margin" (click)="fblogin()">
                         <ion-icon name="logo-facebook"></ion-icon> <span>Ingresá con Facebook</span>
